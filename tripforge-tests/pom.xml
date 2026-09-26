@@ -11,13 +11,13 @@
 
   <groupId>com.tripforge</groupId>
   <artifactId>tripforge-tests</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <name>TripForge self-healing lab tests</name>
 
   <properties>
     <maven.compiler.release>17</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <healer.version>0.1.0-SNAPSHOT</healer.version>
+    <healer.version>0.1.0</healer.version>
     <junit.version>5.14.4</junit.version>
     <tripforge.baseUrl>https://trip-forge-lbuh.vercel.app</tripforge.baseUrl>
     <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
