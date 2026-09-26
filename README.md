@@ -13,9 +13,7 @@ a multilingual demo shop and a UI test project that uses the framework like any 
 ## Quick start
 
 ```bash
-# 1) Framework (until it is published to a Maven repository)
-git clone https://github.com/YasinDeger48/selfhealing-framework.git
-cd selfhealing-framework && mvn install && cd ..
+# 1) The framework comes from Maven Central (io.github.yasindeger48:healer-*) - nothing to install
 
 # 2) Demo site - http://localhost:8080, user standard_user / secret123
 cd demo-site && npm install && npm run dev          # keep running

@@ -23,7 +23,7 @@ They never match again, so every step is healed:
 
 ## Run
 
-Install the framework once: `mvn install -DskipTests` in `../healing-framework`. Then, in this folder:
+The framework comes from Maven Central (`io.github.yasindeger48`), nothing to install. In this folder:
 
 ```bash
 # headless, local healing only ($0)

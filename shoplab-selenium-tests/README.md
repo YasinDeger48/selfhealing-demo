@@ -4,7 +4,7 @@ The ShopLab example with Selenium WebDriver instead of Playwright: page objects 
 (`By.id`, `By.name`, `By.cssSelector`, `By.xpath`) through `SelfHealingDriver.element(key, by)`.
 
 ```bash
-# demo site on :8080 (see ../demo-site), framework installed (mvn install in ../healing-framework)
+# demo site on :8080 (see ../demo-site); the framework comes from Maven Central
 mvn test                                   # headless Edge
 mvn test -Dbrowser=chrome -Dheadless=false # visible Chrome
 ```

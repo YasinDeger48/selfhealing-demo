@@ -6,8 +6,7 @@ self-healing framework (`../healing-framework`), which this project uses only as
 ## Setup (once)
 
 ```bash
-cd ../healing-framework && mvn install        # install the framework into the local Maven repo
-cd ../demo-site && npm install
+cd ../demo-site && npm install                # the framework itself comes from Maven Central
 ```
 
 Optional, for the Claude stage: set the `ANTHROPIC_API_KEY` environment variable.
