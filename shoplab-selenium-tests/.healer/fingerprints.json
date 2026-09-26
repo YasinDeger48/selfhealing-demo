@@ -1,0 +1,300 @@
+{
+  "Header.cartBadge" : {
+    "key" : "Header.cartBadge",
+    "selector" : "#cart-count",
+    "pageUrl" : "http://localhost:8080/products",
+    "capturedAt" : "2026-09-26T20:01:58.255829600Z",
+    "element" : {
+      "tag" : "span",
+      "attributes" : {
+        "id" : "cart-count",
+        "data-testid" : "cart-count-badge",
+        "data-qa" : "cart-badge",
+        "aria-label" : "Items in cart",
+        "class" : "cart-badge"
+      },
+      "text" : "2",
+      "ancestors" : [ "a#nav-cart[nav-cart-link].nav-link", "nav#main-nav[main-nav].main-nav", "div.header-inner", "header#site-header[site-header].site-header" ],
+      "xpath" : "/html/body[1]/div[1]/header[1]/div[1]/nav[1]/a[2]/span[1]",
+      "x" : 311.0,
+      "y" : 304.0,
+      "width" : 20.0,
+      "height" : 18.0,
+      "visible" : true
+    },
+    "origin" : "recorded"
+  },
+  "Header.logoutButton" : {
+    "key" : "Header.logoutButton",
+    "selector" : "xpath=//button[@data-testid='logout-button']",
+    "pageUrl" : "http://localhost:8080/products",
+    "capturedAt" : "2026-09-26T20:02:06.758987300Z",
+    "element" : {
+      "tag" : "button",
+      "attributes" : {
+        "id" : "logout-button",
+        "data-testid" : "logout-button",
+        "data-qa" : "logout",
+        "name" : "logout",
+        "aria-label" : "Log out",
+        "title" : "Log out",
+        "type" : "button",
+        "class" : "btn btn-secondary btn-logout"
+      },
+      "text" : "Logout",
+      "ancestors" : [ "div[header-user-area].user-area", "div.header-inner", "header#site-header[site-header].site-header", "div#root" ],
+      "xpath" : "/html/body[1]/div[1]/header[1]/div[1]/div[1]/button[1]",
+      "x" : 1072.0,
+      "y" : 14.0,
+      "width" : 89.0,
+      "height" : 39.0,
+      "visible" : true
+    },
+    "origin" : "recorded"
+  },
+  "LoginPage.errorMessage" : {
+    "key" : "LoginPage.errorMessage",
+    "selector" : "[data-testid='login-error-message']",
+    "pageUrl" : "http://localhost:8080/login",
+    "capturedAt" : "2026-09-26T20:03:24.029948500Z",
+    "element" : {
+      "tag" : "div",
+      "attributes" : {
+        "id" : "login-error",
+        "data-testid" : "login-error-message",
+        "data-qa" : "login-error",
+        "role" : "alert",
+        "class" : "alert alert-error visible"
+      },
+      "text" : "Invalid username or password.",
+      "ancestors" : [ "div#login-card[login-card].card.login-card", "main.login-wrapper", "div#root" ],
+      "xpath" : "/html/body[1]/div[1]/main[1]/div[2]/div[1]",
+      "x" : 453.0,
+      "y" : 248.0,
+      "width" : 350.0,
+      "height" : 47.0,
+      "visible" : true
+    },
+    "origin" : "recorded"
+  },
+  "LoginPage.loginButton" : {
+    "key" : "LoginPage.loginButton",
+    "selector" : "[data-testid='login-submit-button']",
+    "pageUrl" : "http://localhost:8080/login",
+    "capturedAt" : "2026-09-26T20:01:52.936745Z",
+    "element" : {
+      "tag" : "button",
+      "attributes" : {
+        "id" : "login-button",
+        "data-testid" : "login-submit-button",
+        "data-qa" : "login-button",
+        "name" : "loginButton",
+        "aria-label" : "Sign in",
+        "title" : "Sign in",
+        "type" : "submit",
+        "class" : "btn btn-primary btn-block btn-login"
+      },
+      "text" : "Sign In",
+      "ancestors" : [ "form#login-form[login-form]", "div#login-card[login-card].card.login-card", "main.login-wrapper", "div#root" ],
+      "xpath" : "/html/body[1]/div[1]/main[1]/div[2]/form[1]/button[1]",
+      "x" : 453.0,
+      "y" : 482.0,
+      "width" : 350.0,
+      "height" : 39.0,
+      "visible" : true
+    },
+    "origin" : "recorded"
+  },
+  "LoginPage.password" : {
+    "key" : "LoginPage.password",
+    "selector" : "[name=\"password\"]",
+    "pageUrl" : "http://localhost:8080/login",
+    "capturedAt" : "2026-09-26T20:01:52.702908700Z",
+    "element" : {
+      "tag" : "input",
+      "attributes" : {
+        "id" : "login-password",
+        "data-testid" : "login-password-input",
+        "data-qa" : "password-field",
+        "name" : "password",
+        "aria-label" : "Password",
+        "placeholder" : "Enter your password",
+        "title" : "Password",
+        "type" : "password",
+        "class" : "form-input input-password"
+      },
+      "labelText" : "Password",
+      "ancestors" : [ "div.form-group", "form#login-form[login-form]", "div#login-card[login-card].card.login-card", "main.login-wrapper" ],
+      "xpath" : "/html/body[1]/div[1]/main[1]/div[2]/form[1]/div[2]/input[1]",
+      "x" : 453.0,
+      "y" : 382.0,
+      "width" : 350.0,
+      "height" : 42.0,
+      "visible" : true
+    },
+    "origin" : "recorded"
+  },
+  "LoginPage.username" : {
+    "key" : "LoginPage.username",
+    "selector" : "#login-username",
+    "pageUrl" : "http://localhost:8080/login",
+    "capturedAt" : "2026-09-26T20:01:52.381143500Z",
+    "element" : {
+      "tag" : "input",
+      "attributes" : {
+        "id" : "login-username",
+        "data-testid" : "login-username-input",
+        "data-qa" : "username-field",
+        "name" : "username",
+        "aria-label" : "Username",
+        "placeholder" : "Enter your username",
+        "title" : "Username",
+        "type" : "text",
+        "class" : "form-input input-username"
+      },
+      "labelText" : "Username",
+      "ancestors" : [ "div.form-group", "form#login-form[login-form]", "div#login-card[login-card].card.login-card", "main.login-wrapper" ],
+      "xpath" : "/html/body[1]/div[1]/main[1]/div[2]/form[1]/div[1]/input[1]",
+      "x" : 453.0,
+      "y" : 297.0,
+      "width" : 350.0,
+      "height" : 42.0,
+      "visible" : true
+    },
+    "origin" : "recorded"
+  },
+  "ProductsPage.addToCart[1]" : {
+    "key" : "ProductsPage.addToCart[1]",
+    "selector" : "#add-to-cart-1",
+    "pageUrl" : "http://localhost:8080/products",
+    "capturedAt" : "2026-09-26T20:01:57.949197Z",
+    "element" : {
+      "tag" : "button",
+      "attributes" : {
+        "id" : "add-to-cart-1",
+        "data-testid" : "add-to-cart-1",
+        "data-qa" : "add-to-cart",
+        "name" : "addToCart",
+        "aria-label" : "Add Wireless Headphones to cart",
+        "title" : "Add to Cart",
+        "type" : "button",
+        "class" : "btn btn-primary btn-add-cart"
+      },
+      "text" : "Add to Cart",
+      "ancestors" : [ "div.product-actions", "div.product-body", "article#product-card-1[product-card-1].product-card.card-electronics", "div#product-grid[product-grid].product-grid" ],
+      "xpath" : "/html/body[1]/div[1]/main[1]/div[3]/article[1]/div[2]/div[1]/button[1]",
+      "x" : 213.0,
+      "y" : 516.0,
+      "width" : 107.0,
+      "height" : 39.0,
+      "visible" : true
+    },
+    "origin" : "recorded"
+  },
+  "ProductsPage.addToCart[5]" : {
+    "key" : "ProductsPage.addToCart[5]",
+    "selector" : "#add-to-cart-5",
+    "pageUrl" : "http://localhost:8080/products",
+    "capturedAt" : "2026-09-26T20:01:58.088535700Z",
+    "element" : {
+      "tag" : "button",
+      "attributes" : {
+        "id" : "add-to-cart-5",
+        "data-testid" : "add-to-cart-5",
+        "data-qa" : "add-to-cart",
+        "name" : "addToCart",
+        "aria-label" : "Add Yoga Mat to cart",
+        "title" : "Add to Cart",
+        "type" : "button",
+        "class" : "btn btn-primary btn-add-cart"
+      },
+      "text" : "Add to Cart",
+      "ancestors" : [ "div.product-actions", "div.product-body", "article#product-card-5[product-card-5].product-card.card-sports", "div#product-grid[product-grid].product-grid" ],
+      "xpath" : "/html/body[1]/div[1]/main[1]/div[3]/article[5]/div[2]/div[1]/button[1]",
+      "x" : 213.0,
+      "y" : 854.0,
+      "width" : 107.0,
+      "height" : 39.0,
+      "visible" : true
+    },
+    "origin" : "recorded"
+  },
+  "ProductsPage.categoryFilter" : {
+    "key" : "ProductsPage.categoryFilter",
+    "selector" : "[data-testid='category-filter-select']",
+    "pageUrl" : "http://localhost:8080/products",
+    "capturedAt" : "2026-09-26T20:01:53.570913200Z",
+    "element" : {
+      "tag" : "select",
+      "attributes" : {
+        "id" : "category-filter",
+        "data-testid" : "category-filter-select",
+        "data-qa" : "category-filter",
+        "name" : "category",
+        "aria-label" : "Category filter",
+        "title" : "Category filter",
+        "class" : "form-select select-category"
+      },
+      "ancestors" : [ "div#products-toolbar[products-toolbar].toolbar", "main.container", "div#root" ],
+      "xpath" : "/html/body[1]/div[1]/main[1]/div[1]/select[1]",
+      "x" : 809.0,
+      "y" : 155.0,
+      "width" : 170.0,
+      "height" : 44.0,
+      "visible" : true
+    },
+    "origin" : "recorded"
+  },
+  "ProductsPage.resultCount" : {
+    "key" : "ProductsPage.resultCount",
+    "selector" : "[data-testid='product-result-count']",
+    "pageUrl" : "http://localhost:8080/products",
+    "capturedAt" : "2026-09-26T20:02:59.268072300Z",
+    "element" : {
+      "tag" : "div",
+      "attributes" : {
+        "id" : "result-count",
+        "data-testid" : "product-result-count",
+        "data-qa" : "result-count",
+        "class" : "result-count"
+      },
+      "text" : "1 products listed",
+      "ancestors" : [ "main.container", "div#root" ],
+      "xpath" : "/html/body[1]/div[1]/main[1]/div[2]",
+      "x" : 88.0,
+      "y" : 225.0,
+      "width" : 1080.0,
+      "height" : 21.0,
+      "visible" : true
+    },
+    "origin" : "recorded"
+  },
+  "ProductsPage.search" : {
+    "key" : "ProductsPage.search",
+    "selector" : "#product-search",
+    "pageUrl" : "http://localhost:8080/products",
+    "capturedAt" : "2026-09-26T20:01:53.226719700Z",
+    "element" : {
+      "tag" : "input",
+      "attributes" : {
+        "id" : "product-search",
+        "data-testid" : "product-search-input",
+        "data-qa" : "search-field",
+        "name" : "search",
+        "aria-label" : "Search products",
+        "placeholder" : "Search products...",
+        "title" : "Search products",
+        "type" : "search",
+        "class" : "form-input input-search"
+      },
+      "ancestors" : [ "div.search-box", "div#products-toolbar[products-toolbar].toolbar", "main.container", "div#root" ],
+      "xpath" : "/html/body[1]/div[1]/main[1]/div[1]/div[1]/input[1]",
+      "x" : 81.0,
+      "y" : 155.0,
+      "width" : 716.0,
+      "height" : 42.0,
+      "visible" : true
+    },
+    "origin" : "recorded"
+  }
+}

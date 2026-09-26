@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Selenium version of the ShopLab example project: the same framework through healer-selenium
+  (+ optional healer-claude). Install the framework first: `mvn install` in ../healing-framework.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.shoplab</groupId>
+  <artifactId>shoplab-selenium-tests</artifactId>
+  <version>1.0.0</version>
+  <name>ShopLab UI tests (Selenium)</name>
+
+  <properties>
+    <maven.compiler.release>17</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <healer.version>2.0.0</healer.version>
+    <junit.version>5.14.4</junit.version>
+    <shoplab.baseUrl>http://localhost:8080</shoplab.baseUrl>
+    <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
+  </properties>
+
+  <dependencies>
+    <!-- Self-healing locators for Selenium WebDriver + JUnit 5 extension -->
+    <dependency>
+      <groupId>com.selfhealing</groupId>
+      <artifactId>healer-selenium</artifactId>
+      <version>${healer.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- Optional: Claude as the last healing stage (needs ANTHROPIC_API_KEY) -->
+    <dependency>
+      <groupId>com.selfhealing</groupId>
+      <artifactId>healer-claude</artifactId>
+      <version>${healer.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>2.0.20</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.14.0</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.5.3</version>
+        <configuration>
+          <argLine>-Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8</argLine>
+          <systemPropertyVariables>
+            <shoplab.baseUrl>${shoplab.baseUrl}</shoplab.baseUrl>
+            <healer.runId>${maven.build.timestamp}</healer.runId>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

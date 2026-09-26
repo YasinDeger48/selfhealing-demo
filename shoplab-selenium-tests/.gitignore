@@ -1,0 +1,7 @@
+target/
+.idea/
+*.iml
+# healing cache and locks are per run; fingerprints.json is the shared baseline
+.healer/healed-locators.json
+.healer/*.lock
+.healer/*.tmp
