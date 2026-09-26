@@ -1,0 +1,20 @@
+{
+  "name": "shoplab-demo-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 8080 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --port 8080 --strictPort"
+  },
+  "dependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-router-dom": "^7.18.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.1",
+    "vite": "^8.3.1"
+  }
+}

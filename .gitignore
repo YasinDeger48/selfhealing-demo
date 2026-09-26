@@ -1,0 +1,4 @@
+# The framework lives in its own repository (selfhealing-framework)
+healing-framework/
+.idea/
+.vscode/
