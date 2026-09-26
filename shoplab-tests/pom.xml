@@ -21,6 +21,7 @@
     <junit.version>5.14.4</junit.version>
     <shoplab.baseUrl>http://localhost:8080</shoplab.baseUrl>
     <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
+    <bench.llm>false</bench.llm>
   </properties>
 
   <dependencies>
@@ -75,6 +76,31 @@
             <PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD>1</PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD>
           </environmentVariables>
         </configuration>
+      </plugin>
+      <!-- Healing accuracy benchmark on the ShopLab pages: mvn exec:java@benchmark (add -Dbench.llm=true for Claude) -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.5.0</version>
+        <executions>
+          <execution>
+            <id>benchmark</id>
+            <goals><goal>java</goal></goals>
+            <configuration>
+              <mainClass>com.selfhealing.healer.playwright.HealingBenchmark</mainClass>
+              <classpathScope>test</classpathScope>
+              <arguments>
+                <argument>--url</argument><argument>${shoplab.baseUrl}/products</argument>
+                <argument>--url</argument><argument>${shoplab.baseUrl}/products/4</argument>
+                <argument>--url</argument><argument>${shoplab.baseUrl}/cart</argument>
+                <argument>--url</argument><argument>${shoplab.baseUrl}/contact</argument>
+                <argument>--storage-state</argument><argument>benchmark/shoplab-state.json</argument>
+                <argument>--llm</argument><argument>${bench.llm}</argument>
+                <argument>--set</argument><argument>healer.llm.escalateTo=</argument>
+              </arguments>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

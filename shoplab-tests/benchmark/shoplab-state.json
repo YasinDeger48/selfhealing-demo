@@ -1,0 +1,22 @@
+{
+  "cookies": [],
+  "origins": [
+    {
+      "origin": "http://localhost:8080",
+      "localStorage": [
+        {
+          "name": "shoplab_cart",
+          "value": "[{\"id\":1,\"qty\":1,\"color\":null,\"size\":null}]"
+        },
+        {
+          "name": "shoplab_user",
+          "value": "{\"username\":\"standard_user\",\"displayName\":\"Standard User\",\"email\":\"jane.doe@shoplab.test\"}"
+        },
+        {
+          "name": "shoplab_lang",
+          "value": "en"
+        }
+      ]
+    }
+  ]
+}

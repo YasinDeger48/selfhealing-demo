@@ -52,3 +52,15 @@ cd ../demo-site && python mutate.py --reset
 `src/test/resources/healer.properties` — `healer.language=en` (console trace and the report's default
 language; also `de`, `ru`, `ja`, `tr`, `ar`). The report itself has a language menu. System properties: `shoplab.baseUrl`
 (default `http://localhost:8080`), `browser.channel` (default `msedge`), `headless`, `slowmo`.
+
+## Accuracy benchmark
+
+Measures how well the framework heals the ShopLab pages after simulated releases (low -> extreme, plus removed
+elements). Needs the demo site on :8080; `benchmark/shoplab-state.json` is a logged-in storage state (demo user only).
+
+```bash
+mvn test-compile exec:java@benchmark                    # local heuristic only, $0
+mvn test-compile exec:java@benchmark -Dbench.llm=true   # + Claude Haiku (needs ANTHROPIC_API_KEY), about $0.13
+```
+
+Results: `target/healer-benchmark/benchmark.md` and `benchmark.json`.
