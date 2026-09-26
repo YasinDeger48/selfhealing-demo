@@ -7,6 +7,7 @@ a multilingual demo shop and a UI test project that uses the framework like any 
 |---|---|
 | [`demo-site/`](demo-site) | **ShopLab** — React (Vite) demo e-commerce site in 6 languages (EN default, DE, RU, JA, TR, AR), plus `mutate.py` to break locators on purpose |
 | [`shoplab-tests/`](shoplab-tests) | Playwright + JUnit 5 tests for ShopLab, using the framework through its Maven dependencies |
+| [`tripforge-tests/`](tripforge-tests) | Tests for the public TripForge self-healing lab: every load changes all ids, so each step is healed from a cold start |
 
 ## Quick start
 
