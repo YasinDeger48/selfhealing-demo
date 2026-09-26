@@ -26,14 +26,14 @@
   <dependencies>
     <!-- Self-healing locators for Playwright + JUnit 5 extension -->
     <dependency>
-      <groupId>com.selfhealing</groupId>
+      <groupId>io.github.yasindeger48</groupId>
       <artifactId>healer-playwright</artifactId>
       <version>${healer.version}</version>
       <scope>test</scope>
     </dependency>
     <!-- Optional: Claude as the last healing stage (needs ANTHROPIC_API_KEY) -->
     <dependency>
-      <groupId>com.selfhealing</groupId>
+      <groupId>io.github.yasindeger48</groupId>
       <artifactId>healer-claude</artifactId>
       <version>${healer.version}</version>
       <scope>test</scope>
