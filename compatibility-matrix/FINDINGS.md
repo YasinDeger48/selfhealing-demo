@@ -1,5 +1,26 @@
 # Findings
 
+## 2.2.1: settings-driven browsers, more tests, the real sites
+
+Every project now takes its browser from `healer.properties` (`HealerBrowser` / `HealerDriver`) and runs ten tests:
+the five on bundled pages (two heals, a plain-language step, a removed button that must not be healed, a
+deliberate failure) and five on the real sites (TripForge on Vercel, ShopLab broken with `mutate.py --level high`).
+
+| # | Combination | Problem | Cause | Fix (2.2.1) |
+|---|---|---|---|---|
+| 1 | Playwright + TestNG / JUnit 4 | The video and trace of a failed test were never kept (`browser.video/trace=failures`). | TestNG runs @AfterMethod after the test ended (no current test any more); JUnit 4 runs @After before the rule sees the failure. | The outcome comes from the test that just ran on the thread; when it is not known yet, the files are kept until the test ends and dropped if it passed. |
+| 2 | Playwright 1.45 | Every test failed when `browser.video` was on and Playwright's ffmpeg was missing. | 1.45 only looks for ffmpeg when the first page opens, the fallback was rejected by Playwright, and closing the broken context dropped the connection. | ffmpeg is checked with a probe page before the test, the fallback context is valid, the broken one is left to the browser. |
+| 3 | Any, without `.healer/` (cold start) on the changed ShopLab | Login fields and buttons were not healed; best matches were a div, a form, a paragraph. | Only the old id was known, compared with the new id only. | The step's action (`fill` needs a field ...) and the old name's control word (`...-button`) rule out other kinds; the old name is looked for in all names, the label and the button text. 4 of 5 ShopLab elements heal without history; the cart badge (`cart-count` -> `basket-count`, inside the "Cart" link) is ambiguous and correctly refused - the recorded baseline or Claude solves it. |
+| 4 | Any | A heal refused by a guard read like a threshold problem ("scored 0.82 (min 0.60)"). | The reason did not say which guard. | "... but it is the element of locator 'X'" / "... needs an element that is editable". |
+| 6 | Selenium + Cucumber on JUnit 4 (once) | A scenario failed: "Cannot write .healer/healed-locators.json" (AccessDeniedException). | The project folder is in OneDrive; a scanner / sync held the file while it was replaced. | Retried, and kept in memory if it stays locked - the test goes on. |
+| 5 | Selenium | `healer.visual=true` drew nothing. | The overlay existed for Playwright only. | Selenium overlay (same drawing, through JavaScript). |
+
+Notes (test setup, not framework):
+- Selenium projects share one browser between tests - the ShopLab helper logs out (clears storage and cookies) first.
+- Wait for a single-page app to render before the first step when the probe time is short (`healer.probeTimeoutMs`).
+- Parallel Cucumber on TestNG runs 10 scenarios at once by default (`testng.dataProviderThreadCount`), JUnit 5 may
+  grow its pool beyond `parallelism` (`...fixed.max-pool-size`) - too many browsers against a real site time out.
+
 ## 2.2.0: parallel runs and older library versions
 
 Eight more projects (see [README.md](README.md)): parallel JUnit 5, TestNG and Cucumber runs, Playwright 1.45 and

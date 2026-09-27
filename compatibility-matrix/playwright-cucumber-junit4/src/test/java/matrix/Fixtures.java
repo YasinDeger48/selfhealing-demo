@@ -1,6 +1,6 @@
 package matrix;
 
-/** Bundled test pages and a framework-neutral assertion (works under every runner). */
+/** Bundled test pages and framework-neutral assertions (work under every runner). */
 public final class Fixtures {
     private Fixtures() {
     }
@@ -15,6 +15,28 @@ public final class Fixtures {
 
     public static void check(boolean ok, String message) {
         if (!ok) throw new AssertionError(message);
+    }
+
+    /** The action must fail - e.g. a removed element must not be "healed" to another one. */
+    public static void expectFailure(Runnable action, String message) {
+        try {
+            action.run();
+        } catch (RuntimeException expected) {
+            return;
+        }
+        throw new AssertionError(message);
+    }
+
+    public static boolean containsAll(String text, String... parts) {
+        for (String p : parts) {
+            if (!text.contains(p)) return false;
+        }
+        return true;
+    }
+
+    /** The TripForge / ShopLab scenarios run unless -Dmatrix.skipSites=true. */
+    public static boolean sites() {
+        return !Boolean.getBoolean("matrix.skipSites");
     }
 
     /** Fails only when the run is started with -Dmatrix.fail=true. */

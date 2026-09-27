@@ -5,3 +5,5 @@ target/
 .healer/healed-locators.json
 .healer/*.lock
 .healer/*.tmp
+# personal settings (healer-local.properties)
+healer-local.properties

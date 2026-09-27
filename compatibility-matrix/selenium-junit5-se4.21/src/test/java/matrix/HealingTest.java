@@ -1,6 +1,6 @@
 package matrix;
 
-/** selenium + junit5: the same tests in every combination. */
+/** selenium + junit5: the same tests in every combination. The browser comes from healer.properties. */
 @org.junit.jupiter.api.extension.ExtendWith(com.selfhealing.healer.junit5.HealingExtension.class)
 public class HealingTest {
 
@@ -10,7 +10,7 @@ public class HealingTest {
     @org.junit.jupiter.api.BeforeEach
     public void open() {
         if (driver == null) {
-            driver = new org.openqa.selenium.edge.EdgeDriver(new org.openqa.selenium.edge.EdgeOptions().addArguments("--headless=new"));
+            driver = com.selfhealing.healer.selenium.HealerDriver.create();   // browser.name, browser.headless, browser.viewport, browser.timeoutMs
             Runtime.getRuntime().addShutdownHook(new Thread(driver::quit));
         }
         healer = com.selfhealing.healer.selenium.SelfHealingDriver.wrap(driver);
@@ -30,11 +30,74 @@ public class HealingTest {
     }
 
     @org.junit.jupiter.api.Test
+    public void healRenamedField() {
+        driver.get(Fixtures.url("v1.html"));
+        healer.element("Form.nameField", org.openqa.selenium.By.id("name")).fill("Jane");
+        driver.get(Fixtures.url("v2.html"));
+        healer.element("Form.nameField", org.openqa.selenium.By.id("name")).fill("Jane Doe");
+        Fixtures.check("Jane Doe".equals(driver.findElement(org.openqa.selenium.By.id("full-name")).getDomProperty("value")),
+                "the healed name field was filled");
+    }
+
+    @org.junit.jupiter.api.Test
     public void plainLanguageStep() {
         driver.get(Fixtures.url("v2.html"));
         healer.find("Form.email", "the email field").fill("jane@example.com");
         Fixtures.check("jane@example.com".equals(driver.findElement(org.openqa.selenium.By.id("mail")).getDomProperty("value")),
                 "the email field was filled");
+    }
+
+    @org.junit.jupiter.api.Test
+    public void removedButtonNotHealed() {
+        driver.get(Fixtures.url("v1.html"));
+        healer.element("Form.cancel", org.openqa.selenium.By.id("cancel")).click();
+        driver.get(Fixtures.url("v3.html"));
+        Fixtures.expectFailure(() -> healer.element("Form.cancel", org.openqa.selenium.By.id("cancel")).click(),
+                "a removed button must not be healed to another one");
+        Fixtures.check(driver.findElement(org.openqa.selenium.By.id("out")).getText().isEmpty(), "no other button was clicked");
+    }
+
+    @org.junit.jupiter.api.Test
+    public void tripForgeLookup() {
+        if (!Fixtures.sites()) return;
+        new TripForgeLab(driver, healer).open().findBooking("TFH-2026", "IPEK");
+        if (!Fixtures.sites()) return;
+        Fixtures.check(Fixtures.containsAll(new TripForgeLab(driver, healer).text(), "TF-222", "Istanbul", "Madrid"),
+                "itinerary TF-222 Istanbul -> Madrid expected");
+    }
+
+    @org.junit.jupiter.api.Test
+    public void tripForgeVerification() {
+        if (!Fixtures.sites()) return;
+        new TripForgeLab(driver, healer).open().findBooking("TFH-2026", "IPEK").confirmTraveller().completeVerification();
+        if (!Fixtures.sites()) return;
+        Fixtures.check(new TripForgeLab(driver, healer).text().contains("SELF-HEALING-COMPLETE"), "business outcome expected");
+    }
+
+    @org.junit.jupiter.api.Test
+    public void shopLabWrongPassword() {
+        if (!Fixtures.sites()) return;
+        new ShopLab(driver, healer).openLogin().login("standard_user", "wrong-password");
+        if (!Fixtures.sites()) return;
+        Fixtures.check(new ShopLab(driver, healer).errorText().contains("Invalid username or password"), "error message expected");
+    }
+
+    @org.junit.jupiter.api.Test
+    public void shopLabSearchAndFilter() {
+        if (!Fixtures.sites()) return;
+        new ShopLab(driver, healer).loginAsStandardUser().search("watch");
+        if (!Fixtures.sites()) return;
+        Fixtures.check(new ShopLab(driver, healer).resultCount() == 1, "one watch expected");
+        new ShopLab(driver, healer).search("").filterByCategory("sports");
+        Fixtures.check(new ShopLab(driver, healer).resultCount() == 2, "two sports products expected");
+    }
+
+    @org.junit.jupiter.api.Test
+    public void shopLabAddToCart() {
+        if (!Fixtures.sites()) return;
+        new ShopLab(driver, healer).loginAsStandardUser().addToCart(1).addToCart(5);
+        if (!Fixtures.sites()) return;
+        Fixtures.check(new ShopLab(driver, healer).cartCount() == 2, "two items in the cart badge expected");
     }
 
     @org.junit.jupiter.api.Test

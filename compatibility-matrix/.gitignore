@@ -3,3 +3,4 @@
 */run-fail.log
 matrix-run.out
 __pycache__/
+*/.healer/*.lock

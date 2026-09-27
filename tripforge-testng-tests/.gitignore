@@ -8,3 +8,5 @@ target/
 
 # a fresh clone shows the cold start: no fingerprints, everything derived and learned on the first run
 .healer/
+# personal settings (healer-local.properties)
+healer-local.properties

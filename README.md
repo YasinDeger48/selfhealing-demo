@@ -11,6 +11,16 @@ a multilingual demo shop and a UI test project that uses the framework like any 
 | [`tripforge-tests/`](tripforge-tests) | Tests for the public TripForge self-healing lab: every load changes all ids, so each step is healed from a cold start |
 | [`tripforge-cucumber-tests/`](tripforge-cucumber-tests) | The TripForge lab with Cucumber (Gherkin scenarios), framework from Maven Central |
 | [`tripforge-testng-tests/`](tripforge-testng-tests) | The TripForge lab with TestNG (incl. a data-driven test), framework from Maven Central |
+| [`compatibility-matrix/`](compatibility-matrix) | One project per driver x test runner (+ parallel and older-version variants), each run passing and failing |
+| [`tools/`](tools) | `healer_config.py`: the common `healer.properties` layout; `apply_config.py` brings every project into it |
+
+**Settings in every project.** Each project manages the framework through `src/test/resources/healer.properties`
+in the same commented layout - application (`app.baseUrl`), browser (`browser.name`, `browser.headless`,
+`browser.slowmo`, `browser.viewport`, `browser.timeoutMs`, `browser.video`, `browser.trace`), healing
+(`healer.enabled`, `healer.mode`, thresholds, popups, code fixes), Claude (`healer.llm.*`) and report
+(`healer.report.*`). `healer-ci.properties` is the CI profile (`-Dhealer.profile=ci`), `healer-local.properties`
+your own uncommitted overrides; environment variables and `-D` win over the files:
+`mvn test -Dbrowser.headless=false -Dhealer.enabled=false`.
 
 ## Quick start
 

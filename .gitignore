@@ -2,3 +2,4 @@
 healing-framework/
 .idea/
 .vscode/
+__pycache__/
