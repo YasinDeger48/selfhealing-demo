@@ -9,6 +9,8 @@ a multilingual demo shop and a UI test project that uses the framework like any 
 | [`shoplab-tests/`](shoplab-tests) | Playwright + JUnit 5 tests for ShopLab, using the framework through its Maven dependencies |
 | [`shoplab-selenium-tests/`](shoplab-selenium-tests) | The same framework with Selenium WebDriver (`healer-selenium`): login, search, cart, logout |
 | [`tripforge-tests/`](tripforge-tests) | Tests for the public TripForge self-healing lab: every load changes all ids, so each step is healed from a cold start |
+| [`tripforge-cucumber-tests/`](tripforge-cucumber-tests) | The TripForge lab with Cucumber (Gherkin scenarios), framework from Maven Central |
+| [`tripforge-testng-tests/`](tripforge-testng-tests) | The TripForge lab with TestNG (incl. a data-driven test), framework from Maven Central |
 
 ## Quick start
 
