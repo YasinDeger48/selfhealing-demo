@@ -8,3 +8,6 @@ target/
 
 # a fresh clone shows the cold start: no fingerprints, everything derived and learned on the first run
 .healer/
+
+# personal settings (e.g. browser.headless=false) - never committed
+healer-local.properties

@@ -2,9 +2,9 @@ package com.tripforge.tests;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
-import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
+import com.selfhealing.healer.playwright.HealerBrowser;
 import com.selfhealing.healer.playwright.HealingExtension;
 import com.selfhealing.healer.playwright.SelfHealingPage;
 import org.junit.jupiter.api.AfterAll;
@@ -14,15 +14,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 /**
- * Browser lifecycle for the TripForge lab tests. System properties:
- * {@code tripforge.baseUrl} (default https://trip-forge-lbuh.vercel.app), {@code browser.channel}
- * (default msedge, "chromium" for Playwright's bundled browser), {@code headless} (default true),
- * {@code slowmo} (ms between browser actions, default 0 - use ~300 to watch a headed run).
+ * Browser lifecycle. Everything comes from the settings (src/test/resources/healer.properties, healer-ci.properties,
+ * an uncommitted healer-local.properties, environment variables or -D): browser.name, browser.headless,
+ * browser.slowmo, browser.viewport, browser.timeoutMs, browser.video, browser.trace, app.baseUrl.
  */
 @ExtendWith(HealingExtension.class)
 public abstract class BaseTest {
 
-    protected static final String BASE_URL = System.getProperty("tripforge.baseUrl", "https://trip-forge-lbuh.vercel.app");
+    protected static final String BASE_URL = HealerBrowser.baseUrl();
 
     private static Playwright playwright;
     private static Browser browser;
@@ -34,12 +33,7 @@ public abstract class BaseTest {
     @BeforeAll
     static void launchBrowser() {
         playwright = Playwright.create();
-        BrowserType.LaunchOptions options = new BrowserType.LaunchOptions()
-                .setHeadless(Boolean.parseBoolean(System.getProperty("headless", "true")))
-                .setSlowMo(Double.parseDouble(System.getProperty("slowmo", "0")));
-        String channel = System.getProperty("browser.channel", "msedge");
-        if (!"chromium".equals(channel)) options.setChannel(channel);
-        browser = playwright.chromium().launch(options);
+        browser = HealerBrowser.launch(playwright);
     }
 
     @AfterAll
@@ -49,14 +43,13 @@ public abstract class BaseTest {
 
     @BeforeEach
     void openPage() {
-        context = browser.newContext(new Browser.NewContextOptions().setViewportSize(1280, 900));
+        context = HealerBrowser.newContext(browser);
         page = context.newPage();
-        page.setDefaultTimeout(15_000);
         healer = SelfHealingPage.wrap(page);
     }
 
     @AfterEach
     void closePage() {
-        context.close();
+        HealerBrowser.close(context);   // keeps video and trace of failed tests (browser.video / browser.trace)
     }
 }
