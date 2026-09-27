@@ -15,6 +15,10 @@ Every project runs the same three tests (or scenarios) against two bundled pages
 2. **plainLanguageStep** - `healer.find("Form.email", "the email field")` on v2: found by description.
 3. **deliberateFailure** - passes normally, fails with `-Dmatrix.fail=true`.
 
+Integrations used: `healer-junit5` (`playwright-junit5` without any annotation via extension auto-detection,
+`selenium-junit5` with `@ExtendWith`), `healer-junit4` (`@Rule`), `healer-testng` (registers itself),
+`healer-cucumber` (plugin) on all three Cucumber runners.
+
 `run_all.py` runs each project twice and checks, from Surefire's output and the healer report:
 
 - the build passes, Surefire ran the 3 tests, the report lists exactly those 3 tests (once each), a heal and a

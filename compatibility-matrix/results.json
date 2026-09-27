@@ -96,7 +96,7 @@
     "build": "OK",
     "surefireTests": 3,
     "provider": "JUnitPlatformProvider",
-    "seconds": 16,
+    "seconds": 29,
     "reportTests": 3,
     "reportIds": [
       "HealingTest.deliberateFailure",
@@ -234,7 +234,7 @@
     "build": "OK",
     "surefireTests": 3,
     "provider": "JUnitPlatformProvider",
-    "seconds": 15,
+    "seconds": 27,
     "reportTests": 3,
     "reportIds": [
       "HealingTest.deliberateFailure",

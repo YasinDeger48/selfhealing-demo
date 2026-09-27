@@ -51,6 +51,7 @@ def deps(driver, runner):
         d.append(("io.github.yasindeger48", "healer-cucumber", "${healer.version}"))
         d += [("io.cucumber", "cucumber-java", CUCUMBER), ("io.cucumber", "cucumber-picocontainer", CUCUMBER)]
     if runner == "junit5":
+        d.append(("io.github.yasindeger48", "healer-junit5", "${healer.version}"))
         d.append(("org.junit.jupiter", "junit-jupiter", "5.14.4"))
     if runner == "cucumber-junit5":
         d += [("io.cucumber", "cucumber-junit-platform-engine", CUCUMBER), ("org.junit.platform", "junit-platform-suite", "1.14.4"),
@@ -195,9 +196,10 @@ public final class Fixtures {
 def plain_test(driver, runner):
     fields, open_, close, heal, find = setup(driver)
     open_page = heal.split("\n")[0] + "\n"   # the page is open, so a failure gets a screenshot
-    ext = "com.selfhealing.healer.playwright.HealingExtension" if driver == "playwright" else "com.selfhealing.healer.selenium.SeleniumHealingExtension"
     if runner == "junit5":
-        head, before, after, test = f"@org.junit.jupiter.api.extension.ExtendWith({ext}.class)\n", "@org.junit.jupiter.api.BeforeEach", "@org.junit.jupiter.api.AfterEach", "@org.junit.jupiter.api.Test"
+        # Playwright: no annotation at all (extension auto-detection); Selenium: the usual @ExtendWith
+        head = "" if driver == "playwright" else "@org.junit.jupiter.api.extension.ExtendWith(com.selfhealing.healer.junit5.HealingExtension.class)\n"
+        before, after, test = "@org.junit.jupiter.api.BeforeEach", "@org.junit.jupiter.api.AfterEach", "@org.junit.jupiter.api.Test"
     elif runner == "junit4":
         head, before, after, test = "", "@org.junit.Before", "@org.junit.After", "@org.junit.Test"
     else:
@@ -347,6 +349,8 @@ def main():
                 w(os.path.join(res, "features", "matrix.feature"), FEATURE)
             else:
                 w(os.path.join(src, "HealingTest.java"), plain_test(driver, runner))
+            if runner == "junit5" and driver == "playwright":
+                w(os.path.join(res, "junit-platform.properties"), "junit.jupiter.extensions.autodetection.enabled=true\n")
             mvn = os.path.join(d, ".mvn")
             os.makedirs(mvn, exist_ok=True)
             src_mvn = os.path.join(os.path.dirname(HERE), "tripforge-tests", ".mvn")

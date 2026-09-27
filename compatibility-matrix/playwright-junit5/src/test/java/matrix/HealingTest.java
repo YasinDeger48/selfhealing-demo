@@ -1,7 +1,6 @@
 package matrix;
 
 /** playwright + junit5: the same tests in every combination. */
-@org.junit.jupiter.api.extension.ExtendWith(com.selfhealing.healer.playwright.HealingExtension.class)
 public class HealingTest {
 
     static com.microsoft.playwright.Playwright playwright;

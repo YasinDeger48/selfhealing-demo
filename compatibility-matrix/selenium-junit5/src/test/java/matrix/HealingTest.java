@@ -1,7 +1,7 @@
 package matrix;
 
 /** selenium + junit5: the same tests in every combination. */
-@org.junit.jupiter.api.extension.ExtendWith(com.selfhealing.healer.selenium.SeleniumHealingExtension.class)
+@org.junit.jupiter.api.extension.ExtendWith(com.selfhealing.healer.junit5.HealingExtension.class)
 public class HealingTest {
 
     static org.openqa.selenium.WebDriver driver;

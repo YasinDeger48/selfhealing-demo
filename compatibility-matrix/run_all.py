@@ -84,7 +84,13 @@ def main():
         r["failRun"] = "OK" if not problems else "; ".join(problems)
         print("  ", r["verdict"], "| failing run:", r["failRun"], flush=True)
         results.append(r)
-    json.dump(results, open(os.path.join(HERE, "results.json"), "w", encoding="utf-8"), indent=2)
+    # a partial run (only some projects) keeps the other projects' last results
+    previous = os.path.join(HERE, "results.json")
+    if len(sys.argv) > 1 and os.path.exists(previous):
+        ran = {r["project"] for r in results}
+        results = sorted([r for r in json.load(open(previous, encoding="utf-8")) if r["project"] not in ran] + results,
+                         key=lambda r: r["project"])
+    json.dump(results, open(previous, "w", encoding="utf-8"), indent=2)
     lines = ["# Compatibility results", "",
              "| Combination | Build | Surefire provider | Tests run | Report tests | Heals | Found by description | Steps | Result | Failing test fails the build |",
              "|---|---|---|---:|---:|---:|---:|---:|---|---|"]
