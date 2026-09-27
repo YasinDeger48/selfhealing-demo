@@ -10,7 +10,7 @@ The TestNG listener registers itself through `META-INF/services` - there is no `
 
 ```bash
 mvn test                                                          # headless
-mvn test -Dheadless=false -Dhealer.visual=true -Dslowmo=300       # watch it: healing drawn on the page
+mvn test -Dbrowser.headless=false -Dhealer.visual=true -Dbrowser.slowmo=300       # watch it: healing drawn on the page
 ```
 
 Report: `target/healer-report/healing-report.html`.

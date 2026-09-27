@@ -2,11 +2,11 @@ package com.shoplab.tests;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
-import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import com.shoplab.tests.pages.LoginPage;
-import com.selfhealing.healer.playwright.HealingExtension;
+import com.selfhealing.healer.junit5.HealingExtension;
+import com.selfhealing.healer.playwright.HealerBrowser;
 import com.selfhealing.healer.playwright.SelfHealingPage;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -15,15 +15,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 /**
- * Browser lifecycle for the ShopLab tests. System properties:
- * {@code shoplab.baseUrl} (default http://localhost:8080), {@code browser.channel} (default msedge,
- * use "chromium" for Playwright's bundled browser), {@code headless} (default true),
- * {@code slowmo} (ms between browser actions, default 0 - use ~300 to watch a headed run).
+ * Browser lifecycle for the ShopLab tests. Everything comes from the settings (src/test/resources/healer.properties,
+ * environment variables or -D): app.baseUrl, browser.name (msedge; chromium for Playwright's bundled browser),
+ * browser.headless, browser.slowmo (e.g. 300 to watch a headed run), browser.viewport, browser.video, browser.trace.
  */
 @ExtendWith(HealingExtension.class)
 public abstract class BaseTest {
 
-    protected static final String BASE_URL = System.getProperty("shoplab.baseUrl", "http://localhost:8080");
+    protected static final String BASE_URL = HealerBrowser.baseUrl();
 
     private static Playwright playwright;
     private static Browser browser;
@@ -35,12 +34,7 @@ public abstract class BaseTest {
     @BeforeAll
     static void launchBrowser() {
         playwright = Playwright.create();
-        BrowserType.LaunchOptions options = new BrowserType.LaunchOptions()
-                .setHeadless(Boolean.parseBoolean(System.getProperty("headless", "true")))
-                .setSlowMo(Double.parseDouble(System.getProperty("slowmo", "0")));
-        String channel = System.getProperty("browser.channel", "msedge");
-        if (!"chromium".equals(channel)) options.setChannel(channel);
-        browser = playwright.chromium().launch(options);
+        browser = HealerBrowser.launch(playwright);
     }
 
     @AfterAll
@@ -50,14 +44,14 @@ public abstract class BaseTest {
 
     @BeforeEach
     void openPage() {
-        context = browser.newContext(new Browser.NewContextOptions().setViewportSize(1280, 900));
+        context = HealerBrowser.newContext(browser);
         page = context.newPage();
         healer = SelfHealingPage.wrap(page);
     }
 
     @AfterEach
     void closePage() {
-        context.close();
+        HealerBrowser.close(context);
     }
 
     protected void loginAsStandardUser() {

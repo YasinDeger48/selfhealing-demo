@@ -29,6 +29,6 @@ cd ../shoplab-tests && mvn test                      # report: target/healer-rep
 ```
 
 Optional: set `ANTHROPIC_API_KEY` to enable the Claude stage (needed for the `extreme` level).
-Watch it live: `mvn test -Dheadless=false -Dslowmo=250 -Dhealer.visual=true`.
+Watch it live: `mvn test -Dbrowser.headless=false -Dbrowser.slowmo=250 -Dhealer.visual=true`.
 
-Requirements: Java 17+, Maven 3.9+, Node.js 18+, Python 3, Microsoft Edge (or `-Dbrowser.channel=chromium`).
+Requirements: Java 17+, Maven 3.9+, Node.js 18+, Python 3, Microsoft Edge (or `-Dbrowser.name=chromium`).

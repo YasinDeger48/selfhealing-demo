@@ -16,7 +16,7 @@
   <properties>
     <maven.compiler.release>17</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <healer.version>2.0.1</healer.version>
+    <healer.version>2.2.0</healer.version>
     <junit.version>5.14.4</junit.version>
     <shoplab.baseUrl>http://localhost:8080</shoplab.baseUrl>
     <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
@@ -34,6 +34,13 @@
     <dependency>
       <groupId>io.github.yasindeger48</groupId>
       <artifactId>healer-claude</artifactId>
+      <version>${healer.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- JUnit 5 integration (report, test attribution, failure analysis) for either adapter -->
+    <dependency>
+      <groupId>io.github.yasindeger48</groupId>
+      <artifactId>healer-junit5</artifactId>
       <version>${healer.version}</version>
       <scope>test</scope>
     </dependency>
@@ -65,7 +72,6 @@
         <configuration>
           <argLine>-Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8</argLine>
           <systemPropertyVariables>
-            <shoplab.baseUrl>${shoplab.baseUrl}</shoplab.baseUrl>
             <healer.runId>${maven.build.timestamp}</healer.runId>
           </systemPropertyVariables>
         </configuration>

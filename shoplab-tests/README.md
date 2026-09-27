@@ -25,7 +25,7 @@ cd ../demo-site && python mutate.py --level extreme    # low | medium | high | e
 cd ../shoplab-tests && mvn test
 
 # 4) Watch it happen: headed browser + healing overlay
-mvn test -Dheadless=false -Dslowmo=250 -Dhealer.visual=true -Dhealer.visual.pauseMs=1500
+mvn test -Dbrowser.headless=false -Dbrowser.slowmo=250 -Dhealer.visual=true -Dhealer.visual.pauseMs=1500
 
 # 5) Restore the site
 cd ../demo-site && python mutate.py --reset
@@ -49,8 +49,9 @@ cd ../demo-site && python mutate.py --reset
 ## Settings
 
 `src/test/resources/healer.properties` — `healer.language=en` (console trace and the report's default
-language; also `de`, `ru`, `ja`, `tr`, `ar`). The report itself has a language menu. System properties: `shoplab.baseUrl`
-(default `http://localhost:8080`), `browser.channel` (default `msedge`), `headless`, `slowmo`.
+language; also `de`, `ru`, `ja`, `tr`, `ar`). The report itself has a language menu. Browser and address come from
+`src/test/resources/healer.properties` (override with `-D`): `app.baseUrl` (default `http://localhost:8080`),
+`browser.name` (default `msedge`), `browser.headless`, `browser.slowmo`.
 
 ## Accuracy benchmark
 

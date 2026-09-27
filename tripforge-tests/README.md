@@ -30,7 +30,7 @@ The framework comes from Maven Central (`io.github.yasindeger48`), nothing to in
 mvn test -Dhealer.llm.enabled=false
 
 # watch it: browser opens, healing steps are drawn on the page
-mvn test -Dheadless=false -Dhealer.visual=true -Dslowmo=300 -Dtest=SelfHealingLabTest#fullVerificationCompletes
+mvn test -Dbrowser.headless=false -Dhealer.visual=true -Dbrowser.slowmo=300 -Dtest=SelfHealingLabTest#fullVerificationCompletes
 
 # start from zero (forget learned fingerprints and cached heals)
 rm -rf .healer

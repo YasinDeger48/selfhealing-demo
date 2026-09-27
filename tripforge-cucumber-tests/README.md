@@ -11,7 +11,7 @@ optional `healer-claude`). Nothing to build or install first.
 
 ```bash
 mvn test                                                          # headless
-mvn test -Dheadless=false -Dhealer.visual=true -Dslowmo=300       # watch it: healing drawn on the page
+mvn test -Dbrowser.headless=false -Dhealer.visual=true -Dbrowser.slowmo=300       # watch it: healing drawn on the page
 ```
 
 Report: `target/healer-report/healing-report.html` - each scenario is a test, the Gherkin steps are its steps.

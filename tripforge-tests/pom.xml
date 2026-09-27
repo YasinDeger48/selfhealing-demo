@@ -23,7 +23,7 @@
   </properties>
 
   <dependencies>
-    <!-- Self-healing locators for Playwright + JUnit 5 extension -->
+    <!-- Self-healing locators for Playwright -->
     <dependency>
       <groupId>io.github.yasindeger48</groupId>
       <artifactId>healer-playwright</artifactId>
@@ -34,6 +34,13 @@
     <dependency>
       <groupId>io.github.yasindeger48</groupId>
       <artifactId>healer-claude</artifactId>
+      <version>${healer.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- JUnit 5 integration (report, test attribution, failure analysis) for either adapter -->
+    <dependency>
+      <groupId>io.github.yasindeger48</groupId>
+      <artifactId>healer-junit5</artifactId>
       <version>${healer.version}</version>
       <scope>test</scope>
     </dependency>

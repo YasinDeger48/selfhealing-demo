@@ -1,5 +1,24 @@
 # Findings
 
+## 2.2.0: parallel runs and older library versions
+
+Eight more projects (see [README.md](README.md)): parallel JUnit 5, TestNG and Cucumber runs, Playwright 1.45 and
+Selenium 4.21. All pass both runs - no framework change was needed. Heals, plain-language steps and failures stay tied
+to the right test when tests run on several threads and share element keys.
+
+Notes for users:
+
+- **Parallel tests need their own browser per thread.** TestNG `parallel=methods` runs the methods of one instance on
+  several threads, so instance fields (`page`, `driver`) are shared - keep them in a `ThreadLocal`
+  (the matrix projects show how).
+- **TestNG parallel with Surefire 3.6:** Surefire runs TestNG on the JUnit Platform (testng-engine); set
+  `testng.parallel=methods` and `testng.threadCount=3` in `src/test/resources/junit-platform.properties` - the
+  `<parallel>` setting of Surefire's own TestNG provider does not apply.
+- **Surefire only runs classes named `*Test`, `Test*`, `*Tests`, `*TestCase`** - a class named `HealingTest2` is
+  silently skipped (this was a mistake in the first version of the parallel projects, not a framework bug).
+
+## 2.1.0
+
 Found by running the matrix with healer 2.0.1 (Maven Surefire 3.5.3, then 3.6.0), fixed in **healer 2.1.0**.
 After the fixes all 12 combinations pass both runs (see [RESULTS.md](RESULTS.md)).
 

@@ -16,10 +16,9 @@
   <properties>
     <maven.compiler.release>17</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <healer.version>2.0.1</healer.version>
+    <healer.version>2.2.0</healer.version>
     <cucumber.version>7.34.9</cucumber.version>
     <junit.version>5.14.4</junit.version>
-    <tripforge.baseUrl>https://trip-forge-lbuh.vercel.app</tripforge.baseUrl>
   </properties>
 
   <dependencyManagement>
@@ -108,7 +107,6 @@
         <configuration>
           <argLine>-Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8</argLine>
           <systemPropertyVariables>
-            <tripforge.baseUrl>${tripforge.baseUrl}</tripforge.baseUrl>
           </systemPropertyVariables>
           <environmentVariables>
             <!-- uses the installed Edge (browser.channel=msedge); no browser download -->

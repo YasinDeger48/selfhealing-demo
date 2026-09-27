@@ -2,21 +2,21 @@ package com.tripforge.cucumber;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
-import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
+import com.selfhealing.healer.playwright.HealerBrowser;
 import com.selfhealing.healer.playwright.SelfHealingPage;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 
 /**
- * Browser lifecycle. System properties: {@code headless} (default true), {@code slowmo} (ms, default 0),
- * {@code browser.channel} (default msedge; "chromium" for Playwright's bundled browser).
+ * Browser lifecycle. Everything comes from the settings (src/test/resources/healer.properties, environment variables
+ * or -D): app.baseUrl, browser.name, browser.headless, browser.slowmo, browser.viewport, browser.timeoutMs.
  */
 public class Hooks {
 
-    public static final String BASE_URL = System.getProperty("tripforge.baseUrl", "https://trip-forge-lbuh.vercel.app");
+    public static final String BASE_URL = HealerBrowser.baseUrl();
 
     private static Playwright playwright;
     private static Browser browser;
@@ -31,23 +31,17 @@ public class Hooks {
     public void openBrowser() {
         if (browser == null) {
             playwright = Playwright.create();
-            BrowserType.LaunchOptions o = new BrowserType.LaunchOptions()
-                    .setHeadless(Boolean.parseBoolean(System.getProperty("headless", "true")))
-                    .setSlowMo(Double.parseDouble(System.getProperty("slowmo", "0")));
-            String channel = System.getProperty("browser.channel", "msedge");
-            if (!"chromium".equals(channel)) o.setChannel(channel);
-            browser = playwright.chromium().launch(o);
+            browser = HealerBrowser.launch(playwright);
         }
-        BrowserContext context = browser.newContext(new Browser.NewContextOptions().setViewportSize(1280, 900));
+        BrowserContext context = HealerBrowser.newContext(browser);
         Page page = context.newPage();
-        page.setDefaultTimeout(15_000);
         world.page = page;
         world.healer = SelfHealingPage.wrap(page);
     }
 
     @After
     public void closeBrowser() {
-        world.page.context().close();
+        HealerBrowser.close(world.page.context());
     }
 
     @AfterAll

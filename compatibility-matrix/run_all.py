@@ -1,5 +1,5 @@
 """Runs `mvn test` in every generated project and writes RESULTS.md (see README.md)."""
-import json, os, re, subprocess, sys, time
+import json, os, re, shutil, subprocess, sys, time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 MVN = "mvn.cmd" if os.name == "nt" else "mvn"
@@ -7,8 +7,16 @@ EXPECTED = {"healRenamedButton", "plainLanguageStep", "deliberateFailure", "Heal
             "Deliberate failure"}
 
 
+def expected(project):
+    """matrix.json written by generate.py: number of report tests and deliberate failures, parallel or not."""
+    f = os.path.join(HERE, project, "matrix.json")
+    return json.load(open(f, encoding="utf-8")) if os.path.exists(f) else {"tests": 3, "failures": 1, "parallel": False}
+
+
 def run(project, fail=False):
     d = os.path.join(HERE, project)
+    if not fail:   # start from zero: a store left by an earlier run would find the elements without healing
+        shutil.rmtree(os.path.join(d, "target", "healer-store"), ignore_errors=True)
     t0 = time.time()
     cmd = [MVN, "-B", "test"] + (["-Dmatrix.fail=true"] if fail else [])
     p = subprocess.run(cmd, cwd=d, capture_output=True, text=True, encoding="utf-8", errors="replace")
@@ -18,7 +26,8 @@ def run(project, fail=False):
     provider = (re.findall(r"Using auto detected provider (\S+)", out) or ["?"])[-1].split(".")[-1]
     report = os.path.join(d, "target", "healer-report", "healing-report.json")
     r = {"project": project, "build": "OK" if p.returncode == 0 else "FAILED", "surefireTests": tests_run,
-         "provider": provider, "seconds": round(time.time() - t0)}
+         "provider": provider, "seconds": round(time.time() - t0),
+         "threads": len(set(re.findall(r"^\[matrix-thread\] (.+)$", out, re.M)))}
     if os.path.exists(report):
         rep = json.load(open(report, encoding="utf-8"))
         tests = rep.get("tests", [])
@@ -41,6 +50,7 @@ def run(project, fail=False):
 
 
 def verdict(r):
+    want = expected(r["project"])
     notes = []
     if r["build"] != "OK":
         notes.append("build failed")
@@ -58,8 +68,10 @@ def verdict(r):
         extra = [i for i in r["reportIds"] if not any(e in i for e in EXPECTED)]
         if extra:
             notes.append("extra report tests: " + ", ".join(extra))
-        if r["reportTests"] != 3:
-            notes.append(f"{r['reportTests']} report tests instead of 3")
+        if r["reportTests"] != want["tests"]:
+            notes.append(f"{r['reportTests']} report tests instead of {want['tests']}")
+    if want["parallel"] and r["threads"] < 2:
+        notes.append(f"not parallel ({r['threads']} thread)")
     return "OK" if not notes else "; ".join(notes)
 
 
@@ -77,8 +89,9 @@ def main():
         problems = []
         if f["build"] == "OK":
             problems.append("a failing test did NOT fail the build")
-        if f.get("failedTests", 0) != 1:
-            problems.append(f"{f.get('failedTests', 0)} failed test(s) in the report instead of 1")
+        want = expected(p)["failures"]
+        if f.get("failedTests", 0) != want:
+            problems.append(f"{f.get('failedTests', 0)} failed test(s) in the report instead of {want}")
         elif f.get("triage") != "ASSERTION":
             problems.append("failure analysis: " + str(f.get("triage")))
         r["failRun"] = "OK" if not problems else "; ".join(problems)
@@ -92,11 +105,11 @@ def main():
                          key=lambda r: r["project"])
     json.dump(results, open(previous, "w", encoding="utf-8"), indent=2)
     lines = ["# Compatibility results", "",
-             "| Combination | Build | Surefire provider | Tests run | Report tests | Heals | Found by description | Steps | Result | Failing test fails the build |",
-             "|---|---|---|---:|---:|---:|---:|---:|---|---|"]
+             "| Combination | Build | Surefire provider | Tests run | Report tests | Heals | Found by description | Steps | Threads | Result | Failing test fails the build |",
+             "|---|---|---|---:|---:|---:|---:|---:|---:|---|---|"]
     for r in results:
         lines.append(f"| {r['project']} | {r['build']} | {r['provider']} | {r['surefireTests']} | {r.get('reportTests', 0)} | "
-                     f"{r.get('heals', '-')} | {r.get('found', '-')} | {r.get('steps', '-')} | {r['verdict']} | {r['failRun']} |")
+                     f"{r.get('heals', '-')} | {r.get('found', '-')} | {r.get('steps', '-')} | {r.get('threads') or '-'} | {r['verdict']} | {r['failRun']} |")
     open(os.path.join(HERE, "RESULTS.md"), "w", encoding="utf-8", newline="\n").write("\n".join(lines) + "\n")
     print("\n".join(lines))
 
