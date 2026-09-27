@@ -16,7 +16,7 @@
   <properties>
     <maven.compiler.release>17</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <healer.version>2.0.0</healer.version>
+    <healer.version>2.0.1</healer.version>
     <junit.version>5.14.4</junit.version>
     <shoplab.baseUrl>http://localhost:8080</shoplab.baseUrl>
     <maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
@@ -61,7 +61,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.5.3</version>
+        <version>3.6.0</version>
         <configuration>
           <argLine>-Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8</argLine>
           <systemPropertyVariables>

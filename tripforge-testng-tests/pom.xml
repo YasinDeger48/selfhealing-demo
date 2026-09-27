@@ -16,7 +16,7 @@
   <properties>
     <maven.compiler.release>17</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <healer.version>2.0.0</healer.version>
+    <healer.version>2.0.1</healer.version>
     <testng.version>7.12.0</testng.version>
     <tripforge.baseUrl>https://trip-forge-lbuh.vercel.app</tripforge.baseUrl>
   </properties>
@@ -67,16 +67,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.5.3</version>
-        <dependencies>
-          <!-- healer 2.0.0 brings the JUnit API along, which makes Surefire pick JUnit and run no TestNG test;
-               forcing the TestNG provider avoids that (fixed in healer 2.0.1, then this block can go) -->
-          <dependency>
-            <groupId>org.apache.maven.surefire</groupId>
-            <artifactId>surefire-testng</artifactId>
-            <version>3.5.3</version>
-          </dependency>
-        </dependencies>
+        <version>3.6.0</version>
         <configuration>
           <argLine>-Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8</argLine>
           <systemPropertyVariables>
