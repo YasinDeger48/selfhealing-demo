@@ -1,0 +1,94 @@
+--- a/src/test/java/com/shoplab/tests/pages/LoginPage.java
++++ b/src/test/java/com/shoplab/tests/pages/LoginPage.java
+@@ -13,9 +13,9 @@
+ 
+     public LoginPage(SelfHealingPage healer) {
+         this.healer = healer;
+-        this.username = healer.locator("LoginPage.username", "#login-username");
+-        this.password = healer.locator("LoginPage.password", "input[name='password']");
+-        this.loginButton = healer.locator("LoginPage.loginButton", "[data-testid='login-submit-button']");
++        this.username = healer.locator("LoginPage.username", "[data-testid='username-input']");
++        this.password = healer.locator("LoginPage.password", "[data-testid='login-password-input']");
++        this.loginButton = healer.locator("LoginPage.loginButton", "[data-testid='signin-button']");
+         this.errorMessage = healer.locator("LoginPage.errorMessage", "[data-testid='login-error-message']");
+     }
+ 
+--- a/src/test/java/com/shoplab/tests/pages/CartPage.java
++++ b/src/test/java/com/shoplab/tests/pages/CartPage.java
+@@ -22,7 +22,7 @@
+ 
+     public CartPage(SelfHealingPage healer) {
+         this.healer = healer;
+-        this.couponInput = healer.locator("CartPage.couponInput", "#coupon-code");
++        this.couponInput = healer.locator("CartPage.couponInput", "[data-testid='promo-input']");
+         this.applyCoupon = healer.locator("CartPage.applyCoupon", "[data-testid='apply-coupon-button']");
+         this.couponMessage = healer.locator("CartPage.couponMessage", "[data-testid='coupon-message']");
+         this.total = healer.locator("CartPage.total", "#summary-total");
+@@ -32,7 +32,7 @@
+         this.city = healer.locator("CartPage.city", "#city");
+         this.postalCode = healer.locator("CartPage.postalCode", "[data-qa='postal-code']");
+         this.acceptTerms = healer.locator("CartPage.acceptTerms", "#accept-terms");
+-        this.placeOrder = healer.locator("CartPage.placeOrder", "#place-order");
++        this.placeOrder = healer.locator("CartPage.placeOrder", "[data-testid='complete-order-button']");
+         this.checkoutError = healer.locator("CartPage.checkoutError", "[data-testid='checkout-error-message']");
+         this.orderSuccess = healer.locator("CartPage.orderSuccess", "[data-testid='order-success-message']");
+     }
+--- a/src/test/java/com/shoplab/tests/pages/Header.java
++++ b/src/test/java/com/shoplab/tests/pages/Header.java
+@@ -11,10 +11,10 @@
+     private final HealingLocator logoutButton;
+ 
+     public Header(SelfHealingPage healer) {
+-        this.cartBadge = healer.locator("Header.cartBadge", "#cart-count");
++        this.cartBadge = healer.locator("Header.cartBadge", "[data-testid='basket-badge']");
+         this.cartLink = healer.locator("Header.cartLink", "[data-testid='nav-cart-link']");
+         this.contactLink = healer.locator("Header.contactLink", "#nav-contact");
+-        this.logoutButton = healer.locator("Header.logoutButton", "button[data-testid='logout-button']");
++        this.logoutButton = healer.locator("Header.logoutButton", "[data-testid='logout-button']");
+     }
+ 
+     public int cartCount() {
+--- a/src/test/java/com/shoplab/tests/pages/ContactPage.java
++++ b/src/test/java/com/shoplab/tests/pages/ContactPage.java
+@@ -16,11 +16,11 @@
+ 
+     public ContactPage(SelfHealingPage healer) {
+         this.fullName = healer.locator("ContactPage.fullName", "#contact-name");
+-        this.email = healer.locator("ContactPage.email", "#contact-email");
++        this.email = healer.locator("ContactPage.email", "[data-testid='email-field']");
+         this.subject = healer.locator("ContactPage.subject", "[data-testid='contact-subject-select']");
+         this.phonePreference = healer.locator("ContactPage.phonePreference", "#pref-phone");
+         this.message = healer.locator("ContactPage.message", "textarea[name='message']");
+-        this.submit = healer.locator("ContactPage.submit", "button[data-qa='send-message']");
++        this.submit = healer.locator("ContactPage.submit", "[data-testid='contact-submit-button']");
+         this.successMessage = healer.locator("ContactPage.successMessage", "[data-testid='contact-success-message']");
+         this.errorMessage = healer.locator("ContactPage.errorMessage", "[data-testid='contact-error-message']");
+     }
+--- a/src/test/java/com/shoplab/tests/pages/ProductDetailPage.java
++++ b/src/test/java/com/shoplab/tests/pages/ProductDetailPage.java
+@@ -15,10 +15,10 @@
+     public ProductDetailPage(SelfHealingPage healer) {
+         this.healer = healer;
+         this.name = healer.locator("ProductDetailPage.name", "[data-testid='product-detail-name']");
+-        this.sizeSelect = healer.locator("ProductDetailPage.sizeSelect", "[data-testid='size-select']");
++        this.sizeSelect = healer.locator("ProductDetailPage.sizeSelect", "[data-testid='variant-size-dropdown']");
+         this.sizeError = healer.locator("ProductDetailPage.sizeError", "#size-error");
+         this.quantityIncrease = healer.locator("ProductDetailPage.quantityIncrease", "[aria-label='Increase quantity']");
+-        this.addToCart = healer.locator("ProductDetailPage.addToCart", "button:has-text('Add to Cart')");
++        this.addToCart = healer.locator("ProductDetailPage.addToCart", "[data-testid='product-detail-add-to-cart']");
+     }
+ 
+     public String productName() {
+--- a/src/test/java/com/shoplab/tests/pages/ProductsPage.java
++++ b/src/test/java/com/shoplab/tests/pages/ProductsPage.java
+@@ -13,8 +13,8 @@
+ 
+     public ProductsPage(SelfHealingPage healer) {
+         this.healer = healer;
+-        this.search = healer.locator("ProductsPage.search", "#product-search");
+-        this.categoryFilter = healer.locator("ProductsPage.categoryFilter", "[data-testid='category-filter-select']");
++        this.search = healer.locator("ProductsPage.search", "[data-testid='search-box']");
++        this.categoryFilter = healer.locator("ProductsPage.categoryFilter", "[data-testid='filter-category']");
+         this.sort = healer.locator("ProductsPage.sort", "#sort-select");
+         this.resultCount = healer.locator("ProductsPage.resultCount", "[data-testid='product-result-count']");
+     }

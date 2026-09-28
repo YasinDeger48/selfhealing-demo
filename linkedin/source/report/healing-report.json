@@ -1,0 +1,4358 @@
+{
+  "generatedAt" : "2026-09-28T11:57:54.236790500Z",
+  "runStartedAt" : "2026-09-28T11:56:22.682311200Z",
+  "runDurationMs" : 91554,
+  "settings" : {
+    "language" : "en",
+    "mode" : "AUTO",
+    "minConfidence" : 0.6,
+    "minMargin" : 0.08,
+    "llmEnabled" : false,
+    "llmModel" : "claude-haiku-4-5",
+    "llmEscalateTo" : "claude-opus-5"
+  },
+  "summary" : {
+    "tests" : 12,
+    "passed" : 12,
+    "failed" : 0,
+    "testsWithWarn" : 12,
+    "healed" : 55,
+    "intents" : 0,
+    "suggested" : 0,
+    "healFailed" : 0,
+    "uniqueElements" : 17,
+    "popups" : 0,
+    "bySource" : {
+      "HEURISTIC" : 17
+    },
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "triageCostUsd" : 0.0,
+    "llmCalls" : 0,
+    "failureCauses" : { }
+  },
+  "tests" : [ {
+    "id" : "CheckoutTest.couponReducesTotal",
+    "className" : "CheckoutTest",
+    "method" : "couponReducesTotal",
+    "displayName" : "couponReducesTotal()",
+    "status" : "PASSED",
+    "startedAt" : "2026-09-28T11:56:22.682311200Z",
+    "durationMs" : 22630,
+    "steps" : [ {
+      "index" : 1,
+      "atMs" : 690,
+      "element" : "Page",
+      "action" : "navigate",
+      "detail" : "http://localhost:8080/login",
+      "status" : "OK"
+    }, {
+      "index" : 2,
+      "atMs" : 1540,
+      "element" : "LoginPage.username",
+      "action" : "fill",
+      "detail" : "'standard_user'",
+      "status" : "HEALED",
+      "healId" : 1
+    }, {
+      "index" : 3,
+      "atMs" : 5071,
+      "element" : "LoginPage.password",
+      "action" : "fill",
+      "detail" : "'••••••••'",
+      "status" : "HEALED",
+      "healId" : 2
+    }, {
+      "index" : 4,
+      "atMs" : 8431,
+      "element" : "LoginPage.loginButton",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 3
+    }, {
+      "index" : 5,
+      "atMs" : 11856,
+      "element" : "ProductsPage.addToCart[1]",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 4
+    }, {
+      "index" : 6,
+      "atMs" : 15198,
+      "element" : "ProductsPage.addToCart[5]",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 5
+    }, {
+      "index" : 7,
+      "atMs" : 18607,
+      "element" : "Header.cartLink",
+      "action" : "click",
+      "status" : "OK"
+    }, {
+      "index" : 8,
+      "atMs" : 18875,
+      "element" : "CartPage.total",
+      "action" : "read",
+      "detail" : "text",
+      "status" : "OK"
+    }, {
+      "index" : 9,
+      "atMs" : 18940,
+      "element" : "CartPage.couponInput",
+      "action" : "fill",
+      "detail" : "'SAVE10'",
+      "status" : "HEALED",
+      "healId" : 6
+    }, {
+      "index" : 10,
+      "atMs" : 22264,
+      "element" : "CartPage.applyCoupon",
+      "action" : "click",
+      "status" : "OK"
+    }, {
+      "index" : 11,
+      "atMs" : 22419,
+      "element" : "CartPage.couponMessage",
+      "action" : "read",
+      "detail" : "text",
+      "status" : "OK"
+    }, {
+      "index" : 12,
+      "atMs" : 22543,
+      "element" : "CartPage.total",
+      "action" : "read",
+      "detail" : "text",
+      "status" : "OK"
+    } ],
+    "lastUrl" : "http://localhost:8080/cart"
+  }, {
+    "id" : "CheckoutTest.checkoutValidationAndOrder",
+    "className" : "CheckoutTest",
+    "method" : "checkoutValidationAndOrder",
+    "displayName" : "checkoutValidationAndOrder()",
+    "status" : "PASSED",
+    "startedAt" : "2026-09-28T11:56:45.330518500Z",
+    "durationMs" : 6599,
+    "steps" : [ {
+      "index" : 1,
+      "atMs" : 534,
+      "element" : "Page",
+      "action" : "navigate",
+      "detail" : "http://localhost:8080/login",
+      "status" : "OK"
+    }, {
+      "index" : 2,
+      "atMs" : 1339,
+      "element" : "LoginPage.username",
+      "action" : "fill",
+      "detail" : "'standard_user'",
+      "status" : "HEALED",
+      "healId" : 7
+    }, {
+      "index" : 3,
+      "atMs" : 1482,
+      "element" : "LoginPage.password",
+      "action" : "fill",
+      "detail" : "'••••••••'",
+      "status" : "HEALED",
+      "healId" : 8
+    }, {
+      "index" : 4,
+      "atMs" : 1549,
+      "element" : "LoginPage.loginButton",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 9
+    }, {
+      "index" : 5,
+      "atMs" : 1700,
+      "element" : "ProductsPage.addToCart[1]",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 10
+    }, {
+      "index" : 6,
+      "atMs" : 1811,
+      "element" : "ProductsPage.addToCart[5]",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 11
+    }, {
+      "index" : 7,
+      "atMs" : 1879,
+      "element" : "Header.cartLink",
+      "action" : "click",
+      "status" : "OK"
+    }, {
+      "index" : 8,
+      "atMs" : 2034,
+      "element" : "CartPage.placeOrder",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 12
+    }, {
+      "index" : 9,
+      "atMs" : 5477,
+      "element" : "CartPage.checkoutError",
+      "action" : "read",
+      "detail" : "text",
+      "status" : "OK"
+    }, {
+      "index" : 10,
+      "atMs" : 5593,
+      "element" : "CartPage.firstName",
+      "action" : "fill",
+      "detail" : "'Ada'",
+      "status" : "OK"
+    }, {
+      "index" : 11,
+      "atMs" : 5742,
+      "element" : "CartPage.lastName",
+      "action" : "fill",
+      "detail" : "'Lovelace'",
+      "status" : "OK"
+    }, {
+      "index" : 12,
+      "atMs" : 5891,
+      "element" : "CartPage.address",
+      "action" : "fill",
+      "detail" : "'Test sokak 1'",
+      "status" : "OK"
+    }, {
+      "index" : 13,
+      "atMs" : 6035,
+      "element" : "CartPage.city",
+      "action" : "select",
+      "detail" : "'istanbul'",
+      "status" : "OK"
+    }, {
+      "index" : 14,
+      "atMs" : 6159,
+      "element" : "CartPage.postalCode",
+      "action" : "fill",
+      "detail" : "'34000'",
+      "status" : "OK"
+    }, {
+      "index" : 15,
+      "atMs" : 6265,
+      "element" : "CartPage.acceptTerms",
+      "action" : "check",
+      "status" : "OK"
+    }, {
+      "index" : 16,
+      "atMs" : 6386,
+      "element" : "CartPage.placeOrder",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 12
+    }, {
+      "index" : 17,
+      "atMs" : 6496,
+      "element" : "CartPage.orderSuccess",
+      "action" : "wait",
+      "detail" : "until visible",
+      "status" : "OK"
+    }, {
+      "index" : 18,
+      "atMs" : 6554,
+      "element" : "CartPage.orderSuccess",
+      "action" : "verify",
+      "detail" : "is visible",
+      "status" : "OK"
+    } ],
+    "lastUrl" : "http://localhost:8080/cart"
+  }, {
+    "id" : "ContactTest.logout",
+    "className" : "ContactTest",
+    "method" : "logout",
+    "displayName" : "logout()",
+    "status" : "PASSED",
+    "startedAt" : "2026-09-28T11:56:54.718249900Z",
+    "durationMs" : 5297,
+    "steps" : [ {
+      "index" : 1,
+      "atMs" : 467,
+      "element" : "Page",
+      "action" : "navigate",
+      "detail" : "http://localhost:8080/login",
+      "status" : "OK"
+    }, {
+      "index" : 2,
+      "atMs" : 1526,
+      "element" : "LoginPage.username",
+      "action" : "fill",
+      "detail" : "'standard_user'",
+      "status" : "HEALED",
+      "healId" : 13
+    }, {
+      "index" : 3,
+      "atMs" : 1658,
+      "element" : "LoginPage.password",
+      "action" : "fill",
+      "detail" : "'••••••••'",
+      "status" : "HEALED",
+      "healId" : 14
+    }, {
+      "index" : 4,
+      "atMs" : 1687,
+      "element" : "LoginPage.loginButton",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 15
+    }, {
+      "index" : 5,
+      "atMs" : 1807,
+      "element" : "Header.contactLink",
+      "action" : "click",
+      "status" : "OK"
+    }, {
+      "index" : 6,
+      "atMs" : 1962,
+      "element" : "Header.logoutButton",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 16
+    } ],
+    "lastUrl" : "http://localhost:8080/login"
+  }, {
+    "id" : "ContactTest.sendMessage",
+    "className" : "ContactTest",
+    "method" : "sendMessage",
+    "displayName" : "sendMessage()",
+    "status" : "PASSED",
+    "startedAt" : "2026-09-28T11:57:00.023203100Z",
+    "durationMs" : 8641,
+    "steps" : [ {
+      "index" : 1,
+      "atMs" : 402,
+      "element" : "Page",
+      "action" : "navigate",
+      "detail" : "http://localhost:8080/login",
+      "status" : "OK"
+    }, {
+      "index" : 2,
+      "atMs" : 1378,
+      "element" : "LoginPage.username",
+      "action" : "fill",
+      "detail" : "'standard_user'",
+      "status" : "HEALED",
+      "healId" : 17
+    }, {
+      "index" : 3,
+      "atMs" : 1485,
+      "element" : "LoginPage.password",
+      "action" : "fill",
+      "detail" : "'••••••••'",
+      "status" : "HEALED",
+      "healId" : 18
+    }, {
+      "index" : 4,
+      "atMs" : 1518,
+      "element" : "LoginPage.loginButton",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 19
+    }, {
+      "index" : 5,
+      "atMs" : 1593,
+      "element" : "Header.contactLink",
+      "action" : "click",
+      "status" : "OK"
+    }, {
+      "index" : 6,
+      "atMs" : 1710,
+      "element" : "ContactPage.fullName",
+      "action" : "fill",
+      "detail" : "'Ada Lovelace'",
+      "status" : "OK"
+    }, {
+      "index" : 7,
+      "atMs" : 1775,
+      "element" : "ContactPage.email",
+      "action" : "fill",
+      "detail" : "'ada@test.com'",
+      "status" : "HEALED",
+      "healId" : 20
+    }, {
+      "index" : 8,
+      "atMs" : 5032,
+      "element" : "ContactPage.subject",
+      "action" : "select",
+      "detail" : "'order'",
+      "status" : "OK"
+    }, {
+      "index" : 9,
+      "atMs" : 5109,
+      "element" : "ContactPage.phonePreference",
+      "action" : "check",
+      "status" : "OK"
+    }, {
+      "index" : 10,
+      "atMs" : 5208,
+      "element" : "ContactPage.message",
+      "action" : "fill",
+      "detail" : "'I would like to know the status of my order.'",
+      "status" : "OK"
+    }, {
+      "index" : 11,
+      "atMs" : 5313,
+      "element" : "ContactPage.submit",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 21
+    }, {
+      "index" : 12,
+      "atMs" : 8564,
+      "element" : "ContactPage.successMessage",
+      "action" : "read",
+      "detail" : "text",
+      "status" : "OK"
+    } ],
+    "lastUrl" : "http://localhost:8080/contact"
+  }, {
+    "id" : "ContactTest.emptyFormShowsErrors",
+    "className" : "ContactTest",
+    "method" : "emptyFormShowsErrors",
+    "displayName" : "emptyFormShowsErrors()",
+    "status" : "PASSED",
+    "startedAt" : "2026-09-28T11:57:08.668500900Z",
+    "durationMs" : 1151,
+    "steps" : [ {
+      "index" : 1,
+      "atMs" : 348,
+      "element" : "Page",
+      "action" : "navigate",
+      "detail" : "http://localhost:8080/login",
+      "status" : "OK"
+    }, {
+      "index" : 2,
+      "atMs" : 613,
+      "element" : "LoginPage.username",
+      "action" : "fill",
+      "detail" : "'standard_user'",
+      "status" : "HEALED",
+      "healId" : 22
+    }, {
+      "index" : 3,
+      "atMs" : 722,
+      "element" : "LoginPage.password",
+      "action" : "fill",
+      "detail" : "'••••••••'",
+      "status" : "HEALED",
+      "healId" : 23
+    }, {
+      "index" : 4,
+      "atMs" : 774,
+      "element" : "LoginPage.loginButton",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 24
+    }, {
+      "index" : 5,
+      "atMs" : 880,
+      "element" : "Header.contactLink",
+      "action" : "click",
+      "status" : "OK"
+    }, {
+      "index" : 6,
+      "atMs" : 1006,
+      "element" : "ContactPage.submit",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 25
+    }, {
+      "index" : 7,
+      "atMs" : 1071,
+      "element" : "ContactPage.errorMessage",
+      "action" : "read",
+      "detail" : "text",
+      "status" : "OK"
+    } ],
+    "lastUrl" : "http://localhost:8080/contact"
+  }, {
+    "id" : "LoginTest.invalidPasswordShowsError",
+    "className" : "LoginTest",
+    "method" : "invalidPasswordShowsError",
+    "displayName" : "invalidPasswordShowsError()",
+    "status" : "PASSED",
+    "startedAt" : "2026-09-28T11:57:12.461035600Z",
+    "durationMs" : 1850,
+    "steps" : [ {
+      "index" : 1,
+      "atMs" : 471,
+      "element" : "Page",
+      "action" : "navigate",
+      "detail" : "http://localhost:8080/login",
+      "status" : "OK"
+    }, {
+      "index" : 2,
+      "atMs" : 1489,
+      "element" : "LoginPage.username",
+      "action" : "fill",
+      "detail" : "'standard_user'",
+      "status" : "HEALED",
+      "healId" : 26
+    }, {
+      "index" : 3,
+      "atMs" : 1619,
+      "element" : "LoginPage.password",
+      "action" : "fill",
+      "detail" : "'••••••••'",
+      "status" : "HEALED",
+      "healId" : 27
+    }, {
+      "index" : 4,
+      "atMs" : 1657,
+      "element" : "LoginPage.loginButton",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 28
+    }, {
+      "index" : 5,
+      "atMs" : 1775,
+      "element" : "LoginPage.errorMessage",
+      "action" : "read",
+      "detail" : "text",
+      "status" : "OK"
+    } ],
+    "lastUrl" : "http://localhost:8080/login"
+  }, {
+    "id" : "LoginTest.validLoginOpensProducts",
+    "className" : "LoginTest",
+    "method" : "validLoginOpensProducts",
+    "displayName" : "validLoginOpensProducts()",
+    "status" : "PASSED",
+    "startedAt" : "2026-09-28T11:57:14.313056800Z",
+    "durationMs" : 1555,
+    "steps" : [ {
+      "index" : 1,
+      "atMs" : 290,
+      "element" : "Page",
+      "action" : "navigate",
+      "detail" : "http://localhost:8080/login",
+      "status" : "OK"
+    }, {
+      "index" : 2,
+      "atMs" : 1260,
+      "element" : "LoginPage.username",
+      "action" : "fill",
+      "detail" : "'standard_user'",
+      "status" : "HEALED",
+      "healId" : 29
+    }, {
+      "index" : 3,
+      "atMs" : 1368,
+      "element" : "LoginPage.password",
+      "action" : "fill",
+      "detail" : "'••••••••'",
+      "status" : "HEALED",
+      "healId" : 30
+    }, {
+      "index" : 4,
+      "atMs" : 1402,
+      "element" : "LoginPage.loginButton",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 31
+    } ],
+    "lastUrl" : "http://localhost:8080/products"
+  }, {
+    "id" : "ProductDetailTest.addWithVariantAndQuantity",
+    "className" : "ProductDetailTest",
+    "method" : "addWithVariantAndQuantity",
+    "displayName" : "addWithVariantAndQuantity()",
+    "status" : "PASSED",
+    "startedAt" : "2026-09-28T11:57:18.479458700Z",
+    "durationMs" : 12049,
+    "steps" : [ {
+      "index" : 1,
+      "atMs" : 523,
+      "element" : "Page",
+      "action" : "navigate",
+      "detail" : "http://localhost:8080/login",
+      "status" : "OK"
+    }, {
+      "index" : 2,
+      "atMs" : 1544,
+      "element" : "LoginPage.username",
+      "action" : "fill",
+      "detail" : "'standard_user'",
+      "status" : "HEALED",
+      "healId" : 32
+    }, {
+      "index" : 3,
+      "atMs" : 1690,
+      "element" : "LoginPage.password",
+      "action" : "fill",
+      "detail" : "'••••••••'",
+      "status" : "HEALED",
+      "healId" : 33
+    }, {
+      "index" : 4,
+      "atMs" : 1731,
+      "element" : "LoginPage.loginButton",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 34
+    }, {
+      "index" : 5,
+      "atMs" : 1893,
+      "element" : "ProductsPage.viewProduct[4]",
+      "action" : "click",
+      "status" : "OK"
+    }, {
+      "index" : 6,
+      "atMs" : 2037,
+      "element" : "ProductDetailPage.color[blue]",
+      "action" : "click",
+      "status" : "OK"
+    }, {
+      "index" : 7,
+      "atMs" : 2155,
+      "element" : "ProductDetailPage.sizeSelect",
+      "action" : "select",
+      "detail" : "'M'",
+      "status" : "HEALED",
+      "healId" : 35
+    }, {
+      "index" : 8,
+      "atMs" : 5454,
+      "element" : "ProductDetailPage.quantityIncrease",
+      "action" : "click",
+      "status" : "OK"
+    }, {
+      "index" : 9,
+      "atMs" : 5543,
+      "element" : "ProductDetailPage.addToCart",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 36
+    }, {
+      "index" : 10,
+      "atMs" : 8830,
+      "element" : "Header.cartBadge",
+      "action" : "read",
+      "detail" : "text",
+      "status" : "HEALED",
+      "healId" : 37
+    } ],
+    "lastUrl" : "http://localhost:8080/products/4"
+  }, {
+    "id" : "ProductDetailTest.sizeIsRequired",
+    "className" : "ProductDetailTest",
+    "method" : "sizeIsRequired",
+    "displayName" : "sizeIsRequired()",
+    "status" : "PASSED",
+    "startedAt" : "2026-09-28T11:57:30.534464800Z",
+    "durationMs" : 1448,
+    "steps" : [ {
+      "index" : 1,
+      "atMs" : 400,
+      "element" : "Page",
+      "action" : "navigate",
+      "detail" : "http://localhost:8080/login",
+      "status" : "OK"
+    }, {
+      "index" : 2,
+      "atMs" : 859,
+      "element" : "LoginPage.username",
+      "action" : "fill",
+      "detail" : "'standard_user'",
+      "status" : "HEALED",
+      "healId" : 38
+    }, {
+      "index" : 3,
+      "atMs" : 977,
+      "element" : "LoginPage.password",
+      "action" : "fill",
+      "detail" : "'••••••••'",
+      "status" : "HEALED",
+      "healId" : 39
+    }, {
+      "index" : 4,
+      "atMs" : 1023,
+      "element" : "LoginPage.loginButton",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 40
+    }, {
+      "index" : 5,
+      "atMs" : 1131,
+      "element" : "ProductsPage.viewProduct[4]",
+      "action" : "click",
+      "status" : "OK"
+    }, {
+      "index" : 6,
+      "atMs" : 1260,
+      "element" : "ProductDetailPage.name",
+      "action" : "read",
+      "detail" : "text",
+      "status" : "OK"
+    }, {
+      "index" : 7,
+      "atMs" : 1316,
+      "element" : "ProductDetailPage.addToCart",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 41
+    }, {
+      "index" : 8,
+      "atMs" : 1368,
+      "element" : "ProductDetailPage.sizeError",
+      "action" : "read",
+      "detail" : "class",
+      "status" : "OK"
+    } ],
+    "lastUrl" : "http://localhost:8080/products/4"
+  }, {
+    "id" : "ProductsTest.searchAndFilter",
+    "className" : "ProductsTest",
+    "method" : "searchAndFilter",
+    "displayName" : "searchAndFilter()",
+    "status" : "PASSED",
+    "startedAt" : "2026-09-28T11:57:34.599246100Z",
+    "durationMs" : 8705,
+    "steps" : [ {
+      "index" : 1,
+      "atMs" : 567,
+      "element" : "Page",
+      "action" : "navigate",
+      "detail" : "http://localhost:8080/login",
+      "status" : "OK"
+    }, {
+      "index" : 2,
+      "atMs" : 1590,
+      "element" : "LoginPage.username",
+      "action" : "fill",
+      "detail" : "'standard_user'",
+      "status" : "HEALED",
+      "healId" : 42
+    }, {
+      "index" : 3,
+      "atMs" : 1743,
+      "element" : "LoginPage.password",
+      "action" : "fill",
+      "detail" : "'••••••••'",
+      "status" : "HEALED",
+      "healId" : 43
+    }, {
+      "index" : 4,
+      "atMs" : 1770,
+      "element" : "LoginPage.loginButton",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 44
+    }, {
+      "index" : 5,
+      "atMs" : 1909,
+      "element" : "ProductsPage.search",
+      "action" : "fill",
+      "detail" : "'watch'",
+      "status" : "HEALED",
+      "healId" : 45
+    }, {
+      "index" : 6,
+      "atMs" : 5215,
+      "element" : "ProductsPage.resultCount",
+      "action" : "read",
+      "detail" : "text",
+      "status" : "OK"
+    }, {
+      "index" : 7,
+      "atMs" : 5291,
+      "element" : "ProductsPage.search",
+      "action" : "fill",
+      "detail" : "''",
+      "status" : "HEALED",
+      "healId" : 45
+    }, {
+      "index" : 8,
+      "atMs" : 5415,
+      "element" : "ProductsPage.categoryFilter",
+      "action" : "select",
+      "detail" : "'sports'",
+      "status" : "HEALED",
+      "healId" : 46
+    }, {
+      "index" : 9,
+      "atMs" : 8657,
+      "element" : "ProductsPage.resultCount",
+      "action" : "read",
+      "detail" : "text",
+      "status" : "OK"
+    } ],
+    "lastUrl" : "http://localhost:8080/products"
+  }, {
+    "id" : "ProductsTest.addToCartUpdatesBadge",
+    "className" : "ProductsTest",
+    "method" : "addToCartUpdatesBadge",
+    "displayName" : "addToCartUpdatesBadge()",
+    "status" : "PASSED",
+    "startedAt" : "2026-09-28T11:57:43.306663300Z",
+    "durationMs" : 8233,
+    "steps" : [ {
+      "index" : 1,
+      "atMs" : 374,
+      "element" : "Page",
+      "action" : "navigate",
+      "detail" : "http://localhost:8080/login",
+      "status" : "OK"
+    }, {
+      "index" : 2,
+      "atMs" : 1379,
+      "element" : "LoginPage.username",
+      "action" : "fill",
+      "detail" : "'standard_user'",
+      "status" : "HEALED",
+      "healId" : 47
+    }, {
+      "index" : 3,
+      "atMs" : 1522,
+      "element" : "LoginPage.password",
+      "action" : "fill",
+      "detail" : "'••••••••'",
+      "status" : "HEALED",
+      "healId" : 48
+    }, {
+      "index" : 4,
+      "atMs" : 1576,
+      "element" : "LoginPage.loginButton",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 49
+    }, {
+      "index" : 5,
+      "atMs" : 1670,
+      "element" : "ProductsPage.addToCart[8]",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 50
+    }, {
+      "index" : 6,
+      "atMs" : 4928,
+      "element" : "ProductsPage.addToCart[2]",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 51
+    }, {
+      "index" : 7,
+      "atMs" : 8197,
+      "element" : "Header.cartBadge",
+      "action" : "read",
+      "detail" : "text",
+      "status" : "HEALED",
+      "healId" : 52
+    } ],
+    "lastUrl" : "http://localhost:8080/products"
+  }, {
+    "id" : "ProductsTest.sortByPrice",
+    "className" : "ProductsTest",
+    "method" : "sortByPrice",
+    "displayName" : "sortByPrice()",
+    "status" : "PASSED",
+    "startedAt" : "2026-09-28T11:57:51.542658300Z",
+    "durationMs" : 1874,
+    "steps" : [ {
+      "index" : 1,
+      "atMs" : 435,
+      "element" : "Page",
+      "action" : "navigate",
+      "detail" : "http://localhost:8080/login",
+      "status" : "OK"
+    }, {
+      "index" : 2,
+      "atMs" : 1468,
+      "element" : "LoginPage.username",
+      "action" : "fill",
+      "detail" : "'standard_user'",
+      "status" : "HEALED",
+      "healId" : 53
+    }, {
+      "index" : 3,
+      "atMs" : 1594,
+      "element" : "LoginPage.password",
+      "action" : "fill",
+      "detail" : "'••••••••'",
+      "status" : "HEALED",
+      "healId" : 54
+    }, {
+      "index" : 4,
+      "atMs" : 1628,
+      "element" : "LoginPage.loginButton",
+      "action" : "click",
+      "status" : "HEALED",
+      "healId" : 55
+    }, {
+      "index" : 5,
+      "atMs" : 1718,
+      "element" : "ProductsPage.sort",
+      "action" : "select",
+      "detail" : "'price-asc'",
+      "status" : "OK"
+    } ],
+    "lastUrl" : "http://localhost:8080/products"
+  } ],
+  "events" : [ {
+    "id" : 1,
+    "test" : "CheckoutTest.couponReducesTotal",
+    "key" : "LoginPage.username",
+    "status" : "HEALED",
+    "originalSelector" : "#login-username",
+    "healedSelector" : "[data-testid=\"username-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 16,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8181043621137435,
+    "reasoning" : "Heuristic match 0.82 (margin 0.52 over next candidate). Matching: tag, name, aria-label, title, type, class, label, ancestors, position. Changed: id, data-qa.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:56:27.500067900Z",
+    "originalElement" : "input#login-username[data-testid=login-username-input]",
+    "healedElement" : "input#user-name[data-testid=username-input]",
+    "changes" : {
+      "id" : [ "login-username", "user-name" ],
+      "data-testid" : [ "login-username-input", "username-input" ],
+      "data-qa" : [ "username-field", "" ],
+      "placeholder" : [ "Enter your username", "Email or username" ]
+    },
+    "screenshot" : "screenshots/heal-22568-1.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "trace" : [ {
+      "kind" : "title",
+      "text" : "---- LoginPage.username --------------------------------------",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "error",
+      "text" : "[X] Selector not found: #login-username  (waited 3024 ms)",
+      "key" : "trace.notFound",
+      "args" : [ "#login-username", 3024 ]
+    }, {
+      "kind" : "info",
+      "text" : "1) Cache: no entry",
+      "key" : "trace.cacheMiss",
+      "args" : [ ]
+    }, {
+      "kind" : "info",
+      "text" : "2) Local heuristic: compared 26 candidates with the fingerprint (threshold 0.60, margin 0.08)  [free]",
+      "key" : "trace.heuristic",
+      "args" : [ 26, 0.6, 0.08 ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #1  0.82  input#user-name[data-testid=username-input]",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "detail",
+      "text" : "        signals: tag 1.00 | name 1.00 | aria-label 1.00 | title 1.00 | type 1.00 | class 1.00 | label 1.00 | ancestors 1.00 | position 0.98 | placeholder 0.68 | data-testid 0.67 | id 0.45 | data-qa 0.00",
+      "key" : "trace.signals",
+      "args" : [ "tag 1.00 | name 1.00 | aria-label 1.00 | title 1.00 | type 1.00 | class 1.00 | label 1.00 | ancestors 1.00 | position 0.98 | placeholder 0.68 | data-testid 0.67 | id 0.45 | data-qa 0.00" ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #2  0.34  input#login-password[data-testid=login-password-input]",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "candidate",
+      "text" : "   #3  0.31  label \"Username\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "ok",
+      "text" : "   -> Accepted: 0.82 >= 0.60 and 0.48 ahead of the runner-up",
+      "key" : "trace.accept",
+      "args" : [ 0.8181043621137435, 0.6, 0.4802832920976628 ]
+    }, {
+      "kind" : "ok",
+      "text" : "4) Validation: [data-testid=\"username-input\"] matches 1 element(s) on the page -> OK",
+      "key" : "trace.validate",
+      "args" : [ "[data-testid=\"username-input\"]", 1, {
+        "key" : "trace.validateOk",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "ok",
+      "text" : "[!] HEALED (HEURISTIC, 0.82): [data-testid=\"username-input\"]  - cost $0.0000 (local) -> test continues, reported as WARN",
+      "key" : "trace.healed",
+      "args" : [ "HEURISTIC", 0.8181043621137435, "[data-testid=\"username-input\"]", "$0.0000", {
+        "key" : "source.HEURISTIC",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "detail",
+      "text" : "    changed: id 'login-username' -> 'user-name', data-testid 'login-username-input' -> 'username-input', data-qa 'username-field' -> '', placeholder 'Enter your username' -> 'Email or username'",
+      "key" : "trace.changes",
+      "args" : [ "id 'login-username' -> 'user-name', data-testid 'login-username-input' -> 'username-input', data-qa 'username-field' -> '', placeholder 'Enter your username' -> 'Email or username'" ]
+    } ],
+    "candidates" : [ {
+      "score" : 0.8181043621137435,
+      "element" : "input#user-name[data-testid=username-input]",
+      "selector" : "[data-testid=\"username-input\"]"
+    }, {
+      "score" : 0.3378210700160807,
+      "element" : "input#login-password[data-testid=login-password-input]",
+      "selector" : "[data-testid=\"login-password-input\"]"
+    }, {
+      "score" : 0.3050438596491228,
+      "element" : "label \"Username\"",
+      "selector" : "[data-testid=\"login-form\"] > div:nth-of-type(1) > label"
+    } ],
+    "probeWaitMs" : 3024,
+    "healDurationMs" : 228,
+    "reused" : false
+  }, {
+    "id" : 2,
+    "test" : "CheckoutTest.couponReducesTotal",
+    "key" : "LoginPage.password",
+    "status" : "HEALED",
+    "originalSelector" : "input[name='password']",
+    "healedSelector" : "[data-testid=\"login-password-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 17,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8236581337737408,
+    "reasoning" : "Heuristic match 0.82 (margin 0.54 over next candidate). Matching: tag, id, data-testid, aria-label, placeholder, title, type, label, ancestors, position. Changed: data-qa, name, class.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:56:30.947058400Z",
+    "originalElement" : "input#login-password[data-testid=login-password-input]",
+    "healedElement" : "input#login-password[data-testid=login-password-input]",
+    "changes" : {
+      "data-qa" : [ "password-field", "pwd" ],
+      "name" : [ "password", "pass" ],
+      "class" : [ "form-input input-password", "form-control pwd-field" ]
+    },
+    "screenshot" : "screenshots/heal-22568-2.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "trace" : [ {
+      "kind" : "title",
+      "text" : "---- LoginPage.password --------------------------------------",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "error",
+      "text" : "[X] Selector not found: input[name='password']  (waited 3018 ms)",
+      "key" : "trace.notFound",
+      "args" : [ "input[name='password']", 3018 ]
+    }, {
+      "kind" : "info",
+      "text" : "1) Cache: no entry",
+      "key" : "trace.cacheMiss",
+      "args" : [ ]
+    }, {
+      "kind" : "info",
+      "text" : "2) Local heuristic: compared 26 candidates with the fingerprint (threshold 0.60, margin 0.08)  [free]",
+      "key" : "trace.heuristic",
+      "args" : [ 26, 0.6, 0.08 ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #1  0.82  input#login-password[data-testid=login-password-input]",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "detail",
+      "text" : "        signals: tag 1.00 | id 1.00 | data-testid 1.00 | aria-label 1.00 | placeholder 1.00 | title 1.00 | type 1.00 | label 1.00 | ancestors 1.00 | position 0.97 | name 0.45 | data-qa 0.19 | class 0.00",
+      "key" : "trace.signals",
+      "args" : [ "tag 1.00 | id 1.00 | data-testid 1.00 | aria-label 1.00 | placeholder 1.00 | title 1.00 | type 1.00 | label 1.00 | ancestors 1.00 | position 0.97 | name 0.45 | data-qa 0.19 | class 0.00" ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #2  0.35  a#forgot-password-link[data-testid=login-forgot-password-link] \"Forgot password?\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "candidate",
+      "text" : "   #3  0.31  label \"Password\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "ok",
+      "text" : "   -> Accepted: 0.82 >= 0.60 and 0.47 ahead of the runner-up",
+      "key" : "trace.accept",
+      "args" : [ 0.8236581337737408, 0.6, 0.47140128899784467 ]
+    }, {
+      "kind" : "ok",
+      "text" : "4) Validation: [data-testid=\"login-password-input\"] matches 1 element(s) on the page -> OK",
+      "key" : "trace.validate",
+      "args" : [ "[data-testid=\"login-password-input\"]", 1, {
+        "key" : "trace.validateOk",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "ok",
+      "text" : "[!] HEALED (HEURISTIC, 0.82): [data-testid=\"login-password-input\"]  - cost $0.0000 (local) -> test continues, reported as WARN",
+      "key" : "trace.healed",
+      "args" : [ "HEURISTIC", 0.8236581337737408, "[data-testid=\"login-password-input\"]", "$0.0000", {
+        "key" : "source.HEURISTIC",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "detail",
+      "text" : "    changed: data-qa 'password-field' -> 'pwd', name 'password' -> 'pass', class 'form-input input-password' -> 'form-control pwd-field'",
+      "key" : "trace.changes",
+      "args" : [ "data-qa 'password-field' -> 'pwd', name 'password' -> 'pass', class 'form-input input-password' -> 'form-control pwd-field'" ]
+    } ],
+    "candidates" : [ {
+      "score" : 0.8236581337737408,
+      "element" : "input#login-password[data-testid=login-password-input]",
+      "selector" : "[data-testid=\"login-password-input\"]"
+    }, {
+      "score" : 0.3522568447758961,
+      "element" : "a#forgot-password-link[data-testid=login-forgot-password-link] \"Forgot password?\"",
+      "selector" : "[data-testid=\"login-forgot-password-link\"]"
+    }, {
+      "score" : 0.3050438596491228,
+      "element" : "label \"Password\"",
+      "selector" : "[data-testid=\"login-form\"] > div:nth-of-type(2) > label"
+    } ],
+    "probeWaitMs" : 3018,
+    "healDurationMs" : 174,
+    "reused" : false
+  }, {
+    "id" : 3,
+    "test" : "CheckoutTest.couponReducesTotal",
+    "key" : "LoginPage.loginButton",
+    "status" : "HEALED",
+    "originalSelector" : "[data-testid='login-submit-button']",
+    "healedSelector" : "[data-testid=\"signin-button\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 18,
+    "source" : "HEURISTIC",
+    "confidence" : 0.6916303034371643,
+    "reasoning" : "Heuristic match 0.69 (margin 0.42 over next candidate). Matching: tag, data-qa, name, type, class, position. Changed: id, data-testid.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:56:34.260841900Z",
+    "originalElement" : "button#login-button[data-testid=login-submit-button] \"Sign In\"",
+    "healedElement" : "button#btn-signin[data-testid=signin-button] \"Log In\"",
+    "changes" : {
+      "id" : [ "login-button", "btn-signin" ],
+      "data-testid" : [ "login-submit-button", "signin-button" ],
+      "aria-label" : [ "Sign in", "Log in" ],
+      "title" : [ "Sign in", "Log in" ],
+      "text" : [ "Sign In", "Log In" ]
+    },
+    "screenshot" : "screenshots/heal-22568-3.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "trace" : [ {
+      "kind" : "title",
+      "text" : "---- LoginPage.loginButton -----------------------------------",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "error",
+      "text" : "[X] Selector not found: [data-testid='login-submit-button']  (waited 3005 ms)",
+      "key" : "trace.notFound",
+      "args" : [ "[data-testid='login-submit-button']", 3005 ]
+    }, {
+      "kind" : "info",
+      "text" : "1) Cache: no entry",
+      "key" : "trace.cacheMiss",
+      "args" : [ ]
+    }, {
+      "kind" : "info",
+      "text" : "2) Local heuristic: compared 26 candidates with the fingerprint (threshold 0.60, margin 0.08)  [free]",
+      "key" : "trace.heuristic",
+      "args" : [ 26, 0.6, 0.08 ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #1  0.69  button#btn-signin[data-testid=signin-button] \"Log In\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "detail",
+      "text" : "        signals: tag 1.00 | data-qa 1.00 | name 1.00 | type 1.00 | class 1.00 | position 0.98 | ancestors 0.75 | aria-label 0.57 | title 0.57 | text 0.57 | data-testid 0.47 | id 0.23",
+      "key" : "trace.signals",
+      "args" : [ "tag 1.00 | data-qa 1.00 | name 1.00 | type 1.00 | class 1.00 | position 0.98 | ancestors 0.75 | aria-label 0.57 | title 0.57 | text 0.57 | data-testid 0.47 | id 0.23" ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #2  0.33  form#login-form[data-testid=login-form] \"Username Password Remember me Forgot pas…\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "candidate",
+      "text" : "   #3  0.28  div#login-error[data-testid=login-error-message]",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "ok",
+      "text" : "   -> Accepted: 0.69 >= 0.60 and 0.36 ahead of the runner-up",
+      "key" : "trace.accept",
+      "args" : [ 0.6916303034371643, 0.6, 0.3640161042718604 ]
+    }, {
+      "kind" : "ok",
+      "text" : "4) Validation: [data-testid=\"signin-button\"] matches 1 element(s) on the page -> OK",
+      "key" : "trace.validate",
+      "args" : [ "[data-testid=\"signin-button\"]", 1, {
+        "key" : "trace.validateOk",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "ok",
+      "text" : "[!] HEALED (HEURISTIC, 0.69): [data-testid=\"signin-button\"]  - cost $0.0000 (local) -> test continues, reported as WARN",
+      "key" : "trace.healed",
+      "args" : [ "HEURISTIC", 0.6916303034371643, "[data-testid=\"signin-button\"]", "$0.0000", {
+        "key" : "source.HEURISTIC",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "detail",
+      "text" : "    changed: id 'login-button' -> 'btn-signin', data-testid 'login-submit-button' -> 'signin-button', aria-label 'Sign in' -> 'Log in', title 'Sign in' -> 'Log in', text 'Sign In' -> 'Log In'",
+      "key" : "trace.changes",
+      "args" : [ "id 'login-button' -> 'btn-signin', data-testid 'login-submit-button' -> 'signin-button', aria-label 'Sign in' -> 'Log in', title 'Sign in' -> 'Log in', text 'Sign In' -> 'Log In'" ]
+    } ],
+    "candidates" : [ {
+      "score" : 0.6916303034371643,
+      "element" : "button#btn-signin[data-testid=signin-button] \"Log In\"",
+      "selector" : "[data-testid=\"signin-button\"]"
+    }, {
+      "score" : 0.3276141991653039,
+      "element" : "form#login-form[data-testid=login-form] \"Username Password Remember me Forgot pas…\"",
+      "selector" : "[data-testid=\"login-form\"]"
+    }, {
+      "score" : 0.2758086763671769,
+      "element" : "div#login-error[data-testid=login-error-message]",
+      "selector" : "[data-testid=\"login-error-message\"]"
+    } ],
+    "probeWaitMs" : 3005,
+    "healDurationMs" : 137,
+    "reused" : false
+  }, {
+    "id" : 4,
+    "test" : "CheckoutTest.couponReducesTotal",
+    "key" : "ProductsPage.addToCart[1]",
+    "status" : "HEALED",
+    "originalSelector" : "#add-to-cart-1",
+    "healedSelector" : "[data-testid=\"product-add-btn-1\"]",
+    "sourceFile" : "com/shoplab/tests/pages/ProductsPage.java",
+    "sourceLine" : 39,
+    "source" : "HEURISTIC",
+    "confidence" : 0.7504554473304473,
+    "reasoning" : "Heuristic match 0.75 (margin 0.40 over next candidate). Matching: tag, data-qa, name, aria-label, type, ancestors, position. Changed: id, data-testid.",
+    "pageUrl" : "http://localhost:8080/products",
+    "timestamp" : "2026-09-28T11:56:37.708730800Z",
+    "originalElement" : "button#add-to-cart-1[data-testid=add-to-cart-1] \"Add to Cart\"",
+    "healedElement" : "button#btn-add-1[data-testid=product-add-btn-1] \"Add to Bag\"",
+    "changes" : {
+      "id" : [ "add-to-cart-1", "btn-add-1" ],
+      "data-testid" : [ "add-to-cart-1", "product-add-btn-1" ],
+      "title" : [ "Add to Cart", "Add to Bag" ],
+      "class" : [ "btn btn-primary btn-add-cart", "btn btn-primary js-cart-add" ],
+      "text" : [ "Add to Cart", "Add to Bag" ]
+    },
+    "screenshot" : "screenshots/heal-22568-4.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "trace" : [ {
+      "kind" : "title",
+      "text" : "---- ProductsPage.addToCart[1] -------------------------------",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "error",
+      "text" : "[X] Selector not found: #add-to-cart-1  (waited 3010 ms)",
+      "key" : "trace.notFound",
+      "args" : [ "#add-to-cart-1", 3010 ]
+    }, {
+      "kind" : "info",
+      "text" : "1) Cache: no entry",
+      "key" : "trace.cacheMiss",
+      "args" : [ ]
+    }, {
+      "kind" : "info",
+      "text" : "2) Local heuristic: compared 99 candidates with the fingerprint (threshold 0.60, margin 0.08)  [free]",
+      "key" : "trace.heuristic",
+      "args" : [ 99, 0.6, 0.08 ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #1  0.75  button#btn-add-1[data-testid=product-add-btn-1] \"Add to Bag\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "detail",
+      "text" : "        signals: tag 1.00 | data-qa 1.00 | name 1.00 | aria-label 1.00 | type 1.00 | ancestors 1.00 | position 0.99 | title 0.73 | text 0.73 | class 0.50 | id 0.40 | data-testid 0.33",
+      "key" : "trace.signals",
+      "args" : [ "tag 1.00 | data-qa 1.00 | name 1.00 | aria-label 1.00 | type 1.00 | ancestors 1.00 | position 0.99 | title 0.73 | text 0.73 | class 0.50 | id 0.40 | data-testid 0.33" ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #2  0.35  a#view-product-1[data-testid=view-product-1] \"Details\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "candidate",
+      "text" : "   #3  0.32  button#btn-add-2[data-testid=product-add-btn-2] \"Add to Bag\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "ok",
+      "text" : "   -> Accepted: 0.75 >= 0.60 and 0.40 ahead of the runner-up",
+      "key" : "trace.accept",
+      "args" : [ 0.7504554473304473, 0.6, 0.39546970398286824 ]
+    }, {
+      "kind" : "ok",
+      "text" : "4) Validation: [data-testid=\"product-add-btn-1\"] matches 1 element(s) on the page -> OK",
+      "key" : "trace.validate",
+      "args" : [ "[data-testid=\"product-add-btn-1\"]", 1, {
+        "key" : "trace.validateOk",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "ok",
+      "text" : "[!] HEALED (HEURISTIC, 0.75): [data-testid=\"product-add-btn-1\"]  - cost $0.0000 (local) -> test continues, reported as WARN",
+      "key" : "trace.healed",
+      "args" : [ "HEURISTIC", 0.7504554473304473, "[data-testid=\"product-add-btn-1\"]", "$0.0000", {
+        "key" : "source.HEURISTIC",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "detail",
+      "text" : "    changed: id 'add-to-cart-1' -> 'btn-add-1', data-testid 'add-to-cart-1' -> 'product-add-btn-1', title 'Add to Cart' -> 'Add to Bag', class 'btn btn-primary btn-add-cart' -> 'btn btn-primary js-cart-add', text 'Add to Cart' -> 'Add to Bag'",
+      "key" : "trace.changes",
+      "args" : [ "id 'add-to-cart-1' -> 'btn-add-1', data-testid 'add-to-cart-1' -> 'product-add-btn-1', title 'Add to Cart' -> 'Add to Bag', class 'btn btn-primary btn-add-cart' -> 'btn btn-primary js-cart-add', text 'Add to Cart' -> 'Add to Bag'" ]
+    } ],
+    "candidates" : [ {
+      "score" : 0.7504554473304473,
+      "element" : "button#btn-add-1[data-testid=product-add-btn-1] \"Add to Bag\"",
+      "selector" : "[data-testid=\"product-add-btn-1\"]"
+    }, {
+      "score" : 0.3549857433475791,
+      "element" : "a#view-product-1[data-testid=view-product-1] \"Details\"",
+      "selector" : "[data-testid=\"view-product-1\"]"
+    }, {
+      "score" : 0.3168765102242864,
+      "element" : "button#btn-add-2[data-testid=product-add-btn-2] \"Add to Bag\"",
+      "selector" : "[data-testid=\"product-add-btn-2\"]"
+    } ],
+    "probeWaitMs" : 3010,
+    "healDurationMs" : 158,
+    "reused" : false
+  }, {
+    "id" : 5,
+    "test" : "CheckoutTest.couponReducesTotal",
+    "key" : "ProductsPage.addToCart[5]",
+    "status" : "HEALED",
+    "originalSelector" : "#add-to-cart-5",
+    "healedSelector" : "[data-testid=\"product-add-btn-5\"]",
+    "sourceFile" : "com/shoplab/tests/pages/ProductsPage.java",
+    "sourceLine" : 39,
+    "source" : "HEURISTIC",
+    "confidence" : 0.7504554473304473,
+    "reasoning" : "Heuristic match 0.75 (margin 0.41 over next candidate). Matching: tag, data-qa, name, aria-label, type, ancestors, position. Changed: id, data-testid.",
+    "pageUrl" : "http://localhost:8080/products",
+    "timestamp" : "2026-09-28T11:56:41.103019300Z",
+    "originalElement" : "button#add-to-cart-5[data-testid=add-to-cart-5] \"Add to Cart\"",
+    "healedElement" : "button#btn-add-5[data-testid=product-add-btn-5] \"Add to Bag\"",
+    "changes" : {
+      "id" : [ "add-to-cart-5", "btn-add-5" ],
+      "data-testid" : [ "add-to-cart-5", "product-add-btn-5" ],
+      "title" : [ "Add to Cart", "Add to Bag" ],
+      "class" : [ "btn btn-primary btn-add-cart", "btn btn-primary js-cart-add" ],
+      "text" : [ "Add to Cart", "Add to Bag" ]
+    },
+    "screenshot" : "screenshots/heal-22568-5.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "trace" : [ {
+      "kind" : "title",
+      "text" : "---- ProductsPage.addToCart[5] -------------------------------",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "error",
+      "text" : "[X] Selector not found: #add-to-cart-5  (waited 3009 ms)",
+      "key" : "trace.notFound",
+      "args" : [ "#add-to-cart-5", 3009 ]
+    }, {
+      "kind" : "info",
+      "text" : "1) Cache: no entry",
+      "key" : "trace.cacheMiss",
+      "args" : [ ]
+    }, {
+      "kind" : "info",
+      "text" : "2) Local heuristic: compared 99 candidates with the fingerprint (threshold 0.60, margin 0.08)  [free]",
+      "key" : "trace.heuristic",
+      "args" : [ 99, 0.6, 0.08 ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #1  0.75  button#btn-add-5[data-testid=product-add-btn-5] \"Add to Bag\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "detail",
+      "text" : "        signals: tag 1.00 | data-qa 1.00 | name 1.00 | aria-label 1.00 | type 1.00 | ancestors 1.00 | position 0.99 | title 0.73 | text 0.73 | class 0.50 | id 0.40 | data-testid 0.33",
+      "key" : "trace.signals",
+      "args" : [ "tag 1.00 | data-qa 1.00 | name 1.00 | aria-label 1.00 | type 1.00 | ancestors 1.00 | position 0.99 | title 0.73 | text 0.73 | class 0.50 | id 0.40 | data-testid 0.33" ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #2  0.34  a#view-product-5[data-testid=view-product-5] \"Details\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "candidate",
+      "text" : "   #3  0.31  button#btn-add-4[data-testid=product-add-btn-4] \"Add to Bag\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "ok",
+      "text" : "   -> Accepted: 0.75 >= 0.60 and 0.41 ahead of the runner-up",
+      "key" : "trace.accept",
+      "args" : [ 0.7504554473304473, 0.6, 0.4127278053064648 ]
+    }, {
+      "kind" : "ok",
+      "text" : "4) Validation: [data-testid=\"product-add-btn-5\"] matches 1 element(s) on the page -> OK",
+      "key" : "trace.validate",
+      "args" : [ "[data-testid=\"product-add-btn-5\"]", 1, {
+        "key" : "trace.validateOk",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "ok",
+      "text" : "[!] HEALED (HEURISTIC, 0.75): [data-testid=\"product-add-btn-5\"]  - cost $0.0000 (local) -> test continues, reported as WARN",
+      "key" : "trace.healed",
+      "args" : [ "HEURISTIC", 0.7504554473304473, "[data-testid=\"product-add-btn-5\"]", "$0.0000", {
+        "key" : "source.HEURISTIC",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "detail",
+      "text" : "    changed: id 'add-to-cart-5' -> 'btn-add-5', data-testid 'add-to-cart-5' -> 'product-add-btn-5', title 'Add to Cart' -> 'Add to Bag', class 'btn btn-primary btn-add-cart' -> 'btn btn-primary js-cart-add', text 'Add to Cart' -> 'Add to Bag'",
+      "key" : "trace.changes",
+      "args" : [ "id 'add-to-cart-5' -> 'btn-add-5', data-testid 'add-to-cart-5' -> 'product-add-btn-5', title 'Add to Cart' -> 'Add to Bag', class 'btn btn-primary btn-add-cart' -> 'btn btn-primary js-cart-add', text 'Add to Cart' -> 'Add to Bag'" ]
+    } ],
+    "candidates" : [ {
+      "score" : 0.7504554473304473,
+      "element" : "button#btn-add-5[data-testid=product-add-btn-5] \"Add to Bag\"",
+      "selector" : "[data-testid=\"product-add-btn-5\"]"
+    }, {
+      "score" : 0.33772764202398253,
+      "element" : "a#view-product-5[data-testid=view-product-5] \"Details\"",
+      "selector" : "[data-testid=\"view-product-5\"]"
+    }, {
+      "score" : 0.31384155060625646,
+      "element" : "button#btn-add-4[data-testid=product-add-btn-4] \"Add to Bag\"",
+      "selector" : "[data-testid=\"product-add-btn-4\"]"
+    } ],
+    "probeWaitMs" : 3009,
+    "healDurationMs" : 213,
+    "reused" : false
+  }, {
+    "id" : 6,
+    "test" : "CheckoutTest.couponReducesTotal",
+    "key" : "CartPage.couponInput",
+    "status" : "HEALED",
+    "originalSelector" : "#coupon-code",
+    "healedSelector" : "[data-testid=\"promo-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/CartPage.java",
+    "sourceLine" : 25,
+    "source" : "HEURISTIC",
+    "confidence" : 0.843948842482908,
+    "reasoning" : "Heuristic match 0.84 (margin 0.66 over next candidate). Matching: tag, data-qa, name, aria-label, placeholder, title, type, class, ancestors, position. Changed: id, data-testid.",
+    "pageUrl" : "http://localhost:8080/cart",
+    "timestamp" : "2026-09-28T11:56:44.790143100Z",
+    "originalElement" : "input#coupon-code[data-testid=coupon-code-input]",
+    "healedElement" : "input#promo-code[data-testid=promo-input]",
+    "changes" : {
+      "id" : [ "coupon-code", "promo-code" ],
+      "data-testid" : [ "coupon-code-input", "promo-input" ]
+    },
+    "screenshot" : "screenshots/heal-22568-6.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "trace" : [ {
+      "kind" : "title",
+      "text" : "---- CartPage.couponInput ------------------------------------",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "error",
+      "text" : "[X] Selector not found: #coupon-code  (waited 3011 ms)",
+      "key" : "trace.notFound",
+      "args" : [ "#coupon-code", 3011 ]
+    }, {
+      "kind" : "info",
+      "text" : "1) Cache: no entry",
+      "key" : "trace.cacheMiss",
+      "args" : [ ]
+    }, {
+      "kind" : "info",
+      "text" : "2) Local heuristic: compared 101 candidates with the fingerprint (threshold 0.60, margin 0.08)  [free]",
+      "key" : "trace.heuristic",
+      "args" : [ 101, 0.6, 0.08 ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #1  0.84  input#promo-code[data-testid=promo-input]",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "detail",
+      "text" : "        signals: tag 1.00 | data-qa 1.00 | name 1.00 | aria-label 1.00 | placeholder 1.00 | title 1.00 | type 1.00 | class 1.00 | ancestors 1.00 | position 0.99 | id 0.49 | data-testid 0.42",
+      "key" : "trace.signals",
+      "args" : [ "tag 1.00 | data-qa 1.00 | name 1.00 | aria-label 1.00 | placeholder 1.00 | title 1.00 | type 1.00 | class 1.00 | ancestors 1.00 | position 0.99 | id 0.49 | data-testid 0.42" ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #2  0.45  input#postal-code[data-testid=checkout-postal-code-input]",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "candidate",
+      "text" : "   #3  0.33  div#coupon-message[data-testid=coupon-message]",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "ok",
+      "text" : "   -> Accepted: 0.84 >= 0.60 and 0.40 ahead of the runner-up",
+      "key" : "trace.accept",
+      "args" : [ 0.843948842482908, 0.6, 0.39808471188776473 ]
+    }, {
+      "kind" : "ok",
+      "text" : "4) Validation: [data-testid=\"promo-input\"] matches 1 element(s) on the page -> OK",
+      "key" : "trace.validate",
+      "args" : [ "[data-testid=\"promo-input\"]", 1, {
+        "key" : "trace.validateOk",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "ok",
+      "text" : "[!] HEALED (HEURISTIC, 0.84): [data-testid=\"promo-input\"]  - cost $0.0000 (local) -> test continues, reported as WARN",
+      "key" : "trace.healed",
+      "args" : [ "HEURISTIC", 0.843948842482908, "[data-testid=\"promo-input\"]", "$0.0000", {
+        "key" : "source.HEURISTIC",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "detail",
+      "text" : "    changed: id 'coupon-code' -> 'promo-code', data-testid 'coupon-code-input' -> 'promo-input'",
+      "key" : "trace.changes",
+      "args" : [ "id 'coupon-code' -> 'promo-code', data-testid 'coupon-code-input' -> 'promo-input'" ]
+    } ],
+    "candidates" : [ {
+      "score" : 0.843948842482908,
+      "element" : "input#promo-code[data-testid=promo-input]",
+      "selector" : "[data-testid=\"promo-input\"]"
+    }, {
+      "score" : 0.4458641305951433,
+      "element" : "input#postal-code[data-testid=checkout-postal-code-input]",
+      "selector" : "[data-testid=\"checkout-postal-code-input\"]"
+    }, {
+      "score" : 0.3267129928894634,
+      "element" : "div#coupon-message[data-testid=coupon-message]",
+      "selector" : "[data-testid=\"coupon-message\"]"
+    } ],
+    "probeWaitMs" : 3011,
+    "healDurationMs" : 155,
+    "reused" : false
+  }, {
+    "id" : 7,
+    "test" : "CheckoutTest.checkoutValidationAndOrder",
+    "key" : "LoginPage.username",
+    "status" : "HEALED",
+    "originalSelector" : "#login-username",
+    "healedSelector" : "[data-testid=\"username-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 16,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8181043621137435,
+    "reasoning" : "Heuristic match 0.82 (margin 0.52 over next candidate). Matching: tag, name, aria-label, title, type, class, label, ancestors, position. Changed: id, data-qa.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:56:46.760142300Z",
+    "originalElement" : "input#login-username[data-testid=login-username-input]",
+    "healedElement" : "input#user-name[data-testid=username-input]",
+    "changes" : {
+      "id" : [ "login-username", "user-name" ],
+      "data-testid" : [ "login-username-input", "username-input" ],
+      "data-qa" : [ "username-field", "" ],
+      "placeholder" : [ "Enter your username", "Email or username" ]
+    },
+    "screenshot" : "screenshots/heal-22568-1.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 8,
+    "test" : "CheckoutTest.checkoutValidationAndOrder",
+    "key" : "LoginPage.password",
+    "status" : "HEALED",
+    "originalSelector" : "input[name='password']",
+    "healedSelector" : "[data-testid=\"login-password-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 17,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8236581337737408,
+    "reasoning" : "Heuristic match 0.82 (margin 0.54 over next candidate). Matching: tag, id, data-testid, aria-label, placeholder, title, type, label, ancestors, position. Changed: data-qa, name, class.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:56:46.831040600Z",
+    "originalElement" : "input#login-password[data-testid=login-password-input]",
+    "healedElement" : "input#login-password[data-testid=login-password-input]",
+    "changes" : {
+      "data-qa" : [ "password-field", "pwd" ],
+      "name" : [ "password", "pass" ],
+      "class" : [ "form-input input-password", "form-control pwd-field" ]
+    },
+    "screenshot" : "screenshots/heal-22568-2.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 9,
+    "test" : "CheckoutTest.checkoutValidationAndOrder",
+    "key" : "LoginPage.loginButton",
+    "status" : "HEALED",
+    "originalSelector" : "[data-testid='login-submit-button']",
+    "healedSelector" : "[data-testid=\"signin-button\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 18,
+    "source" : "HEURISTIC",
+    "confidence" : 0.6916303034371643,
+    "reasoning" : "Heuristic match 0.69 (margin 0.42 over next candidate). Matching: tag, data-qa, name, type, class, position. Changed: id, data-testid.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:56:46.910306800Z",
+    "originalElement" : "button#login-button[data-testid=login-submit-button] \"Sign In\"",
+    "healedElement" : "button#btn-signin[data-testid=signin-button] \"Log In\"",
+    "changes" : {
+      "id" : [ "login-button", "btn-signin" ],
+      "data-testid" : [ "login-submit-button", "signin-button" ],
+      "aria-label" : [ "Sign in", "Log in" ],
+      "title" : [ "Sign in", "Log in" ],
+      "text" : [ "Sign In", "Log In" ]
+    },
+    "screenshot" : "screenshots/heal-22568-3.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 10,
+    "test" : "CheckoutTest.checkoutValidationAndOrder",
+    "key" : "ProductsPage.addToCart[1]",
+    "status" : "HEALED",
+    "originalSelector" : "#add-to-cart-1",
+    "healedSelector" : "[data-testid=\"product-add-btn-1\"]",
+    "sourceFile" : "com/shoplab/tests/pages/ProductsPage.java",
+    "sourceLine" : 39,
+    "source" : "HEURISTIC",
+    "confidence" : 0.7504554473304473,
+    "reasoning" : "Heuristic match 0.75 (margin 0.40 over next candidate). Matching: tag, data-qa, name, aria-label, type, ancestors, position. Changed: id, data-testid.",
+    "pageUrl" : "http://localhost:8080/products",
+    "timestamp" : "2026-09-28T11:56:47.081539900Z",
+    "originalElement" : "button#add-to-cart-1[data-testid=add-to-cart-1] \"Add to Cart\"",
+    "healedElement" : "button#btn-add-1[data-testid=product-add-btn-1] \"Add to Bag\"",
+    "changes" : {
+      "id" : [ "add-to-cart-1", "btn-add-1" ],
+      "data-testid" : [ "add-to-cart-1", "product-add-btn-1" ],
+      "title" : [ "Add to Cart", "Add to Bag" ],
+      "class" : [ "btn btn-primary btn-add-cart", "btn btn-primary js-cart-add" ],
+      "text" : [ "Add to Cart", "Add to Bag" ]
+    },
+    "screenshot" : "screenshots/heal-22568-4.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 11,
+    "test" : "CheckoutTest.checkoutValidationAndOrder",
+    "key" : "ProductsPage.addToCart[5]",
+    "status" : "HEALED",
+    "originalSelector" : "#add-to-cart-5",
+    "healedSelector" : "[data-testid=\"product-add-btn-5\"]",
+    "sourceFile" : "com/shoplab/tests/pages/ProductsPage.java",
+    "sourceLine" : 39,
+    "source" : "HEURISTIC",
+    "confidence" : 0.7504554473304473,
+    "reasoning" : "Heuristic match 0.75 (margin 0.41 over next candidate). Matching: tag, data-qa, name, aria-label, type, ancestors, position. Changed: id, data-testid.",
+    "pageUrl" : "http://localhost:8080/products",
+    "timestamp" : "2026-09-28T11:56:47.151449700Z",
+    "originalElement" : "button#add-to-cart-5[data-testid=add-to-cart-5] \"Add to Cart\"",
+    "healedElement" : "button#btn-add-5[data-testid=product-add-btn-5] \"Add to Bag\"",
+    "changes" : {
+      "id" : [ "add-to-cart-5", "btn-add-5" ],
+      "data-testid" : [ "add-to-cart-5", "product-add-btn-5" ],
+      "title" : [ "Add to Cart", "Add to Bag" ],
+      "class" : [ "btn btn-primary btn-add-cart", "btn btn-primary js-cart-add" ],
+      "text" : [ "Add to Cart", "Add to Bag" ]
+    },
+    "screenshot" : "screenshots/heal-22568-5.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 12,
+    "test" : "CheckoutTest.checkoutValidationAndOrder",
+    "key" : "CartPage.placeOrder",
+    "status" : "HEALED",
+    "originalSelector" : "#place-order",
+    "healedSelector" : "[data-testid=\"complete-order-button\"]",
+    "sourceFile" : "com/shoplab/tests/pages/CartPage.java",
+    "sourceLine" : 35,
+    "source" : "HEURISTIC",
+    "confidence" : 0.7899804808286951,
+    "reasoning" : "Heuristic match 0.79 (margin 0.47 over next candidate). Matching: tag, data-qa, name, aria-label, title, type, class, ancestors, position. Changed: id, text.",
+    "pageUrl" : "http://localhost:8080/cart",
+    "timestamp" : "2026-09-28T11:56:50.604225200Z",
+    "originalElement" : "button#place-order[data-testid=place-order-button] \"Place Order\"",
+    "healedElement" : "button#submit-order[data-testid=complete-order-button] \"Checkout\"",
+    "changes" : {
+      "id" : [ "place-order", "submit-order" ],
+      "data-testid" : [ "place-order-button", "complete-order-button" ],
+      "text" : [ "Place Order", "Checkout" ]
+    },
+    "screenshot" : "screenshots/heal-22568-12.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "trace" : [ {
+      "kind" : "title",
+      "text" : "---- CartPage.placeOrder -------------------------------------",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "error",
+      "text" : "[X] Selector not found: #place-order  (waited 3010 ms)",
+      "key" : "trace.notFound",
+      "args" : [ "#place-order", 3010 ]
+    }, {
+      "kind" : "info",
+      "text" : "1) Cache: no entry",
+      "key" : "trace.cacheMiss",
+      "args" : [ ]
+    }, {
+      "kind" : "info",
+      "text" : "2) Local heuristic: compared 101 candidates with the fingerprint (threshold 0.60, margin 0.08)  [free]",
+      "key" : "trace.heuristic",
+      "args" : [ 101, 0.6, 0.08 ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #1  0.79  button#submit-order[data-testid=complete-order-button] \"Checkout\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "detail",
+      "text" : "        signals: tag 1.00 | data-qa 1.00 | name 1.00 | aria-label 1.00 | title 1.00 | type 1.00 | class 1.00 | ancestors 1.00 | position 0.99 | data-testid 0.69 | id 0.45 | text 0.18",
+      "key" : "trace.signals",
+      "args" : [ "tag 1.00 | data-qa 1.00 | name 1.00 | aria-label 1.00 | title 1.00 | type 1.00 | class 1.00 | ancestors 1.00 | position 0.99 | data-testid 0.69 | id 0.45 | text 0.18" ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #2  0.32  button#remove-confirm[data-testid=remove-confirm-button] \"Remove\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "candidate",
+      "text" : "   #3  0.27  button#remove-cancel[data-testid=remove-cancel-button] \"Cancel\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "ok",
+      "text" : "   -> Accepted: 0.79 >= 0.60 and 0.47 ahead of the runner-up",
+      "key" : "trace.accept",
+      "args" : [ 0.7899804808286951, 0.6, 0.4665477506435533 ]
+    }, {
+      "kind" : "ok",
+      "text" : "4) Validation: [data-testid=\"complete-order-button\"] matches 1 element(s) on the page -> OK",
+      "key" : "trace.validate",
+      "args" : [ "[data-testid=\"complete-order-button\"]", 1, {
+        "key" : "trace.validateOk",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "ok",
+      "text" : "[!] HEALED (HEURISTIC, 0.79): [data-testid=\"complete-order-button\"]  - cost $0.0000 (local) -> test continues, reported as WARN",
+      "key" : "trace.healed",
+      "args" : [ "HEURISTIC", 0.7899804808286951, "[data-testid=\"complete-order-button\"]", "$0.0000", {
+        "key" : "source.HEURISTIC",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "detail",
+      "text" : "    changed: id 'place-order' -> 'submit-order', data-testid 'place-order-button' -> 'complete-order-button', text 'Place Order' -> 'Checkout'",
+      "key" : "trace.changes",
+      "args" : [ "id 'place-order' -> 'submit-order', data-testid 'place-order-button' -> 'complete-order-button', text 'Place Order' -> 'Checkout'" ]
+    } ],
+    "candidates" : [ {
+      "score" : 0.7899804808286951,
+      "element" : "button#submit-order[data-testid=complete-order-button] \"Checkout\"",
+      "selector" : "[data-testid=\"complete-order-button\"]"
+    }, {
+      "score" : 0.3234327301851418,
+      "element" : "button#remove-confirm[data-testid=remove-confirm-button] \"Remove\"",
+      "selector" : "[data-testid=\"remove-confirm-button\"]"
+    }, {
+      "score" : 0.27435747532210547,
+      "element" : "button#remove-cancel[data-testid=remove-cancel-button] \"Cancel\"",
+      "selector" : "[data-testid=\"remove-cancel-button\"]"
+    } ],
+    "probeWaitMs" : 3010,
+    "healDurationMs" : 228,
+    "reused" : false
+  }, {
+    "id" : 13,
+    "test" : "ContactTest.logout",
+    "key" : "LoginPage.username",
+    "status" : "HEALED",
+    "originalSelector" : "#login-username",
+    "healedSelector" : "[data-testid=\"username-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 16,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8181043621137435,
+    "reasoning" : "Heuristic match 0.82 (margin 0.52 over next candidate). Matching: tag, name, aria-label, title, type, class, label, ancestors, position. Changed: id, data-qa.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:56:56.328545200Z",
+    "originalElement" : "input#login-username[data-testid=login-username-input]",
+    "healedElement" : "input#user-name[data-testid=username-input]",
+    "changes" : {
+      "id" : [ "login-username", "user-name" ],
+      "data-testid" : [ "login-username-input", "username-input" ],
+      "data-qa" : [ "username-field", "" ],
+      "placeholder" : [ "Enter your username", "Email or username" ]
+    },
+    "screenshot" : "screenshots/heal-22568-1.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 14,
+    "test" : "ContactTest.logout",
+    "key" : "LoginPage.password",
+    "status" : "HEALED",
+    "originalSelector" : "input[name='password']",
+    "healedSelector" : "[data-testid=\"login-password-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 17,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8236581337737408,
+    "reasoning" : "Heuristic match 0.82 (margin 0.54 over next candidate). Matching: tag, id, data-testid, aria-label, placeholder, title, type, label, ancestors, position. Changed: data-qa, name, class.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:56:56.386466Z",
+    "originalElement" : "input#login-password[data-testid=login-password-input]",
+    "healedElement" : "input#login-password[data-testid=login-password-input]",
+    "changes" : {
+      "data-qa" : [ "password-field", "pwd" ],
+      "name" : [ "password", "pass" ],
+      "class" : [ "form-input input-password", "form-control pwd-field" ]
+    },
+    "screenshot" : "screenshots/heal-22568-2.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 15,
+    "test" : "ContactTest.logout",
+    "key" : "LoginPage.loginButton",
+    "status" : "HEALED",
+    "originalSelector" : "[data-testid='login-submit-button']",
+    "healedSelector" : "[data-testid=\"signin-button\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 18,
+    "source" : "HEURISTIC",
+    "confidence" : 0.6916303034371643,
+    "reasoning" : "Heuristic match 0.69 (margin 0.42 over next candidate). Matching: tag, data-qa, name, type, class, position. Changed: id, data-testid.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:56:56.413718500Z",
+    "originalElement" : "button#login-button[data-testid=login-submit-button] \"Sign In\"",
+    "healedElement" : "button#btn-signin[data-testid=signin-button] \"Log In\"",
+    "changes" : {
+      "id" : [ "login-button", "btn-signin" ],
+      "data-testid" : [ "login-submit-button", "signin-button" ],
+      "aria-label" : [ "Sign in", "Log in" ],
+      "title" : [ "Sign in", "Log in" ],
+      "text" : [ "Sign In", "Log In" ]
+    },
+    "screenshot" : "screenshots/heal-22568-3.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 16,
+    "test" : "ContactTest.logout",
+    "key" : "Header.logoutButton",
+    "status" : "HEALED",
+    "originalSelector" : "button[data-testid='logout-button']",
+    "healedSelector" : "[data-testid=\"logout-button\"]",
+    "sourceFile" : "com/shoplab/tests/pages/Header.java",
+    "sourceLine" : 17,
+    "source" : "HEURISTIC",
+    "confidence" : 0.895655487804878,
+    "reasoning" : "Heuristic match 0.90 (margin 0.59 over next candidate). Matching: id, data-testid, data-qa, name, aria-label, title, class, ancestors, position. Changed: type.",
+    "pageUrl" : "http://localhost:8080/contact",
+    "timestamp" : "2026-09-28T11:56:59.780577900Z",
+    "originalElement" : "button#logout-button[data-testid=logout-button] \"Logout\"",
+    "healedElement" : "a#logout-button[data-testid=logout-button] \"Sign Out\"",
+    "changes" : {
+      "tag" : [ "button", "a" ],
+      "type" : [ "button", "" ],
+      "role" : [ "", "button" ],
+      "href" : [ "", "#" ],
+      "text" : [ "Logout", "Sign Out" ]
+    },
+    "screenshot" : "screenshots/heal-22568-16.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "trace" : [ {
+      "kind" : "title",
+      "text" : "---- Header.logoutButton -------------------------------------",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "error",
+      "text" : "[X] Selector not found: button[data-testid='logout-button']  (waited 3008 ms)",
+      "key" : "trace.notFound",
+      "args" : [ "button[data-testid='logout-button']", 3008 ]
+    }, {
+      "kind" : "info",
+      "text" : "1) Cache: no entry",
+      "key" : "trace.cacheMiss",
+      "args" : [ ]
+    }, {
+      "kind" : "info",
+      "text" : "2) Local heuristic: compared 73 candidates with the fingerprint (threshold 0.60, margin 0.08)  [free]",
+      "key" : "trace.heuristic",
+      "args" : [ 73, 0.6, 0.08 ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #1  0.90  a#logout-button[data-testid=logout-button] \"Sign Out\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "detail",
+      "text" : "        signals: id 1.00 | data-testid 1.00 | data-qa 1.00 | name 1.00 | aria-label 1.00 | title 1.00 | class 1.00 | ancestors 1.00 | position 0.98 | tag 0.70 | text 0.50 | type 0.00",
+      "key" : "trace.signals",
+      "args" : [ "id 1.00 | data-testid 1.00 | data-qa 1.00 | name 1.00 | aria-label 1.00 | title 1.00 | class 1.00 | ancestors 1.00 | position 0.98 | tag 0.70 | text 0.50 | type 0.00" ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #2  0.31  button#faq-button[data-testid=faq-open-button] \"Frequently Asked Questions\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "candidate",
+      "text" : "   #3  0.28  button#faq-close[data-testid=faq-close-button] \"Close\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "ok",
+      "text" : "   -> Accepted: 0.90 >= 0.60 and 0.59 ahead of the runner-up",
+      "key" : "trace.accept",
+      "args" : [ 0.895655487804878, 0.6, 0.5894022172658933 ]
+    }, {
+      "kind" : "ok",
+      "text" : "4) Validation: [data-testid=\"logout-button\"] matches 1 element(s) on the page -> OK",
+      "key" : "trace.validate",
+      "args" : [ "[data-testid=\"logout-button\"]", 1, {
+        "key" : "trace.validateOk",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "ok",
+      "text" : "[!] HEALED (HEURISTIC, 0.90): [data-testid=\"logout-button\"]  - cost $0.0000 (local) -> test continues, reported as WARN",
+      "key" : "trace.healed",
+      "args" : [ "HEURISTIC", 0.895655487804878, "[data-testid=\"logout-button\"]", "$0.0000", {
+        "key" : "source.HEURISTIC",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "detail",
+      "text" : "    changed: tag 'button' -> 'a', type 'button' -> '', role '' -> 'button', href '' -> '#', text 'Logout' -> 'Sign Out'",
+      "key" : "trace.changes",
+      "args" : [ "tag 'button' -> 'a', type 'button' -> '', role '' -> 'button', href '' -> '#', text 'Logout' -> 'Sign Out'" ]
+    } ],
+    "candidates" : [ {
+      "score" : 0.895655487804878,
+      "element" : "a#logout-button[data-testid=logout-button] \"Sign Out\"",
+      "selector" : "[data-testid=\"logout-button\"]"
+    }, {
+      "score" : 0.3062532705389848,
+      "element" : "button#faq-button[data-testid=faq-open-button] \"Frequently Asked Questions\"",
+      "selector" : "[data-testid=\"faq-open-button\"]"
+    }, {
+      "score" : 0.284200793847096,
+      "element" : "button#faq-close[data-testid=faq-close-button] \"Close\"",
+      "selector" : "[data-testid=\"faq-close-button\"]"
+    } ],
+    "probeWaitMs" : 3008,
+    "healDurationMs" : 92,
+    "reused" : false
+  }, {
+    "id" : 17,
+    "test" : "ContactTest.sendMessage",
+    "key" : "LoginPage.username",
+    "status" : "HEALED",
+    "originalSelector" : "#login-username",
+    "healedSelector" : "[data-testid=\"username-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 16,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8181043621137435,
+    "reasoning" : "Heuristic match 0.82 (margin 0.52 over next candidate). Matching: tag, name, aria-label, title, type, class, label, ancestors, position. Changed: id, data-qa.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:01.466669900Z",
+    "originalElement" : "input#login-username[data-testid=login-username-input]",
+    "healedElement" : "input#user-name[data-testid=username-input]",
+    "changes" : {
+      "id" : [ "login-username", "user-name" ],
+      "data-testid" : [ "login-username-input", "username-input" ],
+      "data-qa" : [ "username-field", "" ],
+      "placeholder" : [ "Enter your username", "Email or username" ]
+    },
+    "screenshot" : "screenshots/heal-22568-1.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 18,
+    "test" : "ContactTest.sendMessage",
+    "key" : "LoginPage.password",
+    "status" : "HEALED",
+    "originalSelector" : "input[name='password']",
+    "healedSelector" : "[data-testid=\"login-password-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 17,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8236581337737408,
+    "reasoning" : "Heuristic match 0.82 (margin 0.54 over next candidate). Matching: tag, id, data-testid, aria-label, placeholder, title, type, label, ancestors, position. Changed: data-qa, name, class.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:01.517242Z",
+    "originalElement" : "input#login-password[data-testid=login-password-input]",
+    "healedElement" : "input#login-password[data-testid=login-password-input]",
+    "changes" : {
+      "data-qa" : [ "password-field", "pwd" ],
+      "name" : [ "password", "pass" ],
+      "class" : [ "form-input input-password", "form-control pwd-field" ]
+    },
+    "screenshot" : "screenshots/heal-22568-2.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 19,
+    "test" : "ContactTest.sendMessage",
+    "key" : "LoginPage.loginButton",
+    "status" : "HEALED",
+    "originalSelector" : "[data-testid='login-submit-button']",
+    "healedSelector" : "[data-testid=\"signin-button\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 18,
+    "source" : "HEURISTIC",
+    "confidence" : 0.6916303034371643,
+    "reasoning" : "Heuristic match 0.69 (margin 0.42 over next candidate). Matching: tag, data-qa, name, type, class, position. Changed: id, data-testid.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:01.550359500Z",
+    "originalElement" : "button#login-button[data-testid=login-submit-button] \"Sign In\"",
+    "healedElement" : "button#btn-signin[data-testid=signin-button] \"Log In\"",
+    "changes" : {
+      "id" : [ "login-button", "btn-signin" ],
+      "data-testid" : [ "login-submit-button", "signin-button" ],
+      "aria-label" : [ "Sign in", "Log in" ],
+      "title" : [ "Sign in", "Log in" ],
+      "text" : [ "Sign In", "Log In" ]
+    },
+    "screenshot" : "screenshots/heal-22568-3.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 20,
+    "test" : "ContactTest.sendMessage",
+    "key" : "ContactPage.email",
+    "status" : "HEALED",
+    "originalSelector" : "#contact-email",
+    "healedSelector" : "[data-testid=\"email-field\"]",
+    "sourceFile" : "com/shoplab/tests/pages/ContactPage.java",
+    "sourceLine" : 19,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8190573978298347,
+    "reasoning" : "Heuristic match 0.82 (margin 0.37 over next candidate). Matching: tag, data-qa, name, aria-label, placeholder, title, type, class, label, ancestors, position. Changed: id, data-testid.",
+    "pageUrl" : "http://localhost:8080/contact",
+    "timestamp" : "2026-09-28T11:57:04.924176Z",
+    "originalElement" : "input#contact-email[data-testid=contact-email-input]",
+    "healedElement" : "input#email-address[data-testid=email-field]",
+    "changes" : {
+      "id" : [ "contact-email", "email-address" ],
+      "data-testid" : [ "contact-email-input", "email-field" ]
+    },
+    "screenshot" : "screenshots/heal-22568-20.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "trace" : [ {
+      "kind" : "title",
+      "text" : "---- ContactPage.email ---------------------------------------",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "error",
+      "text" : "[X] Selector not found: #contact-email  (waited 3013 ms)",
+      "key" : "trace.notFound",
+      "args" : [ "#contact-email", 3013 ]
+    }, {
+      "kind" : "info",
+      "text" : "1) Cache: no entry",
+      "key" : "trace.cacheMiss",
+      "args" : [ ]
+    }, {
+      "kind" : "info",
+      "text" : "2) Local heuristic: compared 73 candidates with the fingerprint (threshold 0.60, margin 0.08)  [free]",
+      "key" : "trace.heuristic",
+      "args" : [ 73, 0.6, 0.08 ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #1  0.82  input#email-address[data-testid=email-field]",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "detail",
+      "text" : "        signals: tag 1.00 | data-qa 1.00 | name 1.00 | aria-label 1.00 | placeholder 1.00 | title 1.00 | type 1.00 | class 1.00 | label 1.00 | ancestors 1.00 | position 0.99 | id 0.33 | data-testid 0.28",
+      "key" : "trace.signals",
+      "args" : [ "tag 1.00 | data-qa 1.00 | name 1.00 | aria-label 1.00 | placeholder 1.00 | title 1.00 | type 1.00 | class 1.00 | label 1.00 | ancestors 1.00 | position 0.99 | id 0.33 | data-testid 0.28" ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #2  0.45  input#pref-email[data-testid=contact-pref-email]",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "candidate",
+      "text" : "   #3  0.41  input#contact-name[data-testid=contact-name-input]",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "ok",
+      "text" : "   -> Accepted: 0.82 >= 0.60 and 0.37 ahead of the runner-up",
+      "key" : "trace.accept",
+      "args" : [ 0.8190573978298347, 0.6, 0.37027508005088483 ]
+    }, {
+      "kind" : "ok",
+      "text" : "4) Validation: [data-testid=\"email-field\"] matches 1 element(s) on the page -> OK",
+      "key" : "trace.validate",
+      "args" : [ "[data-testid=\"email-field\"]", 1, {
+        "key" : "trace.validateOk",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "ok",
+      "text" : "[!] HEALED (HEURISTIC, 0.82): [data-testid=\"email-field\"]  - cost $0.0000 (local) -> test continues, reported as WARN",
+      "key" : "trace.healed",
+      "args" : [ "HEURISTIC", 0.8190573978298347, "[data-testid=\"email-field\"]", "$0.0000", {
+        "key" : "source.HEURISTIC",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "detail",
+      "text" : "    changed: id 'contact-email' -> 'email-address', data-testid 'contact-email-input' -> 'email-field'",
+      "key" : "trace.changes",
+      "args" : [ "id 'contact-email' -> 'email-address', data-testid 'contact-email-input' -> 'email-field'" ]
+    } ],
+    "candidates" : [ {
+      "score" : 0.8190573978298347,
+      "element" : "input#email-address[data-testid=email-field]",
+      "selector" : "[data-testid=\"email-field\"]"
+    }, {
+      "score" : 0.44878231777894984,
+      "element" : "input#pref-email[data-testid=contact-pref-email]",
+      "selector" : "[data-testid=\"contact-pref-email\"]"
+    }, {
+      "score" : 0.4059262761246222,
+      "element" : "input#contact-name[data-testid=contact-name-input]",
+      "selector" : "[data-testid=\"contact-name-input\"]"
+    } ],
+    "probeWaitMs" : 3013,
+    "healDurationMs" : 111,
+    "reused" : false
+  }, {
+    "id" : 21,
+    "test" : "ContactTest.sendMessage",
+    "key" : "ContactPage.submit",
+    "status" : "HEALED",
+    "originalSelector" : "button[data-qa='send-message']",
+    "healedSelector" : "[data-testid=\"contact-submit-button\"]",
+    "sourceFile" : "com/shoplab/tests/pages/ContactPage.java",
+    "sourceLine" : 23,
+    "source" : "HEURISTIC",
+    "confidence" : 0.7876524390243903,
+    "reasoning" : "Heuristic match 0.79 (margin 0.39 over next candidate). Matching: id, data-testid, name, aria-label, class, ancestors, position. Changed: data-qa, type.",
+    "pageUrl" : "http://localhost:8080/contact",
+    "timestamp" : "2026-09-28T11:57:08.447510200Z",
+    "originalElement" : "button#contact-submit[data-testid=contact-submit-button] \"Send\"",
+    "healedElement" : "a#contact-submit[data-testid=contact-submit-button] \"Send Message\"",
+    "changes" : {
+      "tag" : [ "button", "a" ],
+      "data-qa" : [ "send-message", "submit" ],
+      "title" : [ "Send", "Send Message" ],
+      "type" : [ "submit", "" ],
+      "role" : [ "", "button" ],
+      "href" : [ "", "#" ],
+      "text" : [ "Send", "Send Message" ]
+    },
+    "screenshot" : "screenshots/heal-22568-21.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "trace" : [ {
+      "kind" : "title",
+      "text" : "---- ContactPage.submit --------------------------------------",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "error",
+      "text" : "[X] Selector not found: button[data-qa='send-message']  (waited 3015 ms)",
+      "key" : "trace.notFound",
+      "args" : [ "button[data-qa='send-message']", 3015 ]
+    }, {
+      "kind" : "info",
+      "text" : "1) Cache: no entry",
+      "key" : "trace.cacheMiss",
+      "args" : [ ]
+    }, {
+      "kind" : "info",
+      "text" : "2) Local heuristic: compared 73 candidates with the fingerprint (threshold 0.60, margin 0.08)  [free]",
+      "key" : "trace.heuristic",
+      "args" : [ 73, 0.6, 0.08 ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #1  0.79  a#contact-submit[data-testid=contact-submit-button] \"Send Message\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "detail",
+      "text" : "        signals: id 1.00 | data-testid 1.00 | name 1.00 | aria-label 1.00 | class 1.00 | ancestors 1.00 | position 0.99 | tag 0.70 | title 0.50 | text 0.50 | data-qa 0.15 | type 0.00",
+      "key" : "trace.signals",
+      "args" : [ "id 1.00 | data-testid 1.00 | name 1.00 | aria-label 1.00 | class 1.00 | ancestors 1.00 | position 0.99 | tag 0.70 | title 0.50 | text 0.50 | data-qa 0.15 | type 0.00" ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #2  0.40  button#contact-clear[data-testid=contact-clear-button] \"Clear\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "candidate",
+      "text" : "   #3  0.32  textarea#contact-message[data-testid=contact-message-input]",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "ok",
+      "text" : "   -> Accepted: 0.79 >= 0.60 and 0.39 ahead of the runner-up",
+      "key" : "trace.accept",
+      "args" : [ 0.7876524390243903, 0.6, 0.3852381389566399 ]
+    }, {
+      "kind" : "ok",
+      "text" : "4) Validation: [data-testid=\"contact-submit-button\"] matches 1 element(s) on the page -> OK",
+      "key" : "trace.validate",
+      "args" : [ "[data-testid=\"contact-submit-button\"]", 1, {
+        "key" : "trace.validateOk",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "ok",
+      "text" : "[!] HEALED (HEURISTIC, 0.79): [data-testid=\"contact-submit-button\"]  - cost $0.0000 (local) -> test continues, reported as WARN",
+      "key" : "trace.healed",
+      "args" : [ "HEURISTIC", 0.7876524390243903, "[data-testid=\"contact-submit-button\"]", "$0.0000", {
+        "key" : "source.HEURISTIC",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "detail",
+      "text" : "    changed: tag 'button' -> 'a', data-qa 'send-message' -> 'submit', title 'Send' -> 'Send Message', type 'submit' -> '', role '' -> 'button', href '' -> '#', text 'Send' -> 'Send Message'",
+      "key" : "trace.changes",
+      "args" : [ "tag 'button' -> 'a', data-qa 'send-message' -> 'submit', title 'Send' -> 'Send Message', type 'submit' -> '', role '' -> 'button', href '' -> '#', text 'Send' -> 'Send Message'" ]
+    } ],
+    "candidates" : [ {
+      "score" : 0.7876524390243903,
+      "element" : "a#contact-submit[data-testid=contact-submit-button] \"Send Message\"",
+      "selector" : "[data-testid=\"contact-submit-button\"]"
+    }, {
+      "score" : 0.4024143000677504,
+      "element" : "button#contact-clear[data-testid=contact-clear-button] \"Clear\"",
+      "selector" : "[data-testid=\"contact-clear-button\"]"
+    }, {
+      "score" : 0.3247894889663183,
+      "element" : "textarea#contact-message[data-testid=contact-message-input]",
+      "selector" : "[data-testid=\"contact-message-input\"]"
+    } ],
+    "probeWaitMs" : 3015,
+    "healDurationMs" : 95,
+    "reused" : false
+  }, {
+    "id" : 22,
+    "test" : "ContactTest.emptyFormShowsErrors",
+    "key" : "LoginPage.username",
+    "status" : "HEALED",
+    "originalSelector" : "#login-username",
+    "healedSelector" : "[data-testid=\"username-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 16,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8181043621137435,
+    "reasoning" : "Heuristic match 0.82 (margin 0.52 over next candidate). Matching: tag, name, aria-label, title, type, class, label, ancestors, position. Changed: id, data-qa.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:09.347092700Z",
+    "originalElement" : "input#login-username[data-testid=login-username-input]",
+    "healedElement" : "input#user-name[data-testid=username-input]",
+    "changes" : {
+      "id" : [ "login-username", "user-name" ],
+      "data-testid" : [ "login-username-input", "username-input" ],
+      "data-qa" : [ "username-field", "" ],
+      "placeholder" : [ "Enter your username", "Email or username" ]
+    },
+    "screenshot" : "screenshots/heal-22568-1.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 23,
+    "test" : "ContactTest.emptyFormShowsErrors",
+    "key" : "LoginPage.password",
+    "status" : "HEALED",
+    "originalSelector" : "input[name='password']",
+    "healedSelector" : "[data-testid=\"login-password-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 17,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8236581337737408,
+    "reasoning" : "Heuristic match 0.82 (margin 0.54 over next candidate). Matching: tag, id, data-testid, aria-label, placeholder, title, type, label, ancestors, position. Changed: data-qa, name, class.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:09.407045900Z",
+    "originalElement" : "input#login-password[data-testid=login-password-input]",
+    "healedElement" : "input#login-password[data-testid=login-password-input]",
+    "changes" : {
+      "data-qa" : [ "password-field", "pwd" ],
+      "name" : [ "password", "pass" ],
+      "class" : [ "form-input input-password", "form-control pwd-field" ]
+    },
+    "screenshot" : "screenshots/heal-22568-2.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 24,
+    "test" : "ContactTest.emptyFormShowsErrors",
+    "key" : "LoginPage.loginButton",
+    "status" : "HEALED",
+    "originalSelector" : "[data-testid='login-submit-button']",
+    "healedSelector" : "[data-testid=\"signin-button\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 18,
+    "source" : "HEURISTIC",
+    "confidence" : 0.6916303034371643,
+    "reasoning" : "Heuristic match 0.69 (margin 0.42 over next candidate). Matching: tag, data-qa, name, type, class, position. Changed: id, data-testid.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:09.454241Z",
+    "originalElement" : "button#login-button[data-testid=login-submit-button] \"Sign In\"",
+    "healedElement" : "button#btn-signin[data-testid=signin-button] \"Log In\"",
+    "changes" : {
+      "id" : [ "login-button", "btn-signin" ],
+      "data-testid" : [ "login-submit-button", "signin-button" ],
+      "aria-label" : [ "Sign in", "Log in" ],
+      "title" : [ "Sign in", "Log in" ],
+      "text" : [ "Sign In", "Log In" ]
+    },
+    "screenshot" : "screenshots/heal-22568-3.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 25,
+    "test" : "ContactTest.emptyFormShowsErrors",
+    "key" : "ContactPage.submit",
+    "status" : "HEALED",
+    "originalSelector" : "button[data-qa='send-message']",
+    "healedSelector" : "[data-testid=\"contact-submit-button\"]",
+    "sourceFile" : "com/shoplab/tests/pages/ContactPage.java",
+    "sourceLine" : 23,
+    "source" : "HEURISTIC",
+    "confidence" : 0.7876524390243903,
+    "reasoning" : "Heuristic match 0.79 (margin 0.39 over next candidate). Matching: id, data-testid, name, aria-label, class, ancestors, position. Changed: data-qa, type.",
+    "pageUrl" : "http://localhost:8080/contact",
+    "timestamp" : "2026-09-28T11:57:09.684004300Z",
+    "originalElement" : "button#contact-submit[data-testid=contact-submit-button] \"Send\"",
+    "healedElement" : "a#contact-submit[data-testid=contact-submit-button] \"Send Message\"",
+    "changes" : {
+      "tag" : [ "button", "a" ],
+      "data-qa" : [ "send-message", "submit" ],
+      "title" : [ "Send", "Send Message" ],
+      "type" : [ "submit", "" ],
+      "role" : [ "", "button" ],
+      "href" : [ "", "#" ],
+      "text" : [ "Send", "Send Message" ]
+    },
+    "screenshot" : "screenshots/heal-22568-21.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 26,
+    "test" : "LoginTest.invalidPasswordShowsError",
+    "key" : "LoginPage.username",
+    "status" : "HEALED",
+    "originalSelector" : "#login-username",
+    "healedSelector" : "[data-testid=\"username-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 16,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8181043621137435,
+    "reasoning" : "Heuristic match 0.82 (margin 0.52 over next candidate). Matching: tag, name, aria-label, title, type, class, label, ancestors, position. Changed: id, data-qa.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:14.021099400Z",
+    "originalElement" : "input#login-username[data-testid=login-username-input]",
+    "healedElement" : "input#user-name[data-testid=username-input]",
+    "changes" : {
+      "id" : [ "login-username", "user-name" ],
+      "data-testid" : [ "login-username-input", "username-input" ],
+      "data-qa" : [ "username-field", "" ],
+      "placeholder" : [ "Enter your username", "Email or username" ]
+    },
+    "screenshot" : "screenshots/heal-22568-1.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 27,
+    "test" : "LoginTest.invalidPasswordShowsError",
+    "key" : "LoginPage.password",
+    "status" : "HEALED",
+    "originalSelector" : "input[name='password']",
+    "healedSelector" : "[data-testid=\"login-password-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 17,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8236581337737408,
+    "reasoning" : "Heuristic match 0.82 (margin 0.54 over next candidate). Matching: tag, id, data-testid, aria-label, placeholder, title, type, label, ancestors, position. Changed: data-qa, name, class.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:14.090362800Z",
+    "originalElement" : "input#login-password[data-testid=login-password-input]",
+    "healedElement" : "input#login-password[data-testid=login-password-input]",
+    "changes" : {
+      "data-qa" : [ "password-field", "pwd" ],
+      "name" : [ "password", "pass" ],
+      "class" : [ "form-input input-password", "form-control pwd-field" ]
+    },
+    "screenshot" : "screenshots/heal-22568-2.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 28,
+    "test" : "LoginTest.invalidPasswordShowsError",
+    "key" : "LoginPage.loginButton",
+    "status" : "HEALED",
+    "originalSelector" : "[data-testid='login-submit-button']",
+    "healedSelector" : "[data-testid=\"signin-button\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 18,
+    "source" : "HEURISTIC",
+    "confidence" : 0.6916303034371643,
+    "reasoning" : "Heuristic match 0.69 (margin 0.42 over next candidate). Matching: tag, data-qa, name, type, class, position. Changed: id, data-testid.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:14.128822900Z",
+    "originalElement" : "button#login-button[data-testid=login-submit-button] \"Sign In\"",
+    "healedElement" : "button#btn-signin[data-testid=signin-button] \"Log In\"",
+    "changes" : {
+      "id" : [ "login-button", "btn-signin" ],
+      "data-testid" : [ "login-submit-button", "signin-button" ],
+      "aria-label" : [ "Sign in", "Log in" ],
+      "title" : [ "Sign in", "Log in" ],
+      "text" : [ "Sign In", "Log In" ]
+    },
+    "screenshot" : "screenshots/heal-22568-3.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 29,
+    "test" : "LoginTest.validLoginOpensProducts",
+    "key" : "LoginPage.username",
+    "status" : "HEALED",
+    "originalSelector" : "#login-username",
+    "healedSelector" : "[data-testid=\"username-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 16,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8181043621137435,
+    "reasoning" : "Heuristic match 0.82 (margin 0.52 over next candidate). Matching: tag, name, aria-label, title, type, class, label, ancestors, position. Changed: id, data-qa.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:15.634299500Z",
+    "originalElement" : "input#login-username[data-testid=login-username-input]",
+    "healedElement" : "input#user-name[data-testid=username-input]",
+    "changes" : {
+      "id" : [ "login-username", "user-name" ],
+      "data-testid" : [ "login-username-input", "username-input" ],
+      "data-qa" : [ "username-field", "" ],
+      "placeholder" : [ "Enter your username", "Email or username" ]
+    },
+    "screenshot" : "screenshots/heal-22568-1.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 30,
+    "test" : "LoginTest.validLoginOpensProducts",
+    "key" : "LoginPage.password",
+    "status" : "HEALED",
+    "originalSelector" : "input[name='password']",
+    "healedSelector" : "[data-testid=\"login-password-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 17,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8236581337737408,
+    "reasoning" : "Heuristic match 0.82 (margin 0.54 over next candidate). Matching: tag, id, data-testid, aria-label, placeholder, title, type, label, ancestors, position. Changed: data-qa, name, class.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:15.691758200Z",
+    "originalElement" : "input#login-password[data-testid=login-password-input]",
+    "healedElement" : "input#login-password[data-testid=login-password-input]",
+    "changes" : {
+      "data-qa" : [ "password-field", "pwd" ],
+      "name" : [ "password", "pass" ],
+      "class" : [ "form-input input-password", "form-control pwd-field" ]
+    },
+    "screenshot" : "screenshots/heal-22568-2.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 31,
+    "test" : "LoginTest.validLoginOpensProducts",
+    "key" : "LoginPage.loginButton",
+    "status" : "HEALED",
+    "originalSelector" : "[data-testid='login-submit-button']",
+    "healedSelector" : "[data-testid=\"signin-button\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 18,
+    "source" : "HEURISTIC",
+    "confidence" : 0.6916303034371643,
+    "reasoning" : "Heuristic match 0.69 (margin 0.42 over next candidate). Matching: tag, data-qa, name, type, class, position. Changed: id, data-testid.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:15.725701700Z",
+    "originalElement" : "button#login-button[data-testid=login-submit-button] \"Sign In\"",
+    "healedElement" : "button#btn-signin[data-testid=signin-button] \"Log In\"",
+    "changes" : {
+      "id" : [ "login-button", "btn-signin" ],
+      "data-testid" : [ "login-submit-button", "signin-button" ],
+      "aria-label" : [ "Sign in", "Log in" ],
+      "title" : [ "Sign in", "Log in" ],
+      "text" : [ "Sign In", "Log In" ]
+    },
+    "screenshot" : "screenshots/heal-22568-3.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 32,
+    "test" : "ProductDetailTest.addWithVariantAndQuantity",
+    "key" : "LoginPage.username",
+    "status" : "HEALED",
+    "originalSelector" : "#login-username",
+    "healedSelector" : "[data-testid=\"username-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 16,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8181043621137435,
+    "reasoning" : "Heuristic match 0.82 (margin 0.52 over next candidate). Matching: tag, name, aria-label, title, type, class, label, ancestors, position. Changed: id, data-qa.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:20.103176400Z",
+    "originalElement" : "input#login-username[data-testid=login-username-input]",
+    "healedElement" : "input#user-name[data-testid=username-input]",
+    "changes" : {
+      "id" : [ "login-username", "user-name" ],
+      "data-testid" : [ "login-username-input", "username-input" ],
+      "data-qa" : [ "username-field", "" ],
+      "placeholder" : [ "Enter your username", "Email or username" ]
+    },
+    "screenshot" : "screenshots/heal-22568-1.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 33,
+    "test" : "ProductDetailTest.addWithVariantAndQuantity",
+    "key" : "LoginPage.password",
+    "status" : "HEALED",
+    "originalSelector" : "input[name='password']",
+    "healedSelector" : "[data-testid=\"login-password-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 17,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8236581337737408,
+    "reasoning" : "Heuristic match 0.82 (margin 0.54 over next candidate). Matching: tag, id, data-testid, aria-label, placeholder, title, type, label, ancestors, position. Changed: data-qa, name, class.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:20.182033100Z",
+    "originalElement" : "input#login-password[data-testid=login-password-input]",
+    "healedElement" : "input#login-password[data-testid=login-password-input]",
+    "changes" : {
+      "data-qa" : [ "password-field", "pwd" ],
+      "name" : [ "password", "pass" ],
+      "class" : [ "form-input input-password", "form-control pwd-field" ]
+    },
+    "screenshot" : "screenshots/heal-22568-2.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 34,
+    "test" : "ProductDetailTest.addWithVariantAndQuantity",
+    "key" : "LoginPage.loginButton",
+    "status" : "HEALED",
+    "originalSelector" : "[data-testid='login-submit-button']",
+    "healedSelector" : "[data-testid=\"signin-button\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 18,
+    "source" : "HEURISTIC",
+    "confidence" : 0.6916303034371643,
+    "reasoning" : "Heuristic match 0.69 (margin 0.42 over next candidate). Matching: tag, data-qa, name, type, class, position. Changed: id, data-testid.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:20.221519200Z",
+    "originalElement" : "button#login-button[data-testid=login-submit-button] \"Sign In\"",
+    "healedElement" : "button#btn-signin[data-testid=signin-button] \"Log In\"",
+    "changes" : {
+      "id" : [ "login-button", "btn-signin" ],
+      "data-testid" : [ "login-submit-button", "signin-button" ],
+      "aria-label" : [ "Sign in", "Log in" ],
+      "title" : [ "Sign in", "Log in" ],
+      "text" : [ "Sign In", "Log In" ]
+    },
+    "screenshot" : "screenshots/heal-22568-3.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 35,
+    "test" : "ProductDetailTest.addWithVariantAndQuantity",
+    "key" : "ProductDetailPage.sizeSelect",
+    "status" : "HEALED",
+    "originalSelector" : "[data-testid='size-select']",
+    "healedSelector" : "[data-testid=\"variant-size-dropdown\"]",
+    "sourceFile" : "com/shoplab/tests/pages/ProductDetailPage.java",
+    "sourceLine" : 18,
+    "source" : "HEURISTIC",
+    "confidence" : 0.7925268817204301,
+    "reasoning" : "Heuristic match 0.79 (margin 0.53 over next candidate). Matching: tag, data-qa, name, aria-label, title, class, label, ancestors, position. Changed: id, data-testid.",
+    "pageUrl" : "http://localhost:8080/products/4",
+    "timestamp" : "2026-09-28T11:57:23.776824800Z",
+    "originalElement" : "select#size-select[data-testid=size-select]",
+    "healedElement" : "select#variant-size[data-testid=variant-size-dropdown]",
+    "changes" : {
+      "id" : [ "size-select", "variant-size" ],
+      "data-testid" : [ "size-select", "variant-size-dropdown" ]
+    },
+    "screenshot" : "screenshots/heal-22568-35.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "trace" : [ {
+      "kind" : "title",
+      "text" : "---- ProductDetailPage.sizeSelect ----------------------------",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "error",
+      "text" : "[X] Selector not found: [data-testid='size-select']  (waited 3017 ms)",
+      "key" : "trace.notFound",
+      "args" : [ "[data-testid='size-select']", 3017 ]
+    }, {
+      "kind" : "info",
+      "text" : "1) Cache: no entry",
+      "key" : "trace.cacheMiss",
+      "args" : [ ]
+    }, {
+      "kind" : "info",
+      "text" : "2) Local heuristic: compared 55 candidates with the fingerprint (threshold 0.60, margin 0.08)  [free]",
+      "key" : "trace.heuristic",
+      "args" : [ 55, 0.6, 0.08 ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #1  0.79  select#variant-size[data-testid=variant-size-dropdown]",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "detail",
+      "text" : "        signals: tag 1.00 | data-qa 1.00 | name 1.00 | aria-label 1.00 | title 1.00 | class 1.00 | label 1.00 | ancestors 1.00 | position 0.99 | id 0.33 | data-testid 0.25",
+      "key" : "trace.signals",
+      "args" : [ "tag 1.00 | data-qa 1.00 | name 1.00 | aria-label 1.00 | title 1.00 | class 1.00 | label 1.00 | ancestors 1.00 | position 0.99 | id 0.33 | data-testid 0.25" ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #2  0.33  label \"Size\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "candidate",
+      "text" : "   #3  0.30  div#size-error[data-testid=size-error-message] \"Please select a size.\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "ok",
+      "text" : "   -> Accepted: 0.79 >= 0.60 and 0.46 ahead of the runner-up",
+      "key" : "trace.accept",
+      "args" : [ 0.7925268817204301, 0.6, 0.46169354838709675 ]
+    }, {
+      "kind" : "ok",
+      "text" : "4) Validation: [data-testid=\"variant-size-dropdown\"] matches 1 element(s) on the page -> OK",
+      "key" : "trace.validate",
+      "args" : [ "[data-testid=\"variant-size-dropdown\"]", 1, {
+        "key" : "trace.validateOk",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "ok",
+      "text" : "[!] HEALED (HEURISTIC, 0.79): [data-testid=\"variant-size-dropdown\"]  - cost $0.0000 (local) -> test continues, reported as WARN",
+      "key" : "trace.healed",
+      "args" : [ "HEURISTIC", 0.7925268817204301, "[data-testid=\"variant-size-dropdown\"]", "$0.0000", {
+        "key" : "source.HEURISTIC",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "detail",
+      "text" : "    changed: id 'size-select' -> 'variant-size', data-testid 'size-select' -> 'variant-size-dropdown'",
+      "key" : "trace.changes",
+      "args" : [ "id 'size-select' -> 'variant-size', data-testid 'size-select' -> 'variant-size-dropdown'" ]
+    } ],
+    "candidates" : [ {
+      "score" : 0.7925268817204301,
+      "element" : "select#variant-size[data-testid=variant-size-dropdown]",
+      "selector" : "[data-testid=\"variant-size-dropdown\"]"
+    }, {
+      "score" : 0.3308333333333333,
+      "element" : "label \"Size\"",
+      "selector" : "[data-testid=\"size-options\"] > label"
+    }, {
+      "score" : 0.3045185583647122,
+      "element" : "div#size-error[data-testid=size-error-message] \"Please select a size.\"",
+      "selector" : "[data-testid=\"size-error-message\"]"
+    } ],
+    "probeWaitMs" : 3017,
+    "healDurationMs" : 121,
+    "reused" : false
+  }, {
+    "id" : 36,
+    "test" : "ProductDetailTest.addWithVariantAndQuantity",
+    "key" : "ProductDetailPage.addToCart",
+    "status" : "HEALED",
+    "originalSelector" : "button:has-text('Add to Cart')",
+    "healedSelector" : "[data-testid=\"product-detail-add-to-cart\"]",
+    "sourceFile" : "com/shoplab/tests/pages/ProductDetailPage.java",
+    "sourceLine" : 21,
+    "source" : "HEURISTIC",
+    "confidence" : 0.9670860389610391,
+    "reasoning" : "Heuristic match 0.97 (margin 0.71 over next candidate). Matching: tag, id, data-testid, data-qa, name, aria-label, title, type, class, ancestors, position. Changed: -.",
+    "pageUrl" : "http://localhost:8080/products/4",
+    "timestamp" : "2026-09-28T11:57:27.130172700Z",
+    "originalElement" : "button#detail-add-to-cart[data-testid=product-detail-add-to-cart] \"Add to Cart\"",
+    "healedElement" : "button#detail-add-to-cart[data-testid=product-detail-add-to-cart] \"Add to Bag\"",
+    "changes" : {
+      "text" : [ "Add to Cart", "Add to Bag" ]
+    },
+    "screenshot" : "screenshots/heal-22568-36.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "trace" : [ {
+      "kind" : "title",
+      "text" : "---- ProductDetailPage.addToCart -----------------------------",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "error",
+      "text" : "[X] Selector not found: button:has-text('Add to Cart')  (waited 3012 ms)",
+      "key" : "trace.notFound",
+      "args" : [ "button:has-text('Add to Cart')", 3012 ]
+    }, {
+      "kind" : "info",
+      "text" : "1) Cache: no entry",
+      "key" : "trace.cacheMiss",
+      "args" : [ ]
+    }, {
+      "kind" : "info",
+      "text" : "2) Local heuristic: compared 55 candidates with the fingerprint (threshold 0.60, margin 0.08)  [free]",
+      "key" : "trace.heuristic",
+      "args" : [ 55, 0.6, 0.08 ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #1  0.97  button#detail-add-to-cart[data-testid=product-detail-add-to-cart] \"Add to Bag\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "detail",
+      "text" : "        signals: tag 1.00 | id 1.00 | data-testid 1.00 | data-qa 1.00 | name 1.00 | aria-label 1.00 | title 1.00 | type 1.00 | class 1.00 | ancestors 1.00 | position 0.99 | text 0.73",
+      "key" : "trace.signals",
+      "args" : [ "tag 1.00 | id 1.00 | data-testid 1.00 | data-qa 1.00 | name 1.00 | aria-label 1.00 | title 1.00 | type 1.00 | class 1.00 | ancestors 1.00 | position 0.99 | text 0.73" ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #2  0.32  span#detail-category[data-testid=product-detail-category] \"SPORTS\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "candidate",
+      "text" : "   #3  0.29  h1#detail-name[data-testid=product-detail-name] \"Running Shoes\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "ok",
+      "text" : "   -> Accepted: 0.97 >= 0.60 and 0.65 ahead of the runner-up",
+      "key" : "trace.accept",
+      "args" : [ 0.9670860389610391, 0.6, 0.6481480614293116 ]
+    }, {
+      "kind" : "ok",
+      "text" : "4) Validation: [data-testid=\"product-detail-add-to-cart\"] matches 1 element(s) on the page -> OK",
+      "key" : "trace.validate",
+      "args" : [ "[data-testid=\"product-detail-add-to-cart\"]", 1, {
+        "key" : "trace.validateOk",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "ok",
+      "text" : "[!] HEALED (HEURISTIC, 0.97): [data-testid=\"product-detail-add-to-cart\"]  - cost $0.0000 (local) -> test continues, reported as WARN",
+      "key" : "trace.healed",
+      "args" : [ "HEURISTIC", 0.9670860389610391, "[data-testid=\"product-detail-add-to-cart\"]", "$0.0000", {
+        "key" : "source.HEURISTIC",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "detail",
+      "text" : "    changed: text 'Add to Cart' -> 'Add to Bag'",
+      "key" : "trace.changes",
+      "args" : [ "text 'Add to Cart' -> 'Add to Bag'" ]
+    } ],
+    "candidates" : [ {
+      "score" : 0.9670860389610391,
+      "element" : "button#detail-add-to-cart[data-testid=product-detail-add-to-cart] \"Add to Bag\"",
+      "selector" : "[data-testid=\"product-detail-add-to-cart\"]"
+    }, {
+      "score" : 0.31893797753172753,
+      "element" : "span#detail-category[data-testid=product-detail-category] \"SPORTS\"",
+      "selector" : "[data-testid=\"product-detail-category\"]"
+    }, {
+      "score" : 0.2878561253561253,
+      "element" : "h1#detail-name[data-testid=product-detail-name] \"Running Shoes\"",
+      "selector" : "[data-testid=\"product-detail-name\"]"
+    } ],
+    "probeWaitMs" : 3012,
+    "healDurationMs" : 93,
+    "reused" : false
+  }, {
+    "id" : 37,
+    "test" : "ProductDetailTest.addWithVariantAndQuantity",
+    "key" : "Header.cartBadge",
+    "status" : "HEALED",
+    "originalSelector" : "#cart-count",
+    "healedSelector" : "[data-testid=\"basket-badge\"]",
+    "sourceFile" : "com/shoplab/tests/pages/Header.java",
+    "sourceLine" : 14,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8387037037037037,
+    "reasoning" : "Heuristic match 0.84 (margin 0.60 over next candidate). Matching: tag, data-qa, aria-label, class, text, ancestors, position. Changed: data-testid.",
+    "pageUrl" : "http://localhost:8080/products/4",
+    "timestamp" : "2026-09-28T11:57:30.399371900Z",
+    "originalElement" : "span#cart-count[data-testid=cart-count-badge] \"2\"",
+    "healedElement" : "span#basket-count[data-testid=basket-badge] \"2\"",
+    "changes" : {
+      "id" : [ "cart-count", "basket-count" ],
+      "data-testid" : [ "cart-count-badge", "basket-badge" ]
+    },
+    "screenshot" : "screenshots/heal-22568-37.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "trace" : [ {
+      "kind" : "title",
+      "text" : "---- Header.cartBadge ----------------------------------------",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "error",
+      "text" : "[X] Selector not found: #cart-count  (waited 3016 ms)",
+      "key" : "trace.notFound",
+      "args" : [ "#cart-count", 3016 ]
+    }, {
+      "kind" : "info",
+      "text" : "1) Cache: no entry",
+      "key" : "trace.cacheMiss",
+      "args" : [ ]
+    }, {
+      "kind" : "info",
+      "text" : "2) Local heuristic: compared 55 candidates with the fingerprint (threshold 0.60, margin 0.08)  [free]",
+      "key" : "trace.heuristic",
+      "args" : [ 55, 0.6, 0.08 ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #1  0.84  span#basket-count[data-testid=basket-badge] \"2\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "detail",
+      "text" : "        signals: tag 1.00 | data-qa 1.00 | aria-label 1.00 | class 1.00 | text 1.00 | ancestors 1.00 | position 1.00 | id 0.60 | data-testid 0.45",
+      "key" : "trace.signals",
+      "args" : [ "tag 1.00 | data-qa 1.00 | aria-label 1.00 | class 1.00 | text 1.00 | ancestors 1.00 | position 1.00 | id 0.60 | data-testid 0.45" ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #2  0.35  a#nav-cart[data-testid=nav-cart-link] \"Cart 2\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "candidate",
+      "text" : "   #3  0.24  nav#main-nav[data-testid=main-nav] \"Products Cart 2 Contact\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "ok",
+      "text" : "   -> Accepted: 0.84 >= 0.60 and 0.48 ahead of the runner-up",
+      "key" : "trace.accept",
+      "args" : [ 0.8387037037037037, 0.6, 0.4846812126190663 ]
+    }, {
+      "kind" : "ok",
+      "text" : "4) Validation: [data-testid=\"basket-badge\"] matches 1 element(s) on the page -> OK",
+      "key" : "trace.validate",
+      "args" : [ "[data-testid=\"basket-badge\"]", 1, {
+        "key" : "trace.validateOk",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "ok",
+      "text" : "[!] HEALED (HEURISTIC, 0.84): [data-testid=\"basket-badge\"]  - cost $0.0000 (local) -> test continues, reported as WARN",
+      "key" : "trace.healed",
+      "args" : [ "HEURISTIC", 0.8387037037037037, "[data-testid=\"basket-badge\"]", "$0.0000", {
+        "key" : "source.HEURISTIC",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "detail",
+      "text" : "    changed: id 'cart-count' -> 'basket-count', data-testid 'cart-count-badge' -> 'basket-badge'",
+      "key" : "trace.changes",
+      "args" : [ "id 'cart-count' -> 'basket-count', data-testid 'cart-count-badge' -> 'basket-badge'" ]
+    } ],
+    "candidates" : [ {
+      "score" : 0.8387037037037037,
+      "element" : "span#basket-count[data-testid=basket-badge] \"2\"",
+      "selector" : "[data-testid=\"basket-badge\"]"
+    }, {
+      "score" : 0.3540224910846374,
+      "element" : "a#nav-cart[data-testid=nav-cart-link] \"Cart 2\"",
+      "selector" : "[data-testid=\"nav-cart-link\"]"
+    }, {
+      "score" : 0.23687163670946612,
+      "element" : "nav#main-nav[data-testid=main-nav] \"Products Cart 2 Contact\"",
+      "selector" : "[data-testid=\"main-nav\"]"
+    } ],
+    "probeWaitMs" : 3016,
+    "healDurationMs" : 72,
+    "reused" : false
+  }, {
+    "id" : 38,
+    "test" : "ProductDetailTest.sizeIsRequired",
+    "key" : "LoginPage.username",
+    "status" : "HEALED",
+    "originalSelector" : "#login-username",
+    "healedSelector" : "[data-testid=\"username-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 16,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8181043621137435,
+    "reasoning" : "Heuristic match 0.82 (margin 0.52 over next candidate). Matching: tag, name, aria-label, title, type, class, label, ancestors, position. Changed: id, data-qa.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:31.461232100Z",
+    "originalElement" : "input#login-username[data-testid=login-username-input]",
+    "healedElement" : "input#user-name[data-testid=username-input]",
+    "changes" : {
+      "id" : [ "login-username", "user-name" ],
+      "data-testid" : [ "login-username-input", "username-input" ],
+      "data-qa" : [ "username-field", "" ],
+      "placeholder" : [ "Enter your username", "Email or username" ]
+    },
+    "screenshot" : "screenshots/heal-22568-1.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 39,
+    "test" : "ProductDetailTest.sizeIsRequired",
+    "key" : "LoginPage.password",
+    "status" : "HEALED",
+    "originalSelector" : "input[name='password']",
+    "healedSelector" : "[data-testid=\"login-password-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 17,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8236581337737408,
+    "reasoning" : "Heuristic match 0.82 (margin 0.54 over next candidate). Matching: tag, id, data-testid, aria-label, placeholder, title, type, label, ancestors, position. Changed: data-qa, name, class.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:31.524814700Z",
+    "originalElement" : "input#login-password[data-testid=login-password-input]",
+    "healedElement" : "input#login-password[data-testid=login-password-input]",
+    "changes" : {
+      "data-qa" : [ "password-field", "pwd" ],
+      "name" : [ "password", "pass" ],
+      "class" : [ "form-input input-password", "form-control pwd-field" ]
+    },
+    "screenshot" : "screenshots/heal-22568-2.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 40,
+    "test" : "ProductDetailTest.sizeIsRequired",
+    "key" : "LoginPage.loginButton",
+    "status" : "HEALED",
+    "originalSelector" : "[data-testid='login-submit-button']",
+    "healedSelector" : "[data-testid=\"signin-button\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 18,
+    "source" : "HEURISTIC",
+    "confidence" : 0.6916303034371643,
+    "reasoning" : "Heuristic match 0.69 (margin 0.42 over next candidate). Matching: tag, data-qa, name, type, class, position. Changed: id, data-testid.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:31.574557800Z",
+    "originalElement" : "button#login-button[data-testid=login-submit-button] \"Sign In\"",
+    "healedElement" : "button#btn-signin[data-testid=signin-button] \"Log In\"",
+    "changes" : {
+      "id" : [ "login-button", "btn-signin" ],
+      "data-testid" : [ "login-submit-button", "signin-button" ],
+      "aria-label" : [ "Sign in", "Log in" ],
+      "title" : [ "Sign in", "Log in" ],
+      "text" : [ "Sign In", "Log In" ]
+    },
+    "screenshot" : "screenshots/heal-22568-3.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 41,
+    "test" : "ProductDetailTest.sizeIsRequired",
+    "key" : "ProductDetailPage.addToCart",
+    "status" : "HEALED",
+    "originalSelector" : "button:has-text('Add to Cart')",
+    "healedSelector" : "[data-testid=\"product-detail-add-to-cart\"]",
+    "sourceFile" : "com/shoplab/tests/pages/ProductDetailPage.java",
+    "sourceLine" : 21,
+    "source" : "HEURISTIC",
+    "confidence" : 0.9670860389610391,
+    "reasoning" : "Heuristic match 0.97 (margin 0.71 over next candidate). Matching: tag, id, data-testid, data-qa, name, aria-label, title, type, class, ancestors, position. Changed: -.",
+    "pageUrl" : "http://localhost:8080/products/4",
+    "timestamp" : "2026-09-28T11:57:31.865021700Z",
+    "originalElement" : "button#detail-add-to-cart[data-testid=product-detail-add-to-cart] \"Add to Cart\"",
+    "healedElement" : "button#detail-add-to-cart[data-testid=product-detail-add-to-cart] \"Add to Bag\"",
+    "changes" : {
+      "text" : [ "Add to Cart", "Add to Bag" ]
+    },
+    "screenshot" : "screenshots/heal-22568-36.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 42,
+    "test" : "ProductsTest.searchAndFilter",
+    "key" : "LoginPage.username",
+    "status" : "HEALED",
+    "originalSelector" : "#login-username",
+    "healedSelector" : "[data-testid=\"username-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 16,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8181043621137435,
+    "reasoning" : "Heuristic match 0.82 (margin 0.52 over next candidate). Matching: tag, name, aria-label, title, type, class, label, ancestors, position. Changed: id, data-qa.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:36.284621900Z",
+    "originalElement" : "input#login-username[data-testid=login-username-input]",
+    "healedElement" : "input#user-name[data-testid=username-input]",
+    "changes" : {
+      "id" : [ "login-username", "user-name" ],
+      "data-testid" : [ "login-username-input", "username-input" ],
+      "data-qa" : [ "username-field", "" ],
+      "placeholder" : [ "Enter your username", "Email or username" ]
+    },
+    "screenshot" : "screenshots/heal-22568-1.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 43,
+    "test" : "ProductsTest.searchAndFilter",
+    "key" : "LoginPage.password",
+    "status" : "HEALED",
+    "originalSelector" : "input[name='password']",
+    "healedSelector" : "[data-testid=\"login-password-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 17,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8236581337737408,
+    "reasoning" : "Heuristic match 0.82 (margin 0.54 over next candidate). Matching: tag, id, data-testid, aria-label, placeholder, title, type, label, ancestors, position. Changed: data-qa, name, class.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:36.351487600Z",
+    "originalElement" : "input#login-password[data-testid=login-password-input]",
+    "healedElement" : "input#login-password[data-testid=login-password-input]",
+    "changes" : {
+      "data-qa" : [ "password-field", "pwd" ],
+      "name" : [ "password", "pass" ],
+      "class" : [ "form-input input-password", "form-control pwd-field" ]
+    },
+    "screenshot" : "screenshots/heal-22568-2.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 44,
+    "test" : "ProductsTest.searchAndFilter",
+    "key" : "LoginPage.loginButton",
+    "status" : "HEALED",
+    "originalSelector" : "[data-testid='login-submit-button']",
+    "healedSelector" : "[data-testid=\"signin-button\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 18,
+    "source" : "HEURISTIC",
+    "confidence" : 0.6916303034371643,
+    "reasoning" : "Heuristic match 0.69 (margin 0.42 over next candidate). Matching: tag, data-qa, name, type, class, position. Changed: id, data-testid.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:36.376891Z",
+    "originalElement" : "button#login-button[data-testid=login-submit-button] \"Sign In\"",
+    "healedElement" : "button#btn-signin[data-testid=signin-button] \"Log In\"",
+    "changes" : {
+      "id" : [ "login-button", "btn-signin" ],
+      "data-testid" : [ "login-submit-button", "signin-button" ],
+      "aria-label" : [ "Sign in", "Log in" ],
+      "title" : [ "Sign in", "Log in" ],
+      "text" : [ "Sign In", "Log In" ]
+    },
+    "screenshot" : "screenshots/heal-22568-3.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 45,
+    "test" : "ProductsTest.searchAndFilter",
+    "key" : "ProductsPage.search",
+    "status" : "HEALED",
+    "originalSelector" : "#product-search",
+    "healedSelector" : "[data-testid=\"search-box\"]",
+    "sourceFile" : "com/shoplab/tests/pages/ProductsPage.java",
+    "sourceLine" : 16,
+    "source" : "HEURISTIC",
+    "confidence" : 0.690295358649789,
+    "reasoning" : "Heuristic match 0.69 (margin 0.52 over next candidate). Matching: tag, name, aria-label, title, type, class, ancestors, position. Changed: id, data-testid, data-qa, placeholder.",
+    "pageUrl" : "http://localhost:8080/products",
+    "timestamp" : "2026-09-28T11:57:39.667005Z",
+    "originalElement" : "input#product-search[data-testid=product-search-input]",
+    "healedElement" : "input#search-input[data-testid=search-box]",
+    "changes" : {
+      "id" : [ "product-search", "search-input" ],
+      "data-testid" : [ "product-search-input", "search-box" ],
+      "data-qa" : [ "search-field", "global-search" ],
+      "placeholder" : [ "Search products...", "What are you looking for?" ]
+    },
+    "screenshot" : "screenshots/heal-22568-45.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "trace" : [ {
+      "kind" : "title",
+      "text" : "---- ProductsPage.search -------------------------------------",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "error",
+      "text" : "[X] Selector not found: #product-search  (waited 3006 ms)",
+      "key" : "trace.notFound",
+      "args" : [ "#product-search", 3006 ]
+    }, {
+      "kind" : "info",
+      "text" : "1) Cache: no entry",
+      "key" : "trace.cacheMiss",
+      "args" : [ ]
+    }, {
+      "kind" : "info",
+      "text" : "2) Local heuristic: compared 99 candidates with the fingerprint (threshold 0.60, margin 0.08)  [free]",
+      "key" : "trace.heuristic",
+      "args" : [ 99, 0.6, 0.08 ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #1  0.69  input#search-input[data-testid=search-box]",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "detail",
+      "text" : "        signals: tag 1.00 | name 1.00 | aria-label 1.00 | title 1.00 | type 1.00 | class 1.00 | ancestors 1.00 | position 0.99 | id 0.33 | data-qa 0.33 | data-testid 0.32 | placeholder 0.16",
+      "key" : "trace.signals",
+      "args" : [ "tag 1.00 | name 1.00 | aria-label 1.00 | title 1.00 | type 1.00 | class 1.00 | ancestors 1.00 | position 0.99 | id 0.33 | data-qa 0.33 | data-testid 0.32 | placeholder 0.16" ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #2  0.34  select#sort-select[data-testid=product-sort-select]",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "candidate",
+      "text" : "   #3  0.29  article#product-card-1[data-testid=product-card-1] \"\uD83C\uDFA7 ELECTRONICS Wireless Headphones ₺1,29…\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "ok",
+      "text" : "   -> Accepted: 0.69 >= 0.60 and 0.36 ahead of the runner-up",
+      "key" : "trace.accept",
+      "args" : [ 0.690295358649789, 0.6, 0.35528724595711253 ]
+    }, {
+      "kind" : "ok",
+      "text" : "4) Validation: [data-testid=\"search-box\"] matches 1 element(s) on the page -> OK",
+      "key" : "trace.validate",
+      "args" : [ "[data-testid=\"search-box\"]", 1, {
+        "key" : "trace.validateOk",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "ok",
+      "text" : "[!] HEALED (HEURISTIC, 0.69): [data-testid=\"search-box\"]  - cost $0.0000 (local) -> test continues, reported as WARN",
+      "key" : "trace.healed",
+      "args" : [ "HEURISTIC", 0.690295358649789, "[data-testid=\"search-box\"]", "$0.0000", {
+        "key" : "source.HEURISTIC",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "detail",
+      "text" : "    changed: id 'product-search' -> 'search-input', data-testid 'product-search-input' -> 'search-box', data-qa 'search-field' -> 'global-search', placeholder 'Search products...' -> 'What are you looking for?'",
+      "key" : "trace.changes",
+      "args" : [ "id 'product-search' -> 'search-input', data-testid 'product-search-input' -> 'search-box', data-qa 'search-field' -> 'global-search', placeholder 'Search products...' -> 'What are you looking for?'" ]
+    } ],
+    "candidates" : [ {
+      "score" : 0.690295358649789,
+      "element" : "input#search-input[data-testid=search-box]",
+      "selector" : "[data-testid=\"search-box\"]"
+    }, {
+      "score" : 0.33500811269267644,
+      "element" : "select#sort-select[data-testid=product-sort-select]",
+      "selector" : "[data-testid=\"product-sort-select\"]"
+    }, {
+      "score" : 0.28620383376022474,
+      "element" : "article#product-card-1[data-testid=product-card-1] \"\uD83C\uDFA7 ELECTRONICS Wireless Headphones ₺1,29…\"",
+      "selector" : "[data-testid=\"product-card-1\"]"
+    } ],
+    "probeWaitMs" : 3006,
+    "healDurationMs" : 151,
+    "reused" : false
+  }, {
+    "id" : 46,
+    "test" : "ProductsTest.searchAndFilter",
+    "key" : "ProductsPage.categoryFilter",
+    "status" : "HEALED",
+    "originalSelector" : "[data-testid='category-filter-select']",
+    "healedSelector" : "[data-testid=\"filter-category\"]",
+    "sourceFile" : "com/shoplab/tests/pages/ProductsPage.java",
+    "sourceLine" : 17,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8213392857142857,
+    "reasoning" : "Heuristic match 0.82 (margin 0.51 over next candidate). Matching: tag, id, data-qa, aria-label, title, ancestors, position. Changed: name, class.",
+    "pageUrl" : "http://localhost:8080/products",
+    "timestamp" : "2026-09-28T11:57:43.115060100Z",
+    "originalElement" : "select#category-filter[data-testid=category-filter-select]",
+    "healedElement" : "select#category-filter[data-testid=filter-category]",
+    "changes" : {
+      "data-testid" : [ "category-filter-select", "filter-category" ],
+      "name" : [ "category", "cat" ],
+      "class" : [ "form-select select-category", "form-select filter-cat" ]
+    },
+    "screenshot" : "screenshots/heal-22568-46.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "trace" : [ {
+      "kind" : "title",
+      "text" : "---- ProductsPage.categoryFilter -----------------------------",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "error",
+      "text" : "[X] Selector not found: [data-testid='category-filter-select']  (waited 3005 ms)",
+      "key" : "trace.notFound",
+      "args" : [ "[data-testid='category-filter-select']", 3005 ]
+    }, {
+      "kind" : "info",
+      "text" : "1) Cache: no entry",
+      "key" : "trace.cacheMiss",
+      "args" : [ ]
+    }, {
+      "kind" : "info",
+      "text" : "2) Local heuristic: compared 99 candidates with the fingerprint (threshold 0.60, margin 0.08)  [free]",
+      "key" : "trace.heuristic",
+      "args" : [ 99, 0.6, 0.08 ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #1  0.82  select#category-filter[data-testid=filter-category]",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "detail",
+      "text" : "        signals: tag 1.00 | id 1.00 | data-qa 1.00 | aria-label 1.00 | title 1.00 | ancestors 1.00 | position 0.99 | data-testid 0.67 | name 0.34 | class 0.33",
+      "key" : "trace.signals",
+      "args" : [ "tag 1.00 | id 1.00 | data-qa 1.00 | aria-label 1.00 | title 1.00 | ancestors 1.00 | position 0.99 | data-testid 0.67 | name 0.34 | class 0.33" ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #2  0.39  select#sort-select[data-testid=product-sort-select]",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "candidate",
+      "text" : "   #3  0.31  select#language-select[data-testid=language-select]",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "ok",
+      "text" : "   -> Accepted: 0.82 >= 0.60 and 0.43 ahead of the runner-up",
+      "key" : "trace.accept",
+      "args" : [ 0.8213392857142857, 0.6, 0.43322040814385165 ]
+    }, {
+      "kind" : "ok",
+      "text" : "4) Validation: [data-testid=\"filter-category\"] matches 1 element(s) on the page -> OK",
+      "key" : "trace.validate",
+      "args" : [ "[data-testid=\"filter-category\"]", 1, {
+        "key" : "trace.validateOk",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "ok",
+      "text" : "[!] HEALED (HEURISTIC, 0.82): [data-testid=\"filter-category\"]  - cost $0.0000 (local) -> test continues, reported as WARN",
+      "key" : "trace.healed",
+      "args" : [ "HEURISTIC", 0.8213392857142857, "[data-testid=\"filter-category\"]", "$0.0000", {
+        "key" : "source.HEURISTIC",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "detail",
+      "text" : "    changed: data-testid 'category-filter-select' -> 'filter-category', name 'category' -> 'cat', class 'form-select select-category' -> 'form-select filter-cat'",
+      "key" : "trace.changes",
+      "args" : [ "data-testid 'category-filter-select' -> 'filter-category', name 'category' -> 'cat', class 'form-select select-category' -> 'form-select filter-cat'" ]
+    } ],
+    "candidates" : [ {
+      "score" : 0.8213392857142857,
+      "element" : "select#category-filter[data-testid=filter-category]",
+      "selector" : "[data-testid=\"filter-category\"]"
+    }, {
+      "score" : 0.38811887757043406,
+      "element" : "select#sort-select[data-testid=product-sort-select]",
+      "selector" : "[data-testid=\"product-sort-select\"]"
+    }, {
+      "score" : 0.313069826756819,
+      "element" : "select#language-select[data-testid=language-select]",
+      "selector" : "[data-testid=\"language-select\"]"
+    } ],
+    "probeWaitMs" : 3005,
+    "healDurationMs" : 95,
+    "reused" : false
+  }, {
+    "id" : 47,
+    "test" : "ProductsTest.addToCartUpdatesBadge",
+    "key" : "LoginPage.username",
+    "status" : "HEALED",
+    "originalSelector" : "#login-username",
+    "healedSelector" : "[data-testid=\"username-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 16,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8181043621137435,
+    "reasoning" : "Heuristic match 0.82 (margin 0.52 over next candidate). Matching: tag, name, aria-label, title, type, class, label, ancestors, position. Changed: id, data-qa.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:44.760525100Z",
+    "originalElement" : "input#login-username[data-testid=login-username-input]",
+    "healedElement" : "input#user-name[data-testid=username-input]",
+    "changes" : {
+      "id" : [ "login-username", "user-name" ],
+      "data-testid" : [ "login-username-input", "username-input" ],
+      "data-qa" : [ "username-field", "" ],
+      "placeholder" : [ "Enter your username", "Email or username" ]
+    },
+    "screenshot" : "screenshots/heal-22568-1.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 48,
+    "test" : "ProductsTest.addToCartUpdatesBadge",
+    "key" : "LoginPage.password",
+    "status" : "HEALED",
+    "originalSelector" : "input[name='password']",
+    "healedSelector" : "[data-testid=\"login-password-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 17,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8236581337737408,
+    "reasoning" : "Heuristic match 0.82 (margin 0.54 over next candidate). Matching: tag, id, data-testid, aria-label, placeholder, title, type, label, ancestors, position. Changed: data-qa, name, class.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:44.850076900Z",
+    "originalElement" : "input#login-password[data-testid=login-password-input]",
+    "healedElement" : "input#login-password[data-testid=login-password-input]",
+    "changes" : {
+      "data-qa" : [ "password-field", "pwd" ],
+      "name" : [ "password", "pass" ],
+      "class" : [ "form-input input-password", "form-control pwd-field" ]
+    },
+    "screenshot" : "screenshots/heal-22568-2.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 49,
+    "test" : "ProductsTest.addToCartUpdatesBadge",
+    "key" : "LoginPage.loginButton",
+    "status" : "HEALED",
+    "originalSelector" : "[data-testid='login-submit-button']",
+    "healedSelector" : "[data-testid=\"signin-button\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 18,
+    "source" : "HEURISTIC",
+    "confidence" : 0.6916303034371643,
+    "reasoning" : "Heuristic match 0.69 (margin 0.42 over next candidate). Matching: tag, data-qa, name, type, class, position. Changed: id, data-testid.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:44.895321100Z",
+    "originalElement" : "button#login-button[data-testid=login-submit-button] \"Sign In\"",
+    "healedElement" : "button#btn-signin[data-testid=signin-button] \"Log In\"",
+    "changes" : {
+      "id" : [ "login-button", "btn-signin" ],
+      "data-testid" : [ "login-submit-button", "signin-button" ],
+      "aria-label" : [ "Sign in", "Log in" ],
+      "title" : [ "Sign in", "Log in" ],
+      "text" : [ "Sign In", "Log In" ]
+    },
+    "screenshot" : "screenshots/heal-22568-3.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 50,
+    "test" : "ProductsTest.addToCartUpdatesBadge",
+    "key" : "ProductsPage.addToCart[8]",
+    "status" : "HEALED",
+    "originalSelector" : "#add-to-cart-8",
+    "healedSelector" : "[data-testid=\"product-add-btn-8\"]",
+    "sourceFile" : "com/shoplab/tests/pages/ProductsPage.java",
+    "sourceLine" : 39,
+    "source" : "HEURISTIC",
+    "confidence" : 0.7504554473304473,
+    "reasoning" : "Heuristic match 0.75 (margin 0.41 over next candidate). Matching: tag, data-qa, name, aria-label, type, ancestors, position. Changed: id, data-testid.",
+    "pageUrl" : "http://localhost:8080/products",
+    "timestamp" : "2026-09-28T11:57:48.078715400Z",
+    "originalElement" : "button#add-to-cart-8[data-testid=add-to-cart-8] \"Add to Cart\"",
+    "healedElement" : "button#btn-add-8[data-testid=product-add-btn-8] \"Add to Bag\"",
+    "changes" : {
+      "id" : [ "add-to-cart-8", "btn-add-8" ],
+      "data-testid" : [ "add-to-cart-8", "product-add-btn-8" ],
+      "title" : [ "Add to Cart", "Add to Bag" ],
+      "class" : [ "btn btn-primary btn-add-cart", "btn btn-primary js-cart-add" ],
+      "text" : [ "Add to Cart", "Add to Bag" ]
+    },
+    "screenshot" : "screenshots/heal-22568-50.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "trace" : [ {
+      "kind" : "title",
+      "text" : "---- ProductsPage.addToCart[8] -------------------------------",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "error",
+      "text" : "[X] Selector not found: #add-to-cart-8  (waited 3017 ms)",
+      "key" : "trace.notFound",
+      "args" : [ "#add-to-cart-8", 3017 ]
+    }, {
+      "kind" : "info",
+      "text" : "1) Cache: no entry",
+      "key" : "trace.cacheMiss",
+      "args" : [ ]
+    }, {
+      "kind" : "info",
+      "text" : "2) Local heuristic: compared 99 candidates with the fingerprint (threshold 0.60, margin 0.08)  [free]",
+      "key" : "trace.heuristic",
+      "args" : [ 99, 0.6, 0.08 ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #1  0.75  button#btn-add-8[data-testid=product-add-btn-8] \"Add to Bag\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "detail",
+      "text" : "        signals: tag 1.00 | data-qa 1.00 | name 1.00 | aria-label 1.00 | type 1.00 | ancestors 1.00 | position 0.99 | title 0.73 | text 0.73 | class 0.50 | id 0.40 | data-testid 0.33",
+      "key" : "trace.signals",
+      "args" : [ "tag 1.00 | data-qa 1.00 | name 1.00 | aria-label 1.00 | type 1.00 | ancestors 1.00 | position 0.99 | title 0.73 | text 0.73 | class 0.50 | id 0.40 | data-testid 0.33" ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #2  0.34  a#view-product-8[data-testid=view-product-8] \"Details\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "candidate",
+      "text" : "   #3  0.31  button#btn-add-5[data-testid=product-add-btn-5] \"Add to Bag\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "ok",
+      "text" : "   -> Accepted: 0.75 >= 0.60 and 0.41 ahead of the runner-up",
+      "key" : "trace.accept",
+      "args" : [ 0.7504554473304473, 0.6, 0.4083621195961478 ]
+    }, {
+      "kind" : "ok",
+      "text" : "4) Validation: [data-testid=\"product-add-btn-8\"] matches 1 element(s) on the page -> OK",
+      "key" : "trace.validate",
+      "args" : [ "[data-testid=\"product-add-btn-8\"]", 1, {
+        "key" : "trace.validateOk",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "ok",
+      "text" : "[!] HEALED (HEURISTIC, 0.75): [data-testid=\"product-add-btn-8\"]  - cost $0.0000 (local) -> test continues, reported as WARN",
+      "key" : "trace.healed",
+      "args" : [ "HEURISTIC", 0.7504554473304473, "[data-testid=\"product-add-btn-8\"]", "$0.0000", {
+        "key" : "source.HEURISTIC",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "detail",
+      "text" : "    changed: id 'add-to-cart-8' -> 'btn-add-8', data-testid 'add-to-cart-8' -> 'product-add-btn-8', title 'Add to Cart' -> 'Add to Bag', class 'btn btn-primary btn-add-cart' -> 'btn btn-primary js-cart-add', text 'Add to Cart' -> 'Add to Bag'",
+      "key" : "trace.changes",
+      "args" : [ "id 'add-to-cart-8' -> 'btn-add-8', data-testid 'add-to-cart-8' -> 'product-add-btn-8', title 'Add to Cart' -> 'Add to Bag', class 'btn btn-primary btn-add-cart' -> 'btn btn-primary js-cart-add', text 'Add to Cart' -> 'Add to Bag'" ]
+    } ],
+    "candidates" : [ {
+      "score" : 0.7504554473304473,
+      "element" : "button#btn-add-8[data-testid=product-add-btn-8] \"Add to Bag\"",
+      "selector" : "[data-testid=\"product-add-btn-8\"]"
+    }, {
+      "score" : 0.3420933277342995,
+      "element" : "a#view-product-8[data-testid=view-product-8] \"Details\"",
+      "selector" : "[data-testid=\"view-product-8\"]"
+    }, {
+      "score" : 0.3137603817750877,
+      "element" : "button#btn-add-5[data-testid=product-add-btn-5] \"Add to Bag\"",
+      "selector" : "[data-testid=\"product-add-btn-5\"]"
+    } ],
+    "probeWaitMs" : 3017,
+    "healDurationMs" : 84,
+    "reused" : false
+  }, {
+    "id" : 51,
+    "test" : "ProductsTest.addToCartUpdatesBadge",
+    "key" : "ProductsPage.addToCart[2]",
+    "status" : "HEALED",
+    "originalSelector" : "#add-to-cart-2",
+    "healedSelector" : "[data-testid=\"product-add-btn-2\"]",
+    "sourceFile" : "com/shoplab/tests/pages/ProductsPage.java",
+    "sourceLine" : 39,
+    "source" : "HEURISTIC",
+    "confidence" : 0.7504554473304473,
+    "reasoning" : "Heuristic match 0.75 (margin 0.41 over next candidate). Matching: tag, data-qa, name, aria-label, type, ancestors, position. Changed: id, data-testid.",
+    "pageUrl" : "http://localhost:8080/products",
+    "timestamp" : "2026-09-28T11:57:51.341344500Z",
+    "originalElement" : "button#add-to-cart-2[data-testid=add-to-cart-2] \"Add to Cart\"",
+    "healedElement" : "button#btn-add-2[data-testid=product-add-btn-2] \"Add to Bag\"",
+    "changes" : {
+      "id" : [ "add-to-cart-2", "btn-add-2" ],
+      "data-testid" : [ "add-to-cart-2", "product-add-btn-2" ],
+      "title" : [ "Add to Cart", "Add to Bag" ],
+      "class" : [ "btn btn-primary btn-add-cart", "btn btn-primary js-cart-add" ],
+      "text" : [ "Add to Cart", "Add to Bag" ]
+    },
+    "screenshot" : "screenshots/heal-22568-51.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "trace" : [ {
+      "kind" : "title",
+      "text" : "---- ProductsPage.addToCart[2] -------------------------------",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "error",
+      "text" : "[X] Selector not found: #add-to-cart-2  (waited 3015 ms)",
+      "key" : "trace.notFound",
+      "args" : [ "#add-to-cart-2", 3015 ]
+    }, {
+      "kind" : "info",
+      "text" : "1) Cache: no entry",
+      "key" : "trace.cacheMiss",
+      "args" : [ ]
+    }, {
+      "kind" : "info",
+      "text" : "2) Local heuristic: compared 99 candidates with the fingerprint (threshold 0.60, margin 0.08)  [free]",
+      "key" : "trace.heuristic",
+      "args" : [ 99, 0.6, 0.08 ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #1  0.75  button#btn-add-2[data-testid=product-add-btn-2] \"Add to Bag\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "detail",
+      "text" : "        signals: tag 1.00 | data-qa 1.00 | name 1.00 | aria-label 1.00 | type 1.00 | ancestors 1.00 | position 0.99 | title 0.73 | text 0.73 | class 0.50 | id 0.40 | data-testid 0.33",
+      "key" : "trace.signals",
+      "args" : [ "tag 1.00 | data-qa 1.00 | name 1.00 | aria-label 1.00 | type 1.00 | ancestors 1.00 | position 0.99 | title 0.73 | text 0.73 | class 0.50 | id 0.40 | data-testid 0.33" ]
+    }, {
+      "kind" : "candidate",
+      "text" : "   #2  0.34  a#view-product-2[data-testid=view-product-2] \"Details\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "candidate",
+      "text" : "   #3  0.32  button#btn-add-1[data-testid=product-add-btn-1] \"Add to Bag\"",
+      "key" : null,
+      "args" : null
+    }, {
+      "kind" : "ok",
+      "text" : "   -> Accepted: 0.75 >= 0.60 and 0.41 ahead of the runner-up",
+      "key" : "trace.accept",
+      "args" : [ 0.7504554473304473, 0.6, 0.40645213209788417 ]
+    }, {
+      "kind" : "ok",
+      "text" : "4) Validation: [data-testid=\"product-add-btn-2\"] matches 1 element(s) on the page -> OK",
+      "key" : "trace.validate",
+      "args" : [ "[data-testid=\"product-add-btn-2\"]", 1, {
+        "key" : "trace.validateOk",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "ok",
+      "text" : "[!] HEALED (HEURISTIC, 0.75): [data-testid=\"product-add-btn-2\"]  - cost $0.0000 (local) -> test continues, reported as WARN",
+      "key" : "trace.healed",
+      "args" : [ "HEURISTIC", 0.7504554473304473, "[data-testid=\"product-add-btn-2\"]", "$0.0000", {
+        "key" : "source.HEURISTIC",
+        "args" : [ ]
+      } ]
+    }, {
+      "kind" : "detail",
+      "text" : "    changed: id 'add-to-cart-2' -> 'btn-add-2', data-testid 'add-to-cart-2' -> 'product-add-btn-2', title 'Add to Cart' -> 'Add to Bag', class 'btn btn-primary btn-add-cart' -> 'btn btn-primary js-cart-add', text 'Add to Cart' -> 'Add to Bag'",
+      "key" : "trace.changes",
+      "args" : [ "id 'add-to-cart-2' -> 'btn-add-2', data-testid 'add-to-cart-2' -> 'product-add-btn-2', title 'Add to Cart' -> 'Add to Bag', class 'btn btn-primary btn-add-cart' -> 'btn btn-primary js-cart-add', text 'Add to Cart' -> 'Add to Bag'" ]
+    } ],
+    "candidates" : [ {
+      "score" : 0.7504554473304473,
+      "element" : "button#btn-add-2[data-testid=product-add-btn-2] \"Add to Bag\"",
+      "selector" : "[data-testid=\"product-add-btn-2\"]"
+    }, {
+      "score" : 0.34400331523256317,
+      "element" : "a#view-product-2[data-testid=view-product-2] \"Details\"",
+      "selector" : "[data-testid=\"view-product-2\"]"
+    }, {
+      "score" : 0.3168765102242864,
+      "element" : "button#btn-add-1[data-testid=product-add-btn-1] \"Add to Bag\"",
+      "selector" : "[data-testid=\"product-add-btn-1\"]"
+    } ],
+    "probeWaitMs" : 3015,
+    "healDurationMs" : 91,
+    "reused" : false
+  }, {
+    "id" : 52,
+    "test" : "ProductsTest.addToCartUpdatesBadge",
+    "key" : "Header.cartBadge",
+    "status" : "HEALED",
+    "originalSelector" : "#cart-count",
+    "healedSelector" : "[data-testid=\"basket-badge\"]",
+    "sourceFile" : "com/shoplab/tests/pages/Header.java",
+    "sourceLine" : 14,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8387037037037037,
+    "reasoning" : "Heuristic match 0.84 (margin 0.60 over next candidate). Matching: tag, data-qa, aria-label, class, text, ancestors, position. Changed: data-testid.",
+    "pageUrl" : "http://localhost:8080/products/4",
+    "timestamp" : "2026-09-28T11:57:51.517443800Z",
+    "originalElement" : "span#cart-count[data-testid=cart-count-badge] \"2\"",
+    "healedElement" : "span#basket-count[data-testid=basket-badge] \"2\"",
+    "changes" : {
+      "id" : [ "cart-count", "basket-count" ],
+      "data-testid" : [ "cart-count-badge", "basket-badge" ]
+    },
+    "screenshot" : "screenshots/heal-22568-37.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 53,
+    "test" : "ProductsTest.sortByPrice",
+    "key" : "LoginPage.username",
+    "status" : "HEALED",
+    "originalSelector" : "#login-username",
+    "healedSelector" : "[data-testid=\"username-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 16,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8181043621137435,
+    "reasoning" : "Heuristic match 0.82 (margin 0.52 over next candidate). Matching: tag, name, aria-label, title, type, class, label, ancestors, position. Changed: id, data-qa.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:53.082121Z",
+    "originalElement" : "input#login-username[data-testid=login-username-input]",
+    "healedElement" : "input#user-name[data-testid=username-input]",
+    "changes" : {
+      "id" : [ "login-username", "user-name" ],
+      "data-testid" : [ "login-username-input", "username-input" ],
+      "data-qa" : [ "username-field", "" ],
+      "placeholder" : [ "Enter your username", "Email or username" ]
+    },
+    "screenshot" : "screenshots/heal-22568-1.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 54,
+    "test" : "ProductsTest.sortByPrice",
+    "key" : "LoginPage.password",
+    "status" : "HEALED",
+    "originalSelector" : "input[name='password']",
+    "healedSelector" : "[data-testid=\"login-password-input\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 17,
+    "source" : "HEURISTIC",
+    "confidence" : 0.8236581337737408,
+    "reasoning" : "Heuristic match 0.82 (margin 0.54 over next candidate). Matching: tag, id, data-testid, aria-label, placeholder, title, type, label, ancestors, position. Changed: data-qa, name, class.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:53.147017400Z",
+    "originalElement" : "input#login-password[data-testid=login-password-input]",
+    "healedElement" : "input#login-password[data-testid=login-password-input]",
+    "changes" : {
+      "data-qa" : [ "password-field", "pwd" ],
+      "name" : [ "password", "pass" ],
+      "class" : [ "form-input input-password", "form-control pwd-field" ]
+    },
+    "screenshot" : "screenshots/heal-22568-2.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  }, {
+    "id" : 55,
+    "test" : "ProductsTest.sortByPrice",
+    "key" : "LoginPage.loginButton",
+    "status" : "HEALED",
+    "originalSelector" : "[data-testid='login-submit-button']",
+    "healedSelector" : "[data-testid=\"signin-button\"]",
+    "sourceFile" : "com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 18,
+    "source" : "HEURISTIC",
+    "confidence" : 0.6916303034371643,
+    "reasoning" : "Heuristic match 0.69 (margin 0.42 over next candidate). Matching: tag, data-qa, name, type, class, position. Changed: id, data-testid.",
+    "pageUrl" : "http://localhost:8080/login",
+    "timestamp" : "2026-09-28T11:57:53.179384500Z",
+    "originalElement" : "button#login-button[data-testid=login-submit-button] \"Sign In\"",
+    "healedElement" : "button#btn-signin[data-testid=signin-button] \"Log In\"",
+    "changes" : {
+      "id" : [ "login-button", "btn-signin" ],
+      "data-testid" : [ "login-submit-button", "signin-button" ],
+      "aria-label" : [ "Sign in", "Log in" ],
+      "title" : [ "Sign in", "Log in" ],
+      "text" : [ "Sign In", "Log In" ]
+    },
+    "screenshot" : "screenshots/heal-22568-3.jpg",
+    "llmInputTokens" : 0,
+    "llmOutputTokens" : 0,
+    "llmCostUsd" : 0.0,
+    "probeWaitMs" : 0,
+    "healDurationMs" : 0,
+    "reused" : true
+  } ],
+  "fixes" : [ {
+    "key" : "LoginPage.username",
+    "originalSelector" : "#login-username",
+    "healedSelector" : "[data-testid=\"username-input\"]",
+    "file" : "src/test/java/com/shoplab/tests/pages/LoginPage.java",
+    "line" : 16,
+    "status" : "READY",
+    "note" : null,
+    "tests" : [ "CheckoutTest.couponReducesTotal", "CheckoutTest.checkoutValidationAndOrder", "ContactTest.logout", "ContactTest.sendMessage", "ContactTest.emptyFormShowsErrors", "LoginTest.invalidPasswordShowsError", "LoginTest.validLoginOpensProducts", "ProductDetailTest.addWithVariantAndQuantity", "ProductDetailTest.sizeIsRequired", "ProductsTest.searchAndFilter", "ProductsTest.addToCartUpdatesBadge", "ProductsTest.sortByPrice" ]
+  }, {
+    "key" : "LoginPage.password",
+    "originalSelector" : "input[name='password']",
+    "healedSelector" : "[data-testid=\"login-password-input\"]",
+    "file" : "src/test/java/com/shoplab/tests/pages/LoginPage.java",
+    "line" : 17,
+    "status" : "READY",
+    "note" : null,
+    "tests" : [ "CheckoutTest.couponReducesTotal", "CheckoutTest.checkoutValidationAndOrder", "ContactTest.logout", "ContactTest.sendMessage", "ContactTest.emptyFormShowsErrors", "LoginTest.invalidPasswordShowsError", "LoginTest.validLoginOpensProducts", "ProductDetailTest.addWithVariantAndQuantity", "ProductDetailTest.sizeIsRequired", "ProductsTest.searchAndFilter", "ProductsTest.addToCartUpdatesBadge", "ProductsTest.sortByPrice" ]
+  }, {
+    "key" : "LoginPage.loginButton",
+    "originalSelector" : "[data-testid='login-submit-button']",
+    "healedSelector" : "[data-testid=\"signin-button\"]",
+    "file" : "src/test/java/com/shoplab/tests/pages/LoginPage.java",
+    "line" : 18,
+    "status" : "READY",
+    "note" : null,
+    "tests" : [ "CheckoutTest.couponReducesTotal", "CheckoutTest.checkoutValidationAndOrder", "ContactTest.logout", "ContactTest.sendMessage", "ContactTest.emptyFormShowsErrors", "LoginTest.invalidPasswordShowsError", "LoginTest.validLoginOpensProducts", "ProductDetailTest.addWithVariantAndQuantity", "ProductDetailTest.sizeIsRequired", "ProductsTest.searchAndFilter", "ProductsTest.addToCartUpdatesBadge", "ProductsTest.sortByPrice" ]
+  }, {
+    "key" : "ProductsPage.addToCart[1]",
+    "originalSelector" : "#add-to-cart-1",
+    "healedSelector" : "[data-testid=\"product-add-btn-1\"]",
+    "file" : "src/test/java/com/shoplab/tests/pages/ProductsPage.java",
+    "line" : 39,
+    "status" : "MANUAL",
+    "note" : "notFound",
+    "tests" : [ "CheckoutTest.couponReducesTotal", "CheckoutTest.checkoutValidationAndOrder" ]
+  }, {
+    "key" : "ProductsPage.addToCart[5]",
+    "originalSelector" : "#add-to-cart-5",
+    "healedSelector" : "[data-testid=\"product-add-btn-5\"]",
+    "file" : "src/test/java/com/shoplab/tests/pages/ProductsPage.java",
+    "line" : 39,
+    "status" : "MANUAL",
+    "note" : "notFound",
+    "tests" : [ "CheckoutTest.couponReducesTotal", "CheckoutTest.checkoutValidationAndOrder" ]
+  }, {
+    "key" : "CartPage.couponInput",
+    "originalSelector" : "#coupon-code",
+    "healedSelector" : "[data-testid=\"promo-input\"]",
+    "file" : "src/test/java/com/shoplab/tests/pages/CartPage.java",
+    "line" : 25,
+    "status" : "READY",
+    "note" : null,
+    "tests" : [ "CheckoutTest.couponReducesTotal" ]
+  }, {
+    "key" : "CartPage.placeOrder",
+    "originalSelector" : "#place-order",
+    "healedSelector" : "[data-testid=\"complete-order-button\"]",
+    "file" : "src/test/java/com/shoplab/tests/pages/CartPage.java",
+    "line" : 35,
+    "status" : "READY",
+    "note" : null,
+    "tests" : [ "CheckoutTest.checkoutValidationAndOrder" ]
+  }, {
+    "key" : "Header.logoutButton",
+    "originalSelector" : "button[data-testid='logout-button']",
+    "healedSelector" : "[data-testid=\"logout-button\"]",
+    "file" : "src/test/java/com/shoplab/tests/pages/Header.java",
+    "line" : 17,
+    "status" : "READY",
+    "note" : null,
+    "tests" : [ "ContactTest.logout" ]
+  }, {
+    "key" : "ContactPage.email",
+    "originalSelector" : "#contact-email",
+    "healedSelector" : "[data-testid=\"email-field\"]",
+    "file" : "src/test/java/com/shoplab/tests/pages/ContactPage.java",
+    "line" : 19,
+    "status" : "READY",
+    "note" : null,
+    "tests" : [ "ContactTest.sendMessage" ]
+  }, {
+    "key" : "ContactPage.submit",
+    "originalSelector" : "button[data-qa='send-message']",
+    "healedSelector" : "[data-testid=\"contact-submit-button\"]",
+    "file" : "src/test/java/com/shoplab/tests/pages/ContactPage.java",
+    "line" : 23,
+    "status" : "READY",
+    "note" : null,
+    "tests" : [ "ContactTest.sendMessage", "ContactTest.emptyFormShowsErrors" ]
+  }, {
+    "key" : "ProductDetailPage.sizeSelect",
+    "originalSelector" : "[data-testid='size-select']",
+    "healedSelector" : "[data-testid=\"variant-size-dropdown\"]",
+    "file" : "src/test/java/com/shoplab/tests/pages/ProductDetailPage.java",
+    "line" : 18,
+    "status" : "READY",
+    "note" : null,
+    "tests" : [ "ProductDetailTest.addWithVariantAndQuantity" ]
+  }, {
+    "key" : "ProductDetailPage.addToCart",
+    "originalSelector" : "button:has-text('Add to Cart')",
+    "healedSelector" : "[data-testid=\"product-detail-add-to-cart\"]",
+    "file" : "src/test/java/com/shoplab/tests/pages/ProductDetailPage.java",
+    "line" : 21,
+    "status" : "READY",
+    "note" : null,
+    "tests" : [ "ProductDetailTest.addWithVariantAndQuantity", "ProductDetailTest.sizeIsRequired" ]
+  }, {
+    "key" : "Header.cartBadge",
+    "originalSelector" : "#cart-count",
+    "healedSelector" : "[data-testid=\"basket-badge\"]",
+    "file" : "src/test/java/com/shoplab/tests/pages/Header.java",
+    "line" : 14,
+    "status" : "READY",
+    "note" : null,
+    "tests" : [ "ProductDetailTest.addWithVariantAndQuantity", "ProductsTest.addToCartUpdatesBadge" ]
+  }, {
+    "key" : "ProductsPage.search",
+    "originalSelector" : "#product-search",
+    "healedSelector" : "[data-testid=\"search-box\"]",
+    "file" : "src/test/java/com/shoplab/tests/pages/ProductsPage.java",
+    "line" : 16,
+    "status" : "READY",
+    "note" : null,
+    "tests" : [ "ProductsTest.searchAndFilter" ]
+  }, {
+    "key" : "ProductsPage.categoryFilter",
+    "originalSelector" : "[data-testid='category-filter-select']",
+    "healedSelector" : "[data-testid=\"filter-category\"]",
+    "file" : "src/test/java/com/shoplab/tests/pages/ProductsPage.java",
+    "line" : 17,
+    "status" : "READY",
+    "note" : null,
+    "tests" : [ "ProductsTest.searchAndFilter" ]
+  }, {
+    "key" : "ProductsPage.addToCart[8]",
+    "originalSelector" : "#add-to-cart-8",
+    "healedSelector" : "[data-testid=\"product-add-btn-8\"]",
+    "file" : "src/test/java/com/shoplab/tests/pages/ProductsPage.java",
+    "line" : 39,
+    "status" : "MANUAL",
+    "note" : "notFound",
+    "tests" : [ "ProductsTest.addToCartUpdatesBadge" ]
+  }, {
+    "key" : "ProductsPage.addToCart[2]",
+    "originalSelector" : "#add-to-cart-2",
+    "healedSelector" : "[data-testid=\"product-add-btn-2\"]",
+    "file" : "src/test/java/com/shoplab/tests/pages/ProductsPage.java",
+    "line" : 39,
+    "status" : "MANUAL",
+    "note" : "notFound",
+    "tests" : [ "ProductsTest.addToCartUpdatesBadge" ]
+  } ],
+  "fixPatch" : "target/healer-report/locator-fixes.patch",
+  "fixMode" : "patch",
+  "locatorQuality" : [ {
+    "key" : "ProductDetailPage.addToCart",
+    "selector" : "button:has-text('Add to Cart')",
+    "risk" : "LOW",
+    "reasons" : [ "text" ],
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/ProductDetailPage.java",
+    "sourceLine" : 21,
+    "broken" : true,
+    "tests" : [ "ProductDetailTest.addWithVariantAndQuantity", "ProductDetailTest.sizeIsRequired" ]
+  }, {
+    "key" : "CartPage.acceptTerms",
+    "selector" : "#accept-terms",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/CartPage.java",
+    "sourceLine" : 34,
+    "broken" : false,
+    "tests" : [ "CheckoutTest.checkoutValidationAndOrder" ]
+  }, {
+    "key" : "CartPage.address",
+    "selector" : "[data-testid='checkout-address-input']",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/CartPage.java",
+    "sourceLine" : 31,
+    "broken" : false,
+    "tests" : [ "CheckoutTest.checkoutValidationAndOrder" ]
+  }, {
+    "key" : "CartPage.applyCoupon",
+    "selector" : "[data-testid='apply-coupon-button']",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/CartPage.java",
+    "sourceLine" : 26,
+    "broken" : false,
+    "tests" : [ "CheckoutTest.couponReducesTotal" ]
+  }, {
+    "key" : "CartPage.checkoutError",
+    "selector" : "[data-testid='checkout-error-message']",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/CartPage.java",
+    "sourceLine" : 36,
+    "broken" : false,
+    "tests" : [ "CheckoutTest.checkoutValidationAndOrder" ]
+  }, {
+    "key" : "CartPage.city",
+    "selector" : "#city",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/CartPage.java",
+    "sourceLine" : 32,
+    "broken" : false,
+    "tests" : [ "CheckoutTest.checkoutValidationAndOrder" ]
+  }, {
+    "key" : "CartPage.couponInput",
+    "selector" : "#coupon-code",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/CartPage.java",
+    "sourceLine" : 25,
+    "broken" : true,
+    "tests" : [ "CheckoutTest.couponReducesTotal" ]
+  }, {
+    "key" : "CartPage.couponMessage",
+    "selector" : "[data-testid='coupon-message']",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/CartPage.java",
+    "sourceLine" : 27,
+    "broken" : false,
+    "tests" : [ "CheckoutTest.couponReducesTotal" ]
+  }, {
+    "key" : "CartPage.firstName",
+    "selector" : "#first-name",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/CartPage.java",
+    "sourceLine" : 29,
+    "broken" : false,
+    "tests" : [ "CheckoutTest.checkoutValidationAndOrder" ]
+  }, {
+    "key" : "CartPage.lastName",
+    "selector" : "[name='lastName']",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/CartPage.java",
+    "sourceLine" : 30,
+    "broken" : false,
+    "tests" : [ "CheckoutTest.checkoutValidationAndOrder" ]
+  }, {
+    "key" : "CartPage.orderSuccess",
+    "selector" : "[data-testid='order-success-message']",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/CartPage.java",
+    "sourceLine" : 37,
+    "broken" : false,
+    "tests" : [ "CheckoutTest.checkoutValidationAndOrder" ]
+  }, {
+    "key" : "CartPage.placeOrder",
+    "selector" : "#place-order",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/CartPage.java",
+    "sourceLine" : 35,
+    "broken" : true,
+    "tests" : [ "CheckoutTest.checkoutValidationAndOrder" ]
+  }, {
+    "key" : "CartPage.postalCode",
+    "selector" : "[data-qa='postal-code']",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/CartPage.java",
+    "sourceLine" : 33,
+    "broken" : false,
+    "tests" : [ "CheckoutTest.checkoutValidationAndOrder" ]
+  }, {
+    "key" : "CartPage.total",
+    "selector" : "#summary-total",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/CartPage.java",
+    "sourceLine" : 28,
+    "broken" : false,
+    "tests" : [ "CheckoutTest.couponReducesTotal" ]
+  }, {
+    "key" : "ContactPage.email",
+    "selector" : "#contact-email",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/ContactPage.java",
+    "sourceLine" : 19,
+    "broken" : true,
+    "tests" : [ "ContactTest.sendMessage" ]
+  }, {
+    "key" : "ContactPage.errorMessage",
+    "selector" : "[data-testid='contact-error-message']",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/ContactPage.java",
+    "sourceLine" : 25,
+    "broken" : false,
+    "tests" : [ "ContactTest.emptyFormShowsErrors" ]
+  }, {
+    "key" : "ContactPage.fullName",
+    "selector" : "#contact-name",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/ContactPage.java",
+    "sourceLine" : 18,
+    "broken" : false,
+    "tests" : [ "ContactTest.sendMessage" ]
+  }, {
+    "key" : "ContactPage.message",
+    "selector" : "textarea[name='message']",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/ContactPage.java",
+    "sourceLine" : 22,
+    "broken" : false,
+    "tests" : [ "ContactTest.sendMessage" ]
+  }, {
+    "key" : "ContactPage.phonePreference",
+    "selector" : "#pref-phone",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/ContactPage.java",
+    "sourceLine" : 21,
+    "broken" : false,
+    "tests" : [ "ContactTest.sendMessage" ]
+  }, {
+    "key" : "ContactPage.subject",
+    "selector" : "[data-testid='contact-subject-select']",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/ContactPage.java",
+    "sourceLine" : 20,
+    "broken" : false,
+    "tests" : [ "ContactTest.sendMessage" ]
+  }, {
+    "key" : "ContactPage.submit",
+    "selector" : "button[data-qa='send-message']",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/ContactPage.java",
+    "sourceLine" : 23,
+    "broken" : true,
+    "tests" : [ "ContactTest.emptyFormShowsErrors", "ContactTest.sendMessage" ]
+  }, {
+    "key" : "ContactPage.successMessage",
+    "selector" : "[data-testid='contact-success-message']",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/ContactPage.java",
+    "sourceLine" : 24,
+    "broken" : false,
+    "tests" : [ "ContactTest.sendMessage" ]
+  }, {
+    "key" : "Header.cartBadge",
+    "selector" : "#cart-count",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/Header.java",
+    "sourceLine" : 14,
+    "broken" : true,
+    "tests" : [ "ProductDetailTest.addWithVariantAndQuantity", "ProductsTest.addToCartUpdatesBadge" ]
+  }, {
+    "key" : "Header.cartLink",
+    "selector" : "[data-testid='nav-cart-link']",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/Header.java",
+    "sourceLine" : 15,
+    "broken" : false,
+    "tests" : [ "CheckoutTest.checkoutValidationAndOrder", "CheckoutTest.couponReducesTotal" ]
+  }, {
+    "key" : "Header.contactLink",
+    "selector" : "#nav-contact",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/Header.java",
+    "sourceLine" : 16,
+    "broken" : false,
+    "tests" : [ "ContactTest.emptyFormShowsErrors", "ContactTest.logout", "ContactTest.sendMessage" ]
+  }, {
+    "key" : "Header.logoutButton",
+    "selector" : "button[data-testid='logout-button']",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/Header.java",
+    "sourceLine" : 17,
+    "broken" : true,
+    "tests" : [ "ContactTest.logout" ]
+  }, {
+    "key" : "LoginPage.errorMessage",
+    "selector" : "[data-testid='login-error-message']",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 19,
+    "broken" : false,
+    "tests" : [ "LoginTest.invalidPasswordShowsError" ]
+  }, {
+    "key" : "LoginPage.loginButton",
+    "selector" : "[data-testid='login-submit-button']",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 18,
+    "broken" : true,
+    "tests" : [ "CheckoutTest.checkoutValidationAndOrder", "CheckoutTest.couponReducesTotal", "ContactTest.emptyFormShowsErrors", "ContactTest.logout", "ContactTest.sendMessage", "LoginTest.invalidPasswordShowsError", "LoginTest.validLoginOpensProducts", "ProductDetailTest.addWithVariantAndQuantity", "ProductDetailTest.sizeIsRequired", "ProductsTest.addToCartUpdatesBadge", "ProductsTest.searchAndFilter", "ProductsTest.sortByPrice" ]
+  }, {
+    "key" : "LoginPage.password",
+    "selector" : "input[name='password']",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 17,
+    "broken" : true,
+    "tests" : [ "CheckoutTest.checkoutValidationAndOrder", "CheckoutTest.couponReducesTotal", "ContactTest.emptyFormShowsErrors", "ContactTest.logout", "ContactTest.sendMessage", "LoginTest.invalidPasswordShowsError", "LoginTest.validLoginOpensProducts", "ProductDetailTest.addWithVariantAndQuantity", "ProductDetailTest.sizeIsRequired", "ProductsTest.addToCartUpdatesBadge", "ProductsTest.searchAndFilter", "ProductsTest.sortByPrice" ]
+  }, {
+    "key" : "LoginPage.username",
+    "selector" : "#login-username",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/LoginPage.java",
+    "sourceLine" : 16,
+    "broken" : true,
+    "tests" : [ "CheckoutTest.checkoutValidationAndOrder", "CheckoutTest.couponReducesTotal", "ContactTest.emptyFormShowsErrors", "ContactTest.logout", "ContactTest.sendMessage", "LoginTest.invalidPasswordShowsError", "LoginTest.validLoginOpensProducts", "ProductDetailTest.addWithVariantAndQuantity", "ProductDetailTest.sizeIsRequired", "ProductsTest.addToCartUpdatesBadge", "ProductsTest.searchAndFilter", "ProductsTest.sortByPrice" ]
+  }, {
+    "key" : "ProductDetailPage.color[blue]",
+    "selector" : "[data-testid='color-option-blue']",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/ProductDetailPage.java",
+    "sourceLine" : 29,
+    "broken" : false,
+    "tests" : [ "ProductDetailTest.addWithVariantAndQuantity" ]
+  }, {
+    "key" : "ProductDetailPage.name",
+    "selector" : "[data-testid='product-detail-name']",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/ProductDetailPage.java",
+    "sourceLine" : 17,
+    "broken" : false,
+    "tests" : [ "ProductDetailTest.sizeIsRequired" ]
+  }, {
+    "key" : "ProductDetailPage.quantityIncrease",
+    "selector" : "[aria-label='Increase quantity']",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/ProductDetailPage.java",
+    "sourceLine" : 20,
+    "broken" : false,
+    "tests" : [ "ProductDetailTest.addWithVariantAndQuantity" ]
+  }, {
+    "key" : "ProductDetailPage.sizeError",
+    "selector" : "#size-error",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/ProductDetailPage.java",
+    "sourceLine" : 19,
+    "broken" : false,
+    "tests" : [ "ProductDetailTest.sizeIsRequired" ]
+  }, {
+    "key" : "ProductDetailPage.sizeSelect",
+    "selector" : "[data-testid='size-select']",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/ProductDetailPage.java",
+    "sourceLine" : 18,
+    "broken" : true,
+    "tests" : [ "ProductDetailTest.addWithVariantAndQuantity" ]
+  }, {
+    "key" : "ProductsPage.addToCart[1]",
+    "selector" : "#add-to-cart-1",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/ProductsPage.java",
+    "sourceLine" : 39,
+    "broken" : true,
+    "tests" : [ "CheckoutTest.checkoutValidationAndOrder", "CheckoutTest.couponReducesTotal" ]
+  }, {
+    "key" : "ProductsPage.addToCart[2]",
+    "selector" : "#add-to-cart-2",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/ProductsPage.java",
+    "sourceLine" : 39,
+    "broken" : true,
+    "tests" : [ "ProductsTest.addToCartUpdatesBadge" ]
+  }, {
+    "key" : "ProductsPage.addToCart[5]",
+    "selector" : "#add-to-cart-5",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/ProductsPage.java",
+    "sourceLine" : 39,
+    "broken" : true,
+    "tests" : [ "CheckoutTest.checkoutValidationAndOrder", "CheckoutTest.couponReducesTotal" ]
+  }, {
+    "key" : "ProductsPage.addToCart[8]",
+    "selector" : "#add-to-cart-8",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/ProductsPage.java",
+    "sourceLine" : 39,
+    "broken" : true,
+    "tests" : [ "ProductsTest.addToCartUpdatesBadge" ]
+  }, {
+    "key" : "ProductsPage.categoryFilter",
+    "selector" : "[data-testid='category-filter-select']",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/ProductsPage.java",
+    "sourceLine" : 17,
+    "broken" : true,
+    "tests" : [ "ProductsTest.searchAndFilter" ]
+  }, {
+    "key" : "ProductsPage.resultCount",
+    "selector" : "[data-testid='product-result-count']",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/ProductsPage.java",
+    "sourceLine" : 19,
+    "broken" : false,
+    "tests" : [ "ProductsTest.searchAndFilter" ]
+  }, {
+    "key" : "ProductsPage.search",
+    "selector" : "#product-search",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/ProductsPage.java",
+    "sourceLine" : 16,
+    "broken" : true,
+    "tests" : [ "ProductsTest.searchAndFilter" ]
+  }, {
+    "key" : "ProductsPage.sort",
+    "selector" : "#sort-select",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/ProductsPage.java",
+    "sourceLine" : 18,
+    "broken" : false,
+    "tests" : [ "ProductsTest.sortByPrice" ]
+  }, {
+    "key" : "ProductsPage.viewProduct[4]",
+    "selector" : "[data-testid='view-product-4']",
+    "risk" : "OK",
+    "sourceFile" : "src/test/java/com/shoplab/tests/pages/ProductsPage.java",
+    "sourceLine" : 43,
+    "broken" : false,
+    "tests" : [ "ProductDetailTest.addWithVariantAndQuantity", "ProductDetailTest.sizeIsRequired" ]
+  } ]
+}
